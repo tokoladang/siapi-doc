@@ -288,7 +288,7 @@
     </script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;javascript&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -299,8 +299,6 @@
       <img src="images/logo-1e815a84.png" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
               <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
@@ -309,7 +307,18 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#perkenalan" class="toc-h1 toc-link" data-title="Perkenalan">Perkenalan</a>
+          </li>
+          <li>
+            <a href="#autentikasi" class="toc-h1 toc-link" data-title="Autentikasi">Autentikasi</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#session-api" class="toc-h2 toc-link" data-title="Session API">Session API</a>
+                  </li>
+                  <li>
+                    <a href="#api-token" class="toc-h2 toc-link" data-title="API Token">API Token</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
@@ -333,19 +342,202 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://siplah.tokoladang.co.id'>Dokumentasi Oleh Siplah Toko Ladang</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+        <h1 id='perkenalan'>Perkenalan</h1>
+<p>Selamat Datang di dokumentasi API Siplah Toko Ladang! Anda dapat menggunakan API kami untuk mengakses beberapa informasi yang ada pada database kami.</p>
+<h1 id='autentikasi'>Autentikasi</h1>
+<p>Kami Menggunakan dua Jenis Autentikasi untuk dapat mengakses API. yang pertama menggunakan <a href="/#session-api">Session API</a> yang hanya dipakai oleh Aplikasi Web Internal Kami. dan yang kedua menggunakan <a href="/#api-token">API Token</a> yang dapat dipakai oleh Aplikasi Mobile atau aplikasi pihak ketiga.</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>ada 4 jenis endpoint dalam API:</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<ol>
+<li><code>public</code> adalah endpoint untuk publik yang dapat diakses tanpa harus terautentikasi.</li>
+<li><code>buyer</code> adalah endpoint yang memerlukan login/token pembeli.</li>
+<li><code>seller</code> adalah endpoint yang memerlukan login/token penjual.</li>
+<li><code>admin</code> adalah endpoint yang memerlukan login/token admin.</li>
+</ol>
+
+<aside class="notice">
+Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi.
+</aside>
+<h2 id='session-api'>Session API</h2>
+<blockquote>
+<p>jenis: public</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://siapi.siplah.tokoladang.co.id/public/csrf-cookie"</span>
+</code></pre></div>
+<p>Autentikasi dengan Session API harus memanggil endpoint ini terlebih dahulu sebelum login. untuk mendaftarkan sesi ke server yang nantinya akan disimpan di cookies.</p>
+
+<p><code>GET https://siapi.siplah.tokoladang.co.id/public/csrf-cookie</code></p>
+
+<p>Setelah Itu Dapat melakukan Login Sesuai dengan jenis user.</p>
+<h3 id='login-pembeli'>Login Pembeli</h3>
+<blockquote>
+<p>jenis: public</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://siapi.siplah.tokoladang.co.id/buyer/login"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "email": "pembeli@mail.com"
+    "password": "password_pembeli"
+  }'</span>
+</code></pre></div>
+<p>endpoint ini digunakan untuk login sebagai Pembeli.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://siapi.siplah.tokoladang.co.id/buyer/login</code></p>
+<h3 id='query-body'>Query Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>null</td>
+<td>true</td>
+<td>Email Pembeli</td>
+</tr>
+<tr>
+<td>password</td>
+<td>null</td>
+<td>true</td>
+<td>Password Pembeli</td>
+</tr>
+</tbody></table>
+<h3 id='login-penjual'>Login Penjual</h3>
+<blockquote>
+<p>jenis: public</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://siapi.siplah.tokoladang.co.id/seller/login"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "email": "pembeli@mail.com"
+    "password": "password_pembeli"
+  }'</span>
+</code></pre></div>
+<p>endpoint ini digunakan untuk login sebagai Penjual.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://siapi.siplah.tokoladang.co.id/admin/login</code></p>
+<h3 id='query-body-2'>Query Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>null</td>
+<td>true</td>
+<td>Email Penjual</td>
+</tr>
+<tr>
+<td>password</td>
+<td>null</td>
+<td>true</td>
+<td>Password Penjual</td>
+</tr>
+</tbody></table>
+<h3 id='login-admin'>Login Admin</h3>
+<blockquote>
+<p>jenis: public</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://siapi.siplah.tokoladang.co.id/admin/login"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "email": "admin@mail.com"
+    "password": "password_admin"
+  }'</span>
+</code></pre></div>
+<p>endpoint ini digunakan untuk login sebagai Admin.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://siapi.siplah.tokoladang.co.id/admin/login</code></p>
+<h3 id='query-body-3'>Query Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>null</td>
+<td>true</td>
+<td>Email Admin</td>
+</tr>
+<tr>
+<td>password</td>
+<td>null</td>
+<td>true</td>
+<td>Password Admin</td>
+</tr>
+</tbody></table>
+<h2 id='api-token'>API Token</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>Authorization: Bearer <span class="o">{{</span>TOKEN<span class="o">}}</span>
+</code></pre></div>
+<p>Authentikasi jenis API Token digunakan untuk mendapatkan <code>token</code> yang digunakan sebagai <code>Authorization header</code>. Header harus disertakan setiap hit endpoint menggunakan API Token.</p>
+<h3 id='get-token-penjual'>Get Token Penjual</h3>
+<blockquote>
+<p>jenis: public</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://siapi.siplah.tokoladang.co.id/seller/token"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "email": "pembeli@mail.com"
+    "password": "password_pembeli"
+    "device": "android"
+  }'</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LKJlkj982rkoi"</span><span class="w">
+  </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">....</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk Mendapatkan Token Penjual.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST https://siapi.siplah.tokoladang.co.id/seller/token</code></p>
+<h3 id='query-body-4'>Query Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>null</td>
+<td>true</td>
+<td>Email Penjual</td>
+</tr>
+<tr>
+<td>password</td>
+<td>null</td>
+<td>true</td>
+<td>Password Penjual</td>
+</tr>
+<tr>
+<td>device</td>
+<td>null</td>
+<td>true</td>
+<td>Jenis Perangkat <code>web, android, ios</code></td>
+</tr>
+</tbody></table>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To authorize, use this code:</p>
@@ -582,8 +774,6 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
                 <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
