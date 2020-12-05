@@ -10,7 +10,6 @@ toc_footers:
 
 includes:
   - authentication
-  - aaaaaa
   - errors
 
 search: true
