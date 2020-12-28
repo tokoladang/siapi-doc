@@ -18,12 +18,12 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 > jenis: public
 
 ```shell
-curl "https://siapi.siplah.tokoladang.co.id/public/csrf-cookie"
+curl "https://staging.siapi.tokoladang.co.id/public/csrf-cookie"
 ```
 
 Autentikasi dengan Session API harus memanggil endpoint ini terlebih dahulu sebelum login. untuk mendaftarkan sesi ke server yang nantinya akan disimpan di cookies.
 
-`GET https://siapi.siplah.tokoladang.co.id/public/csrf-cookie`
+`GET https://staging.siapi.tokoladang.co.id/public/csrf-cookie`
 
 Setelah Itu Dapat melakukan Login Sesuai dengan jenis user.
 
@@ -32,7 +32,7 @@ Setelah Itu Dapat melakukan Login Sesuai dengan jenis user.
 > jenis: public
 
 ```shell
-curl -X POST "https://siapi.siplah.tokoladang.co.id/admin/login"
+curl -X POST "https://staging.siapi.tokoladang.co.id/admin/login"
   -H 'Content-Type: application/json'
   -d '{
     "email": "admin@mail.com"
@@ -44,7 +44,7 @@ endpoint ini digunakan untuk login sebagai Admin.
 
 ### HTTP Request
 
-`POST https://siapi.siplah.tokoladang.co.id/admin/login`
+`POST https://staging.siapi.tokoladang.co.id/admin/login`
 
 ### Query Body
 
@@ -58,7 +58,7 @@ password | null | true | Password Admin
 > jenis: public
 
 ```shell
-curl -X POST "https://siapi.siplah.tokoladang.co.id/seller/login"
+curl -X POST "https://staging.siapi.tokoladang.co.id/seller/login"
   -H 'Content-Type: application/json'
   -d '{
     "email": "pembeli@mail.com"
@@ -70,7 +70,7 @@ endpoint ini digunakan untuk login sebagai Penjual.
 
 ### HTTP Request
 
-`POST https://siapi.siplah.tokoladang.co.id/admin/login`
+`POST https://staging.siapi.tokoladang.co.id/admin/login`
 
 ### Query Body
 
@@ -84,7 +84,7 @@ password | null | true | Password Penjual
 > jenis: public
 
 ```shell
-curl -X POST "https://siapi.siplah.tokoladang.co.id/buyer/login"
+curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/login"
   -H 'Content-Type: application/json'
   -d '{
     "code": "ouj78Kn...."
@@ -95,7 +95,7 @@ untuk login pembeli berbeda dengan login admin dan login penjual. pembeli harus 
 
 ### HTTP Request
 
-`POST https://siapi.siplah.tokoladang.co.id/buyer/login`
+`POST https://staging.siapi.tokoladang.co.id/buyer/login`
 
 ### Query Body
 
@@ -116,7 +116,7 @@ Authentikasi jenis API Token digunakan untuk mendapatkan `token` yang digunakan 
 > jenis: public
 
 ```shell
-curl -X POST "https://siapi.siplah.tokoladang.co.id/admin/token"
+curl -X POST "https://staging.siapi.tokoladang.co.id/admin/token"
   -H 'Content-Type: application/json'
   -d '{
     "email": "admin@mail.com"
@@ -138,7 +138,7 @@ endpoint ini digunakan untuk Mendapatkan Token Penjual.
 
 ### HTTP Request
 
-`POST https://siapi.siplah.tokoladang.co.id/admin/token`
+`POST https://staging.siapi.tokoladang.co.id/admin/token`
 
 ### Query Body
 
@@ -153,7 +153,7 @@ device | null | true | Jenis Perangkat `web, android, ios`
 > jenis: public
 
 ```shell
-curl -X POST "https://siapi.siplah.tokoladang.co.id/seller/token"
+curl -X POST "https://staging.siapi.tokoladang.co.id/seller/token"
   -H 'Content-Type: application/json'
   -d '{
     "email": "penjual@mail.com"
@@ -175,7 +175,7 @@ endpoint ini digunakan untuk Mendapatkan Token Penjual.
 
 ### HTTP Request
 
-`POST https://siapi.siplah.tokoladang.co.id/seller/token`
+`POST https://staging.siapi.tokoladang.co.id/seller/token`
 
 ### Query Body
 
@@ -190,7 +190,7 @@ device | null | true | Jenis Perangkat `web, android, ios`
 > jenis: public
 
 ```shell
-curl -X POST "https://siapi.siplah.tokoladang.co.id/buyer/token"
+curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/token"
   -H 'Content-Type: application/json'
   -d '{
     "code": "ouj78Kn...."
@@ -210,7 +210,7 @@ untuk get token pembeli berbeda dengan get token admin dan get token penjual. pe
 
 ### HTTP Request
 
-`POST https://siapi.siplah.tokoladang.co.id/buyer/token`
+`POST https://staging.siapi.tokoladang.co.id/buyer/token`
 
 ### Query Body
 
