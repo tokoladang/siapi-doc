@@ -321,6 +321,9 @@
               </ul>
           </li>
           <li>
+            <a href="#admin-toko" class="toc-h1 toc-link" data-title="[Admin] Toko">[Admin] Toko</a>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -352,18 +355,18 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 <blockquote>
 <p>jenis: public</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://siapi.siplah.tokoladang.co.id/public/csrf-cookie"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://staging.siapi.tokoladang.co.id/public/csrf-cookie"</span>
 </code></pre></div>
 <p>Autentikasi dengan Session API harus memanggil endpoint ini terlebih dahulu sebelum login. untuk mendaftarkan sesi ke server yang nantinya akan disimpan di cookies.</p>
 
-<p><code>GET https://siapi.siplah.tokoladang.co.id/public/csrf-cookie</code></p>
+<p><code>GET https://staging.siapi.tokoladang.co.id/public/csrf-cookie</code></p>
 
 <p>Setelah Itu Dapat melakukan Login Sesuai dengan jenis user.</p>
 <h3 id='login-admin'>Login Admin</h3>
 <blockquote>
 <p>jenis: public</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://siapi.siplah.tokoladang.co.id/admin/login"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://staging.siapi.tokoladang.co.id/admin/login"</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
   <span class="nt">-d</span> <span class="s1">'{
     "email": "admin@mail.com"
@@ -372,7 +375,7 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 </code></pre></div>
 <p>endpoint ini digunakan untuk login sebagai Admin.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>POST https://siapi.siplah.tokoladang.co.id/admin/login</code></p>
+<p><code>POST https://staging.siapi.tokoladang.co.id/admin/login</code></p>
 <h3 id='query-body'>Query Body</h3>
 <table><thead>
 <tr>
@@ -399,7 +402,7 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 <blockquote>
 <p>jenis: public</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://siapi.siplah.tokoladang.co.id/seller/login"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://staging.siapi.tokoladang.co.id/seller/login"</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
   <span class="nt">-d</span> <span class="s1">'{
     "email": "pembeli@mail.com"
@@ -408,7 +411,7 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 </code></pre></div>
 <p>endpoint ini digunakan untuk login sebagai Penjual.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST https://siapi.siplah.tokoladang.co.id/admin/login</code></p>
+<p><code>POST https://staging.siapi.tokoladang.co.id/admin/login</code></p>
 <h3 id='query-body-2'>Query Body</h3>
 <table><thead>
 <tr>
@@ -435,7 +438,7 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 <blockquote>
 <p>jenis: public</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://siapi.siplah.tokoladang.co.id/buyer/login"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://staging.siapi.tokoladang.co.id/buyer/login"</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
   <span class="nt">-d</span> <span class="s1">'{
     "code": "ouj78Kn...."
@@ -443,7 +446,7 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 </code></pre></div>
 <p>untuk login pembeli berbeda dengan login admin dan login penjual. pembeli harus login terlebih dahulu melalui website dapodik berikut: <a href="https://sso.datadik.kemdikbud.go.id/app/365F240F-FCD4-43B3-A871-088817A6EFBC">staging</a> atau <a href="https://sso.datadik.kemdikbud.go.id/app/84DC4A50-BF92-4D2B-9B62-1103329A3638">produksi</a>, setelah sukses maka akan redirect ke server siplah dengan menyertakan query code yang nantinya digunakan untuk login ke aplikasi siplah.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>POST https://siapi.siplah.tokoladang.co.id/buyer/login</code></p>
+<p><code>POST https://staging.siapi.tokoladang.co.id/buyer/login</code></p>
 <h3 id='query-body-3'>Query Body</h3>
 <table><thead>
 <tr>
@@ -467,7 +470,7 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 <blockquote>
 <p>jenis: public</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://siapi.siplah.tokoladang.co.id/admin/token"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://staging.siapi.tokoladang.co.id/admin/token"</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
   <span class="nt">-d</span> <span class="s1">'{
     "email": "admin@mail.com"
@@ -485,7 +488,7 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 </span></code></pre></div>
 <p>endpoint ini digunakan untuk Mendapatkan Token Penjual.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>POST https://siapi.siplah.tokoladang.co.id/admin/token</code></p>
+<p><code>POST https://staging.siapi.tokoladang.co.id/admin/token</code></p>
 <h3 id='query-body-4'>Query Body</h3>
 <table><thead>
 <tr>
@@ -518,7 +521,7 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 <blockquote>
 <p>jenis: public</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://siapi.siplah.tokoladang.co.id/seller/token"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://staging.siapi.tokoladang.co.id/seller/token"</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
   <span class="nt">-d</span> <span class="s1">'{
     "email": "penjual@mail.com"
@@ -536,7 +539,7 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 </span></code></pre></div>
 <p>endpoint ini digunakan untuk Mendapatkan Token Penjual.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
-<p><code>POST https://siapi.siplah.tokoladang.co.id/seller/token</code></p>
+<p><code>POST https://staging.siapi.tokoladang.co.id/seller/token</code></p>
 <h3 id='query-body-5'>Query Body</h3>
 <table><thead>
 <tr>
@@ -569,7 +572,7 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 <blockquote>
 <p>jenis: public</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://siapi.siplah.tokoladang.co.id/buyer/token"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://staging.siapi.tokoladang.co.id/buyer/token"</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
   <span class="nt">-d</span> <span class="s1">'{
     "code": "ouj78Kn...."
@@ -585,7 +588,7 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 </span></code></pre></div>
 <p>untuk get token pembeli berbeda dengan get token admin dan get token penjual. pembeli harus login terlebih dahulu melalui website dapodik berikut: <a href="https://sso.datadik.kemdikbud.go.id/app/365F240F-FCD4-43B3-A871-088817A6EFBC">staging</a> atau <a href="https://sso.datadik.kemdikbud.go.id/app/84DC4A50-BF92-4D2B-9B62-1103329A3638">produksi</a>, setelah sukses maka akan redirect ke server siplah dengan menyertakan query code yang nantinya digunakan untuk get token ke aplikasi siplah.</p>
 <h3 id='http-request-6'>HTTP Request</h3>
-<p><code>POST https://siapi.siplah.tokoladang.co.id/buyer/token</code></p>
+<p><code>POST https://staging.siapi.tokoladang.co.id/buyer/token</code></p>
 <h3 id='query-body-6'>Query Body</h3>
 <table><thead>
 <tr>
@@ -602,7 +605,7 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 <td>Code dari dapodik</td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
+<h1 id='admin-toko'>[Admin] Toko</h1><h1 id='errors'>Errors</h1>
 <p>Siplah Menggunakan code error berikut:</p>
 
 <table><thead>
