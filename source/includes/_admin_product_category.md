@@ -19,7 +19,7 @@ curl -X GET "https://staging.siapi.tokoladang.co.id/admin/product-categories"
 
 endpoint ini digunakan untuk mendapatkan data kategori produk.
 
-## HTTP Request
+### HTTP Request
 
 `GET https://staging.siapi.tokoladang.co.id/admin/product-categories`
 
@@ -49,11 +49,11 @@ curl -X POST "https://staging.siapi.tokoladang.co.id/admin/product-categories"
 
 endpoint ini digunakan untuk menyimpan kategori produk.
 
-## HTTP Request
+### HTTP Request
 
 `POST https://staging.siapi.tokoladang.co.id/admin/product-categories`
 
-## Query Body
+### Query Body
 
 Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
@@ -89,11 +89,11 @@ curl -X PUT "https://staging.siapi.tokoladang.co.id/admin/product-categories/{id
 
 endpoint ini digunakan untuk mengubah kategori produk.
 
-## HTTP Request
+### HTTP Request
 
 `PUT https://staging.siapi.tokoladang.co.id/admin/product-categories/{id}`
 
-## Query Body
+### Query Body
 
 Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
@@ -123,6 +123,6 @@ curl -X DELETE "https://staging.siapi.tokoladang.co.id/admin/product-categories/
 
 endpoint ini digunakan untuk menghapus kategori produk.
 
-## HTTP Request
+### HTTP Request
 
 `DELETE https://staging.siapi.tokoladang.co.id/admin/product-categories/{id}`

@@ -102,6 +102,7 @@ untuk login pembeli berbeda dengan login admin dan login penjual. pembeli harus 
 Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
 code | null | true | Code dari dapodik untuk login
+device | null | true | Jenis Perangkat `web, android, ios`
 
 ## API Token
 

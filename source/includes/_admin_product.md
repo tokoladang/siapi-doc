@@ -20,7 +20,7 @@ Contoh Json Response :
 
 endpoint ini digunakan untuk mendapatkan data produk.
 
-## HTTP Request
+### HTTP Request
 
 `GET https://staging.siapi.tokoladang.co.id/admin/products?q=&status=`
 
@@ -44,7 +44,7 @@ Contoh Json Response :
 
 endpoint ini digunakan untuk mendapatkan data produk berdasarkan id.
 
-## HTTP Request
+### HTTP Request
 
 `GET https://staging.siapi.tokoladang.co.id/admin/products/{id}`
 
@@ -70,11 +70,11 @@ Contoh Json Response :
 
 endpoint ini digunakan untuk mengubah status produk.
 
-## HTTP Request
+### HTTP Request
 
 `POST https://staging.siapi.tokoladang.co.id/admin/products/{id}/status`
 
-## Query Body
+### Query Body
 
 Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------

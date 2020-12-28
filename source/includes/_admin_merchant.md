@@ -19,7 +19,7 @@ curl -X GET "https://staging.siapi.tokoladang.co.id/admin/merchants"
 
 endpoint ini digunakan untuk mendapatkan data Toko.
 
-## HTTP Request
+### HTTP Request
 
 `GET https://staging.siapi.tokoladang.co.id/admin/merchants`
 
@@ -42,7 +42,7 @@ curl -X GET "https://staging.siapi.tokoladang.co.id/admin/merchants/{merchant}"
 
 endpoint ini digunakan untuk mendapatkan data salah satu Toko.
 
-## HTTP Request
+### HTTP Request
 
 `GET https://staging.siapi.tokoladang.co.id/admin/merchants/{merchant}`
 
@@ -67,12 +67,12 @@ curl -X POST "https://staging.siapi.tokoladang.co.id/admin/merchants/verify"
 
 endpoint ini digunakan untuk memverifikasi Toko.
 
-## HTTP Request
+### HTTP Request
 
 `POST https://staging.siapi.tokoladang.co.id/admin/merchants/verify`
 
 
-## Query Body
+### Query Body
 
 Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
@@ -99,12 +99,12 @@ curl -X POST "https://staging.siapi.tokoladang.co.id/admin/merchants/suspend"
 
 endpoint ini digunakan untuk suspend Toko.
 
-## HTTP Request
+### HTTP Request
 
 `POST https://staging.siapi.tokoladang.co.id/admin/merchants/suspend`
 
 
-## Query Body
+### Query Body
 
 Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
@@ -131,12 +131,12 @@ curl -X POST "https://staging.siapi.tokoladang.co.id/admin/merchants/unsuspend"
 
 endpoint ini digunakan untuk unsuspend Toko.
 
-## HTTP Request
+### HTTP Request
 
 `POST https://staging.siapi.tokoladang.co.id/admin/merchants/unsuspend`
 
 
-## Query Body
+### Query Body
 
 Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
