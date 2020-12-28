@@ -1,156 +1,143 @@
 # [Admin] Toko
 
-## Kategori Produk
-### Get Kategori Produk
+## Get Semua Toko
 
-> jenis: public
+> jenis: admin
 
 ```shell
-curl -X GET "https://staging.siapi.tokoladang.co.id/admin/product-categories"
+curl -X GET "https://staging.siapi.tokoladang.co.id/admin/merchants"
 -H 'Content-Type: application/json'
 -d '{}'
 ```
+> Contoh Json Response :
 
-endpoint ini digunakan untuk mendapatkan data kategori produk.
-
-### HTTP Request
-
-`GET https://staging.siapi.tokoladang.co.id/admin/product-categories`
-
-### Simpan Kategori Produk
-
-> jenis: public
-
-```shell
-curl -X POST "https://staging.siapi.tokoladang.co.id/admin/product-categories"
--H 'Content-Type: application/json'
--d '{    
-    "name": "Kategori"
-    "sequence": ""
-    "description": "Kategori Baru"
-    "image": ""
-    "enabled": "true"
-}'
+```json
+{
+  "data": {....}
+}
 ```
 
-endpoint ini digunakan untuk menyimpan kategori produk.
+endpoint ini digunakan untuk mendapatkan data Toko.
 
-### HTTP Request
+## HTTP Request
 
-`POST https://staging.siapi.tokoladang.co.id/admin/product-categories`
+`GET https://staging.siapi.tokoladang.co.id/admin/merchants`
 
-### Query Body
+## Get salah satu toko
 
-Parameter | Default | required | Deskripsi
---------- | ------- | -------- | -----------
-name | null | true | Nama Kategori
-sequence | null | true | Sequence
-description | null | true | Deskripsi
-image | null | image | Gambar ikon
-enabled | null | true | Status kategori
-
-### Ubah Kategori Produk
-
-> jenis: public
+> jenis: admin
 
 ```shell
-curl -X PUT "https://staging.siapi.tokoladang.co.id/admin/product-categories/{id}"
+curl -X GET "https://staging.siapi.tokoladang.co.id/admin/merchants/{merchant}"
+-H 'Content-Type: application/json'
+-d '{}'
+```
+> Contoh Json Response :
+
+```json
+{
+  "data": {....}
+}
+```
+
+endpoint ini digunakan untuk mendapatkan data salah satu Toko.
+
+## HTTP Request
+
+`GET https://staging.siapi.tokoladang.co.id/admin/merchants/{merchant}`
+
+## Post verifikasi toko
+
+> jenis: admin
+
+```shell
+curl -X POST "https://staging.siapi.tokoladang.co.id/admin/merchants/verify"
 -H 'Content-Type: application/json'
 -d '{
-    "name": "Kategori"
-    "sequence": ""
-    "description": "Kategori Baru"
-    "image": ""
-    "enabled": "true"
+    "id": "1"
 }'
 ```
+> Contoh Json Response :
 
-endpoint ini digunakan untuk mengubah kategori produk.
+```json
+{
+  "data": {....}
+}
+```
 
-### HTTP Request
+endpoint ini digunakan untuk memverifikasi Toko.
 
-`PUT https://staging.siapi.tokoladang.co.id/admin/product-categories/{id}`
+## HTTP Request
 
-### Query Body
+`POST https://staging.siapi.tokoladang.co.id/admin/merchants/verify`
+
+
+## Query Body
 
 Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
-name | null | true | Nama Kategori
-sequence | null | true | Sequence
-description | null | true | Deskripsi
-image | null | image | Gambar ikon
-enabled | null | true | Status kategori
+id | null | true | ID Toko
 
-### Hapus Kategori Produk
+## Post suspend toko
 
-> jenis: public
+> jenis: admin
 
 ```shell
-curl -X DELETE "https://staging.siapi.tokoladang.co.id/admin/product-categories/{id}"
--H 'Content-Type: application/json'
--d '{}'
-```
-
-endpoint ini digunakan untuk menghapus kategori produk.
-
-### HTTP Request
-
-`DELETE https://staging.siapi.tokoladang.co.id/admin/product-categories/{id}`
-
-## Produk
-
-### Get Produk
-
-> jenis: public
-
-```shell
-curl -X GET "https://staging.siapi.tokoladang.co.id/admin/products?q=&status="
--H 'Content-Type: application/json'
--d '{}'
-```
-
-endpoint ini digunakan untuk mendapatkan data produk.
-
-### HTTP Request
-
-`GET https://staging.siapi.tokoladang.co.id/admin/products?q=&status=`
-
-### Get Produk berdasarkan id
-
-> jenis: public
-
-```shell
-curl -X GET "https://staging.siapi.tokoladang.co.id/admin/products/{id}"
--H 'Content-Type: application/json'
--d '{}'
-```
-
-endpoint ini digunakan untuk mendapatkan data produk berdasarkan id.
-
-### HTTP Request
-
-`GET https://staging.siapi.tokoladang.co.id/admin/products/{id}`
-
-### Update status produk
-
-> jenis: public
-
-```shell
-curl -X POST "https://staging.siapi.tokoladang.co.id/admin/products/{id}/status"
+curl -X POST "https://staging.siapi.tokoladang.co.id/admin/merchants/suspend"
 -H 'Content-Type: application/json'
 -d '{
-    "status": "update_status"
+    "id": "1"
 }'
 ```
+> Contoh Json Response :
 
-endpoint ini digunakan untuk mengubah status produk.
+```json
+{
+  "data": {....}
+}
+```
 
-### HTTP Request
+endpoint ini digunakan untuk suspend Toko.
 
-`POST https://staging.siapi.tokoladang.co.id/admin/products/{id}/status`
+## HTTP Request
 
-### Query Body
+`POST https://staging.siapi.tokoladang.co.id/admin/merchants/suspend`
+
+
+## Query Body
 
 Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
-status | null | true | Status produk
+id | null | true | ID Toko
+
+## Post unsuspend toko
+
+> jenis: admin
+
+```shell
+curl -X POST "https://staging.siapi.tokoladang.co.id/admin/merchants/unsuspend"
+-H 'Content-Type: application/json'
+-d '{
+    "id": "1"
+}'
+```
+> Contoh Json Response :
+
+```json
+{
+  "data": {....}
+}
+```
+
+endpoint ini digunakan untuk unsuspend Toko.
+
+## HTTP Request
+
+`POST https://staging.siapi.tokoladang.co.id/admin/merchants/unsuspend`
+
+
+## Query Body
+
+Parameter | Default | required | Deskripsi
+--------- | ------- | -------- | -----------
+id | null | true | ID Toko
