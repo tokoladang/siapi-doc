@@ -12,9 +12,24 @@ curl -X GET "https://staging.siapi.tokoladang.co.id/admin/product-categories"
 > Contoh Json Response :
 
 ```json
-{
-  "data": {....}
-}
+[
+  {
+        "id": 1,
+        "name": "Tempore est nesciunt laudantium consequuntur beatae vero est eum.",
+        "parent_id": null,
+        "sequence": 1,
+        "description": "Recusandae quis aspernatur ea quis fuga.",
+        "enabled": true,
+        "image": "https://lorempixel.com/100/100/food",
+        "level": 2,
+        "slug": "tempore-est-nesciunt-laudantium-consequuntur-beatae-vero-est-eum",
+        "created_by": null,
+        "updated_by": null,
+        "created_at": "2020-12-29T04:08:10.000000Z",
+        "updated_at": "2020-12-29T04:08:10.000000Z"
+    },
+    {...}
+]
 ```
 
 endpoint ini digunakan untuk mendapatkan data kategori produk.
@@ -31,9 +46,9 @@ endpoint ini digunakan untuk mendapatkan data kategori produk.
 curl -X POST "https://staging.siapi.tokoladang.co.id/admin/product-categories"
 -H 'Content-Type: application/json'
 -d '{    
-    "name": "Kategori"
-    "sequence": ""
-    "description": "Kategori Baru"
+    "name": "Pelengkap"
+    "sequence": "1"
+    "description": "deskripsi"
     "image": ""
     "enabled": "true"
 }'
@@ -43,7 +58,17 @@ curl -X POST "https://staging.siapi.tokoladang.co.id/admin/product-categories"
 
 ```json
 {
-  "data": {....}
+  "code": 200,
+  "message": "Kategori Produk Berhasil disimpan",
+  "data": {
+    "name": "Pelengkap",
+    "sequence": "1",
+    "description": "deskripsi",
+    "enabled": true,
+    "parent_id": null,
+    "level": 2,
+    "slug": "pelengkap"
+  }
 }
 ```
 
@@ -71,9 +96,9 @@ enabled | null | true | Status kategori
 curl -X PUT "https://staging.siapi.tokoladang.co.id/admin/product-categories/{id}"
 -H 'Content-Type: application/json'
 -d '{
-    "name": "Kategori"
-    "sequence": ""
-    "description": "Kategori Baru"
+    "name": "Pelengkap 2"
+    "sequence": "1"
+    "description": "deskripsi"
     "image": ""
     "enabled": "true"
 }'
@@ -83,7 +108,23 @@ curl -X PUT "https://staging.siapi.tokoladang.co.id/admin/product-categories/{id
 
 ```json
 {
-  "data": {....}
+    "code": 200,
+    "message": "Kategori Produk Berhasil disimpan",
+    "data": {
+        "id": 304,
+        "name": "Pelengkap 2",
+        "parent_id": null,
+        "sequence": "1",
+        "description": "deskripsi",
+        "enabled": true,
+        "image": null,
+        "level": 2,
+        "slug": "pelengkap-2",
+        "created_by": null,
+        "updated_by": null,
+        "created_at": "2020-12-29T05:33:22.000000Z",
+        "updated_at": "2020-12-29T05:47:54.000000Z"
+    }
 }
 ```
 
@@ -117,7 +158,19 @@ curl -X DELETE "https://staging.siapi.tokoladang.co.id/admin/product-categories/
 
 ```json
 {
-  "data": {....}
+    "id": 304,
+    "name": "Pelengkap 2",
+    "parent_id": null,
+    "sequence": 1,
+    "description": "deskripsi",
+    "enabled": true,
+    "image": null,
+    "level": 2,
+    "slug": "pelengkap-2",
+    "created_by": null,
+    "updated_by": null,
+    "created_at": "2020-12-29T05:33:22.000000Z",
+    "updated_at": "2020-12-29T05:47:54.000000Z"
 }
 ```
 
