@@ -429,6 +429,23 @@
               </ul>
           </li>
           <li>
+            <a href="#admin-complain" class="toc-h1 toc-link" data-title="[Admin] Complain">[Admin] Complain</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-semua-komplain-toko" class="toc-h2 toc-link" data-title="Get Semua Komplain Toko">Get Semua Komplain Toko</a>
+                  </li>
+                  <li>
+                    <a href="#get-komplain-toko-berdasarkan-id" class="toc-h2 toc-link" data-title="Get Komplain Toko berdasarkan ID">Get Komplain Toko berdasarkan ID</a>
+                  </li>
+                  <li>
+                    <a href="#post-komplain-baru" class="toc-h2 toc-link" data-title="POST Komplain baru">POST Komplain baru</a>
+                  </li>
+                  <li>
+                    <a href="#put-status-komplain" class="toc-h2 toc-link" data-title="PUT status komplain">PUT status komplain</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#seller-merchant" class="toc-h1 toc-link" data-title="[Seller] Merchant">[Seller] Merchant</a>
               <ul class="toc-list-h2">
                   <li>
@@ -862,52 +879,8 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 <p>Contoh Json Response :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hills, Roob and Reinger"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56793 Mills Station</span><span class="se">\n</span><span class="s2">Savannahborough, NH 85389"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"province_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"220000"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"city_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"220200"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"district_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"220205"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"village_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"220205AI"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"66810-3086"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"slogan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quo iusto magni et voluptas."</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ut aut nobis quasi alias omnis."</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"suspend"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hills-roob-and-reinger"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://lorempixel.com/200/200/?85422"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"verified_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-29T04:30:31.000000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"review_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"review_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"couriers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jne:jnt"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"is_umkm"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"qualified"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"business_category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kecil"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mraz.demond@murray.com"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08173496730"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"seller_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"individual"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"main_category"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"is_pkp"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"documents"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"bank_account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hills, Roob and Reinger"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"no"</span><span class="p">:</span><span class="w"> </span><span class="mi">1974063211</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"bank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MANDIRI"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"branch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Barrychester"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"sosmed"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"signature"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"email_verified_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updated_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-29T04:08:08.000000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-29T04:30:31.000000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toko berhasil diverifikasi"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>endpoint ini digunakan untuk memverifikasi Toko.</p>
@@ -943,52 +916,8 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 <p>Contoh Json Response :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hills, Roob and Reinger"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56793 Mills Station</span><span class="se">\n</span><span class="s2">Savannahborough, NH 85389"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"province_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"220000"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"city_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"220200"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"district_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"220205"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"village_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"220205AI"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"66810-3086"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"slogan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quo iusto magni et voluptas."</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ut aut nobis quasi alias omnis."</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"suspend"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hills-roob-and-reinger"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://lorempixel.com/200/200/?85422"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"verified_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-29T04:30:31.000000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"review_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"review_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"couriers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jne:jnt"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"is_umkm"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"qualified"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"business_category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kecil"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mraz.demond@murray.com"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08173496730"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"seller_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"individual"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"main_category"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"is_pkp"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"documents"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"bank_account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hills, Roob and Reinger"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"no"</span><span class="p">:</span><span class="w"> </span><span class="mi">1974063211</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"bank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MANDIRI"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"branch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Barrychester"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"sosmed"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"signature"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"email_verified_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updated_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-29T04:08:08.000000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-29T04:35:51.000000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toko berhasil diblokir"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>endpoint ini digunakan untuk suspend Toko.</p>
@@ -1024,52 +953,8 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 <p>Contoh Json Response :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hills, Roob and Reinger"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56793 Mills Station</span><span class="se">\n</span><span class="s2">Savannahborough, NH 85389"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"province_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"220000"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"city_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"220200"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"district_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"220205"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"village_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"220205AI"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"66810-3086"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"slogan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quo iusto magni et voluptas."</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ut aut nobis quasi alias omnis."</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"suspend"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hills-roob-and-reinger"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://lorempixel.com/200/200/?85422"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"deleted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"verified_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-29T04:30:31.000000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"review_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"review_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"couriers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jne:jnt"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"is_umkm"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"qualified"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"business_category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kecil"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mraz.demond@murray.com"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08173496730"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"seller_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"individual"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"main_category"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"is_pkp"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"documents"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"bank_account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hills, Roob and Reinger"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"no"</span><span class="p">:</span><span class="w"> </span><span class="mi">1974063211</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"bank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MANDIRI"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"branch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Barrychester"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"sosmed"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"signature"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"email_verified_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updated_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-29T04:08:08.000000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-29T04:36:22.000000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toko berhasil diaktifkan kembali"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>endpoint ini digunakan untuk unsuspend Toko.</p>
@@ -1143,16 +1028,7 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kategori Produk Berhasil disimpan"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pelengkap"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deskripsi"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pelengkap"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kategori Produk Berhasil disimpan"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>endpoint ini digunakan untuk menyimpan kategori produk.</p>
@@ -1217,22 +1093,7 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kategori Produk Berhasil disimpan"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">304</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pelengkap 2"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deskripsi"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pelengkap-2"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"updated_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-29T05:33:22.000000Z"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-29T05:47:54.000000Z"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kategori Produk Berhasil disimpan"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>endpoint ini digunakan untuk mengubah kategori produk.</p>
@@ -1290,19 +1151,8 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 <p>Contoh Json Response :</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">304</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pelengkap 2"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deskripsi"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pelengkap-2"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updated_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-29T05:33:22.000000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-29T05:47:54.000000Z"</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kategori Produk Berhasil dihapus"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>endpoint ini digunakan untuk menghapus kategori produk.</p>
@@ -1459,59 +1309,8 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 </code></pre></div>
 <p>Contoh Json Response :</p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SKU5FEAABAA5D151"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"upc"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"ean"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Culpa totam laudantium laudantium sit."</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Occaecati eaque aperiam laudantium accusamus. Ut a quia illo sequi culpa. Est expedita vel placeat cupiditate ut. Sunt ducimus nihil voluptatem minima ullam nihil ut."</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"product_category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"brand_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"merchant_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">66</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">41640902</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"qty_available"</span><span class="p">:</span><span class="w"> </span><span class="mi">37</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"qty_sell"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unavailable"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"culpa-totam-laudantium-laudantium-sit"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">914</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"is_secondhand"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"taxed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"price_zone_1"</span><span class="p">:</span><span class="w"> </span><span class="mi">41641902</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"price_zone_2"</span><span class="p">:</span><span class="w"> </span><span class="mi">41642902</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"price_zone_3"</span><span class="p">:</span><span class="w"> </span><span class="mi">41643902</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"price_zone_4"</span><span class="p">:</span><span class="w"> </span><span class="mi">41644902</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"price_zone_5"</span><span class="p">:</span><span class="w"> </span><span class="mi">41645902</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"wholesales"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">41639902</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">41638902</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"isbn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9793846863434"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"review_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"review_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"with_shipping_cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://lorempixel.com/640/480/?51590"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="s2">"https://lorempixel.com/640/480/?51590"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"https://lorempixel.com/640/480/?58979"</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buku"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"merchant_storage_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"is_goods"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"is_umkm"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"is_domestic"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"qualified"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updated_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-29T04:08:10.000000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-29T06:14:28.000000Z"</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Status produk berhasil diubah."</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>endpoint ini digunakan untuk mengubah status produk.</p>
@@ -1581,15 +1380,6 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Admin Berhasil ditambahkan"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new@demo.id"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new admin"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-29T07:03:14.000000Z"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-29T07:03:14.000000Z"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
-    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>endpoint ini digunakan untuk menambah user admin.</p>
@@ -1638,16 +1428,7 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Admin Berhasil ditambahkan"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new@demo.id"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new admin"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-29T07:03:14.000000Z"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-29T07:03:14.000000Z"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peran Admin Berhasil diubah"</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>endpoint ini digunakan untuk update role admin.</p>
@@ -1684,16 +1465,7 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Admin Berhasil ditambahkan"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new@demo.id"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new admin"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-29T07:03:14.000000Z"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-29T07:03:14.000000Z"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Status Admin Berhasil diubah"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>endpoint ini digunakan untuk mengubah status admin.</p>
@@ -2446,6 +2218,140 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 <td>null</td>
 <td>true</td>
 <td>tanggal</td>
+</tr>
+</tbody></table>
+<h1 id='admin-complain'>[Admin] Complain</h1><h2 id='get-semua-komplain-toko'>Get Semua Komplain Toko</h2>
+<blockquote>
+<p>jenis: admin</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://staging.siapi.tokoladang.co.id/admin/complains"</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+<span class="nt">-d</span> <span class="s1">'{}'</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"merchant_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">92</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5FEAABAB83B81"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"komplain 1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"done"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer_order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"school_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4BB64007-F3F0-3C97-AF26-4FF94EBC52C4"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-02T08:15:29.000000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"merchant"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+        </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+        </span><span class="nl">"customer_order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="err">....</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk mendapatkan data Komplain.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://staging.siapi.tokoladang.co.id/admin/complains</code></p>
+<h2 id='get-komplain-toko-berdasarkan-id'>Get Komplain Toko berdasarkan ID</h2>
+<blockquote>
+<p>jenis: admin</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://staging.siapi.tokoladang.co.id/admin/complains/{complain}"</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+<span class="nt">-d</span> <span class="s1">'{}'</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"merchant_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">92</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5FEAABAB83B81"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"komplain 1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"done"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customer_order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"school_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4BB64007-F3F0-3C97-AF26-4FF94EBC52C4"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-02T08:15:29.000000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"merchant"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+    </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+    </span><span class="nl">"customer_order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+    </span><span class="nl">"merchant_complain_history"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="err">...</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">}]</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk mendapatkan data Komplain berdasarkan ID.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://staging.siapi.tokoladang.co.id/admin/complains/{complain}</code></p>
+<h2 id='post-komplain-baru'>POST Komplain baru</h2>
+<blockquote>
+<p>jenis: admin</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://staging.siapi.tokoladang.co.id/admin/complains/{complain}"</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+<span class="nt">-d</span> <span class="s1">'{}'</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Berhasil menyimpan data"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk menambah pesan pada komplain.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://staging.siapi.tokoladang.co.id/admin/complains/{complain}</code></p>
+<h3 id='query-body'>Query Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>message</td>
+<td>null</td>
+<td>true</td>
+<td>Pesan</td>
+</tr>
+</tbody></table>
+<h2 id='put-status-komplain'>PUT status komplain</h2>
+<blockquote>
+<p>jenis: admin</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="s2">"https://staging.siapi.tokoladang.co.id/admin/complains/{complain}"</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+<span class="nt">-d</span> <span class="s1">'{}'</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Berhasil menyimpan data"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk mengubah status komplain.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>PUT https://staging.siapi.tokoladang.co.id/admin/complains/{complain}</code></p>
+<h3 id='query-body-2'>Query Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>message</td>
+<td>null</td>
+<td>true</td>
+<td>Pesan</td>
 </tr>
 </tbody></table>
 <h1 id='seller-merchant'>[Seller] Merchant</h1>
