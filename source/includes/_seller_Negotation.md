@@ -6,9 +6,7 @@ Negotations digunakan untuk mengambil data negosiasi antara penjual dan pembeli,
 Memerlukan Authentikasi sebagai seller.
 </aside>
 
-## DATA Negotations
-
-### GET Data
+## Get Semua data Negoisasi
 
 > jenis: seller
 
@@ -45,7 +43,7 @@ endpoint ini digunakan untuk mendapatkan data negosiasi dari pembeli.
 
 `GET https://staging.siapi.tokoladang.co.id/seller/negotiations`
 
-### POST Reply
+## Post Membalas Negoisasi
 
 > jenis: seller
 
@@ -84,7 +82,7 @@ nego_price |  | true | Harga Nego dari penjual
 nego_qty |  | true | Banyak barang nego penjual
 message | null | false | Pesan dari Penjual
 
-### POST Accept
+## Post Menyetujui Negoisasi
 
 > jenis: seller
 
@@ -116,7 +114,7 @@ Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
 negotiation_id |  | true | Id Negosiasi
 
-### POST Reject
+## Post Menolak Negoisasi
 
 > jenis: seller
 
