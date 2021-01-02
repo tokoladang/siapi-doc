@@ -16,6 +16,11 @@ includes:
   - admin_admins
   - admin_sekolah
   - admin_payment
+  - seller_Merc
+  - seller_Product
+  - seller_Order
+  - seller_Merc_storage
+  - seller_Negotation
   - errors
 
 search: true
