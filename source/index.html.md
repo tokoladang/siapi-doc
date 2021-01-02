@@ -11,6 +11,11 @@ toc_footers:
 includes:
   - authentication
   - admin_merchant
+  - seller_Merc
+  - seller_Product
+  - seller_Order
+  - seller_Merc_storage
+  - seller_Negotation
   - errors
 
 search: true
