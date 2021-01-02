@@ -59,16 +59,7 @@ curl -X POST "https://staging.siapi.tokoladang.co.id/admin/product-categories"
 ```json
 {
   "code": 200,
-  "message": "Kategori Produk Berhasil disimpan",
-  "data": {
-    "name": "Pelengkap",
-    "sequence": "1",
-    "description": "deskripsi",
-    "enabled": true,
-    "parent_id": null,
-    "level": 2,
-    "slug": "pelengkap"
-  }
+  "message": "Kategori Produk Berhasil disimpan"
 }
 ```
 
@@ -109,22 +100,7 @@ curl -X PUT "https://staging.siapi.tokoladang.co.id/admin/product-categories/{id
 ```json
 {
     "code": 200,
-    "message": "Kategori Produk Berhasil disimpan",
-    "data": {
-        "id": 304,
-        "name": "Pelengkap 2",
-        "parent_id": null,
-        "sequence": "1",
-        "description": "deskripsi",
-        "enabled": true,
-        "image": null,
-        "level": 2,
-        "slug": "pelengkap-2",
-        "created_by": null,
-        "updated_by": null,
-        "created_at": "2020-12-29T05:33:22.000000Z",
-        "updated_at": "2020-12-29T05:47:54.000000Z"
-    }
+    "message": "Kategori Produk Berhasil disimpan"
 }
 ```
 
@@ -158,19 +134,8 @@ curl -X DELETE "https://staging.siapi.tokoladang.co.id/admin/product-categories/
 
 ```json
 {
-    "id": 304,
-    "name": "Pelengkap 2",
-    "parent_id": null,
-    "sequence": 1,
-    "description": "deskripsi",
-    "enabled": true,
-    "image": null,
-    "level": 2,
-    "slug": "pelengkap-2",
-    "created_by": null,
-    "updated_by": null,
-    "created_at": "2020-12-29T05:33:22.000000Z",
-    "updated_at": "2020-12-29T05:47:54.000000Z"
+    "code": 200,
+    "message": "Kategori Produk Berhasil dihapus"
 }
 ```
 
