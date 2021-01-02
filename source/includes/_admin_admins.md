@@ -119,16 +119,7 @@ curl -X POST "https://staging.siapi.tokoladang.co.id/admin/admins/{admin}/update
 ```json
 {
     "code": 200,
-    "message": "Admin Berhasil ditambahkan",
-    "data": {
-        "email": "new@demo.id",
-        "name": "new admin",
-        "roles": "*",
-        "active": true,
-        "updated_at": "2020-12-29T07:03:14.000000Z",
-        "created_at": "2020-12-29T07:03:14.000000Z",
-        "id": 12
-    }
+    "message": "Status Admin Berhasil diubah"
 }
 ```
 
