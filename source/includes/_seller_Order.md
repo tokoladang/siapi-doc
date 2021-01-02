@@ -6,8 +6,6 @@ Order digunakan untuk mengambil data riwayat Pembelian toko, merubah status dari
 Memerlukan Authentikasi sebagai seller.
 </aside>
 
-## DATA Order
-
 <!-- ### GET Data
 
 > jenis: seller
@@ -40,7 +38,7 @@ endpoint ini digunakan untuk mendapatkan data Produk toko.
 
 `GET https://staging.siapi.tokoladang.co.id/seller/products` -->
 
-### POST Process
+## Post Ubah Status (Proses) Pemesanan
 
 > jenis: seller
 
@@ -77,7 +75,7 @@ time_limit |  | true | Lama estimasi pengerjaan
 shipping_cost |  | false | Ongkos pengerjaan
 shipping_etd |  | false | Estimasi pengiriman
 
-### POST Reject
+## Post Ubah Status (Tolak) Pemesanan
 
 > jenis: seller
 
@@ -101,7 +99,7 @@ endpoint ini digunakan untuk menolak pesanan dari pembeli.
 `POST https://staging.siapi.tokoladang.co.id/seller/orders/{id}/reject`
 
 
-### POST Send
+## Post Ubah Status (Kirim) Pemesanan
 
 > jenis: seller
 
