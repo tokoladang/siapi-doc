@@ -87,7 +87,8 @@ password | null | true | Password Penjual
 curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/login"
   -H 'Content-Type: application/json'
   -d '{
-    "code": "ouj78Kn...."
+    "code": "ouj78Kn...."   
+    "device": "android"
   }'
 ```
 
@@ -102,6 +103,7 @@ untuk login pembeli berbeda dengan login admin dan login penjual. pembeli harus 
 Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
 code | null | true | Code dari dapodik untuk login
+device | null | true | Jenis Perangkat `web, android, ios`
 
 ## API Token
 
@@ -193,7 +195,7 @@ device | null | true | Jenis Perangkat `web, android, ios`
 curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/token"
   -H 'Content-Type: application/json'
   -d '{
-    "code": "ouj78Kn...."
+    "code": "ouj78Kn...." 
   }'
 ```
 
