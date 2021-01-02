@@ -449,7 +449,13 @@
             <a href="#seller-merchant" class="toc-h1 toc-link" data-title="[Seller] Merchant">[Seller] Merchant</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#data-merchant" class="toc-h2 toc-link" data-title="DATA Merchant">DATA Merchant</a>
+                    <a href="#get-data-toko" class="toc-h2 toc-link" data-title="Get Data Toko">Get Data Toko</a>
+                  </li>
+                  <li>
+                    <a href="#post-tambah-toko" class="toc-h2 toc-link" data-title="Post Tambah Toko">Post Tambah Toko</a>
+                  </li>
+                  <li>
+                    <a href="#put-ubah-toko" class="toc-h2 toc-link" data-title="Put Ubah Toko">Put Ubah Toko</a>
                   </li>
               </ul>
           </li>
@@ -457,7 +463,16 @@
             <a href="#seller-product" class="toc-h1 toc-link" data-title="[Seller] Product">[Seller] Product</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#data-product" class="toc-h2 toc-link" data-title="DATA Product">DATA Product</a>
+                    <a href="#get-semua-produk-toko" class="toc-h2 toc-link" data-title="Get Semua Produk Toko">Get Semua Produk Toko</a>
+                  </li>
+                  <li>
+                    <a href="#post-tambah-data-produk-toko" class="toc-h2 toc-link" data-title="Post Tambah data Produk Toko">Post Tambah data Produk Toko</a>
+                  </li>
+                  <li>
+                    <a href="#put-ubah-data-toko" class="toc-h2 toc-link" data-title="Put Ubah Data Toko">Put Ubah Data Toko</a>
+                  </li>
+                  <li>
+                    <a href="#put-ubah-status-produk-toko" class="toc-h2 toc-link" data-title="Put Ubah Status Produk Toko">Put Ubah Status Produk Toko</a>
                   </li>
               </ul>
           </li>
@@ -465,7 +480,13 @@
             <a href="#seller-order" class="toc-h1 toc-link" data-title="[Seller] Order">[Seller] Order</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#data-order" class="toc-h2 toc-link" data-title="DATA Order">DATA Order</a>
+                    <a href="#post-ubah-status-proses-pemesanan" class="toc-h2 toc-link" data-title="Post Ubah Status (Proses) Pemesanan">Post Ubah Status (Proses) Pemesanan</a>
+                  </li>
+                  <li>
+                    <a href="#post-ubah-status-tolak-pemesanan" class="toc-h2 toc-link" data-title="Post Ubah Status (Tolak) Pemesanan">Post Ubah Status (Tolak) Pemesanan</a>
+                  </li>
+                  <li>
+                    <a href="#post-ubah-status-kirim-pemesanan" class="toc-h2 toc-link" data-title="Post Ubah Status (Kirim) Pemesanan">Post Ubah Status (Kirim) Pemesanan</a>
                   </li>
               </ul>
           </li>
@@ -473,7 +494,16 @@
             <a href="#seller-merchant-storage" class="toc-h1 toc-link" data-title="[Seller] Merchant Storage">[Seller] Merchant Storage</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#data-merchant-storage" class="toc-h2 toc-link" data-title="DATA Merchant Storage">DATA Merchant Storage</a>
+                    <a href="#get-semua-data-etalase" class="toc-h2 toc-link" data-title="Get Semua data Etalase">Get Semua data Etalase</a>
+                  </li>
+                  <li>
+                    <a href="#post-tambah-data-etalase" class="toc-h2 toc-link" data-title="Post Tambah data Etalase">Post Tambah data Etalase</a>
+                  </li>
+                  <li>
+                    <a href="#put-ubah-data-etalase" class="toc-h2 toc-link" data-title="Put Ubah data etalase">Put Ubah data etalase</a>
+                  </li>
+                  <li>
+                    <a href="#delete-hapus-data-etalase" class="toc-h2 toc-link" data-title="Delete Hapus data Etalase">Delete Hapus data Etalase</a>
                   </li>
               </ul>
           </li>
@@ -481,7 +511,16 @@
             <a href="#seller-negotations" class="toc-h1 toc-link" data-title="[Seller] Negotations">[Seller] Negotations</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#data-negotations" class="toc-h2 toc-link" data-title="DATA Negotations">DATA Negotations</a>
+                    <a href="#get-semua-data-negoisasi" class="toc-h2 toc-link" data-title="Get Semua data Negoisasi">Get Semua data Negoisasi</a>
+                  </li>
+                  <li>
+                    <a href="#post-membalas-negoisasi" class="toc-h2 toc-link" data-title="Post Membalas Negoisasi">Post Membalas Negoisasi</a>
+                  </li>
+                  <li>
+                    <a href="#post-menyetujui-negoisasi" class="toc-h2 toc-link" data-title="Post Menyetujui Negoisasi">Post Menyetujui Negoisasi</a>
+                  </li>
+                  <li>
+                    <a href="#post-menolak-negoisasi" class="toc-h2 toc-link" data-title="Post Menolak Negoisasi">Post Menolak Negoisasi</a>
                   </li>
               </ul>
           </li>
@@ -2360,7 +2399,7 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 <aside class="notice">
 Memerlukan Authentikasi sebagai seller.
 </aside>
-<h2 id='data-merchant'>DATA Merchant</h2><h3 id='get-data'>GET Data</h3>
+<h2 id='get-data-toko'>Get Data Toko</h2>
 <blockquote>
 <p>jenis: seller</p>
 </blockquote>
@@ -2385,7 +2424,7 @@ Memerlukan Authentikasi sebagai seller.
 <p>endpoint ini digunakan untuk mendapatkan data Toko.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://staging.siapi.tokoladang.co.id/seller/merchants/{id}</code></p>
-<h3 id='post-insert-merchant'>POST Insert Merchant</h3>
+<h2 id='post-tambah-toko'>Post Tambah Toko</h2>
 <blockquote>
 <p>jenis: seller</p>
 </blockquote>
@@ -2575,7 +2614,7 @@ Memerlukan Authentikasi sebagai seller.
 <td>Tanda Penjual</td>
 </tr>
 </tbody></table>
-<h3 id='put-update-merchant'>PUT Update Merchant</h3>
+<h2 id='put-ubah-toko'>Put Ubah Toko</h2>
 <blockquote>
 <p>jenis: seller</p>
 </blockquote>
@@ -2771,7 +2810,7 @@ Memerlukan Authentikasi sebagai seller.
 <aside class="notice">
 Memerlukan Authentikasi sebagai seller.
 </aside>
-<h2 id='data-product'>DATA Product</h2><h3 id='get-data'>GET Data</h3>
+<h2 id='get-semua-produk-toko'>Get Semua Produk Toko</h2>
 <blockquote>
 <p>jenis: seller</p>
 </blockquote>
@@ -2798,7 +2837,7 @@ Memerlukan Authentikasi sebagai seller.
 <p>endpoint ini digunakan untuk mendapatkan data Produk toko.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://staging.siapi.tokoladang.co.id/seller/products</code></p>
-<h3 id='post-insert'>POST Insert</h3>
+<h2 id='post-tambah-data-produk-toko'>Post Tambah data Produk Toko</h2>
 <blockquote>
 <p>jenis: seller</p>
 </blockquote>
@@ -3002,7 +3041,7 @@ membutuhkan isbn apabila kind = Buku.</p>
 <td>Apakah termasuk produk domestik</td>
 </tr>
 </tbody></table>
-<h3 id='put-update'>PUT Update</h3>
+<h2 id='put-ubah-data-toko'>Put Ubah Data Toko</h2>
 <blockquote>
 <p>jenis: seller</p>
 </blockquote>
@@ -3206,7 +3245,7 @@ membutuhkan isbn apabila kind = Buku.</p>
 <td>Apakah termasuk produk domestik</td>
 </tr>
 </tbody></table>
-<h3 id='put-status'>PUT Status</h3>
+<h2 id='put-ubah-status-produk-toko'>Put Ubah Status Produk Toko</h2>
 <blockquote>
 <p>jenis: seller</p>
 </blockquote>
@@ -3242,7 +3281,7 @@ membutuhkan isbn apabila kind = Buku.</p>
 <aside class="notice">
 Memerlukan Authentikasi sebagai seller.
 </aside>
-<h2 id='data-order'>DATA Order</h2>
+
 <!-- ### GET Data
 
 > jenis: seller
@@ -3274,7 +3313,7 @@ endpoint ini digunakan untuk mendapatkan data Produk toko.
 ### HTTP Request
 
 `GET https://staging.siapi.tokoladang.co.id/seller/products` -->
-<h3 id='post-process'>POST Process</h3>
+<h2 id='post-ubah-status-proses-pemesanan'>Post Ubah Status (Proses) Pemesanan</h2>
 <blockquote>
 <p>jenis: seller</p>
 </blockquote>
@@ -3325,7 +3364,7 @@ endpoint ini digunakan untuk mendapatkan data Produk toko.
 <td>Estimasi pengiriman</td>
 </tr>
 </tbody></table>
-<h3 id='post-reject'>POST Reject</h3>
+<h2 id='post-ubah-status-tolak-pemesanan'>Post Ubah Status (Tolak) Pemesanan</h2>
 <blockquote>
 <p>jenis: seller</p>
 </blockquote>
@@ -3343,7 +3382,7 @@ endpoint ini digunakan untuk mendapatkan data Produk toko.
 <p>endpoint ini digunakan untuk menolak pesanan dari pembeli.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>POST https://staging.siapi.tokoladang.co.id/seller/orders/{id}/reject</code></p>
-<h3 id='post-send'>POST Send</h3>
+<h2 id='post-ubah-status-kirim-pemesanan'>Post Ubah Status (Kirim) Pemesanan</h2>
 <blockquote>
 <p>jenis: seller</p>
 </blockquote>
@@ -3367,7 +3406,7 @@ endpoint ini digunakan untuk mendapatkan data Produk toko.
 <aside class="notice">
 Memerlukan Authentikasi sebagai seller.
 </aside>
-<h2 id='data-merchant-storage'>DATA Merchant Storage</h2><h3 id='get-data'>GET Data</h3>
+<h2 id='get-semua-data-etalase'>Get Semua data Etalase</h2>
 <blockquote>
 <p>jenis: seller</p>
 </blockquote>
@@ -3392,7 +3431,7 @@ Memerlukan Authentikasi sebagai seller.
 <p>endpoint ini digunakan untuk mendapatkan data etalase.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://staging.siapi.tokoladang.co.id/seller/merchant-storages</code></p>
-<h3 id='post-insert-etalase'>POST Insert Etalase</h3>
+<h2 id='post-tambah-data-etalase'>Post Tambah data Etalase</h2>
 <blockquote>
 <p>jenis: seller</p>
 </blockquote>
@@ -3422,7 +3461,7 @@ Memerlukan Authentikasi sebagai seller.
 <td>Nama Etalase</td>
 </tr>
 </tbody></table>
-<h3 id='put-update-etalase'>PUT Update Etalase</h3>
+<h2 id='put-ubah-data-etalase'>Put Ubah data etalase</h2>
 <blockquote>
 <p>jenis: seller</p>
 </blockquote>
@@ -3452,7 +3491,7 @@ Memerlukan Authentikasi sebagai seller.
 <td>Nama Etalase</td>
 </tr>
 </tbody></table>
-<h3 id='delete-hapus-etalase'>DELETE Hapus Etalase</h3>
+<h2 id='delete-hapus-data-etalase'>Delete Hapus data Etalase</h2>
 <blockquote>
 <p>jenis: seller</p>
 </blockquote>
@@ -3469,7 +3508,7 @@ Memerlukan Authentikasi sebagai seller.
 <aside class="notice">
 Memerlukan Authentikasi sebagai seller.
 </aside>
-<h2 id='data-negotations'>DATA Negotations</h2><h3 id='get-data'>GET Data</h3>
+<h2 id='get-semua-data-negoisasi'>Get Semua data Negoisasi</h2>
 <blockquote>
 <p>jenis: seller</p>
 </blockquote>
@@ -3500,7 +3539,7 @@ Memerlukan Authentikasi sebagai seller.
 <p>endpoint ini digunakan untuk mendapatkan data negosiasi dari pembeli.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://staging.siapi.tokoladang.co.id/seller/negotiations</code></p>
-<h3 id='post-reply'>POST Reply</h3>
+<h2 id='post-membalas-negoisasi'>Post Membalas Negoisasi</h2>
 <blockquote>
 <p>jenis: seller</p>
 </blockquote>
@@ -3558,7 +3597,7 @@ Memerlukan Authentikasi sebagai seller.
 <td>Pesan dari Penjual</td>
 </tr>
 </tbody></table>
-<h3 id='post-accept'>POST Accept</h3>
+<h2 id='post-menyetujui-negoisasi'>Post Menyetujui Negoisasi</h2>
 <blockquote>
 <p>jenis: seller</p>
 </blockquote>
@@ -3595,7 +3634,7 @@ Memerlukan Authentikasi sebagai seller.
 <td>Id Negosiasi</td>
 </tr>
 </tbody></table>
-<h3 id='post-reject'>POST Reject</h3>
+<h2 id='post-menolak-negoisasi'>Post Menolak Negoisasi</h2>
 <blockquote>
 <p>jenis: seller</p>
 </blockquote>
