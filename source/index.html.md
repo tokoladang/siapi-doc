@@ -16,6 +16,7 @@ includes:
   - admin_admins
   - admin_sekolah
   - admin_payment
+  - admin_complain
   - errors
 
 search: true
