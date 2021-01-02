@@ -70,7 +70,7 @@ endpoint ini digunakan untuk login sebagai Penjual.
 
 ### HTTP Request
 
-`POST https://staging.siapi.tokoladang.co.id/admin/login`
+`POST https://staging.siapi.tokoladang.co.id/seller/login`
 
 ### Query Body
 
