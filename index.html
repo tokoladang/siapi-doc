@@ -429,6 +429,46 @@
               </ul>
           </li>
           <li>
+            <a href="#seller-merchant" class="toc-h1 toc-link" data-title="[Seller] Merchant">[Seller] Merchant</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#data-merchant" class="toc-h2 toc-link" data-title="DATA Merchant">DATA Merchant</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#seller-product" class="toc-h1 toc-link" data-title="[Seller] Product">[Seller] Product</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#data-product" class="toc-h2 toc-link" data-title="DATA Product">DATA Product</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#seller-order" class="toc-h1 toc-link" data-title="[Seller] Order">[Seller] Order</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#data-order" class="toc-h2 toc-link" data-title="DATA Order">DATA Order</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#seller-merchant-storage" class="toc-h1 toc-link" data-title="[Seller] Merchant Storage">[Seller] Merchant Storage</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#data-merchant-storage" class="toc-h2 toc-link" data-title="DATA Merchant Storage">DATA Merchant Storage</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#seller-negotations" class="toc-h1 toc-link" data-title="[Seller] Negotations">[Seller] Negotations</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#data-negotations" class="toc-h2 toc-link" data-title="DATA Negotations">DATA Negotations</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -2406,6 +2446,1284 @@ Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi
 <td>null</td>
 <td>true</td>
 <td>tanggal</td>
+</tr>
+</tbody></table>
+<h1 id='seller-merchant'>[Seller] Merchant</h1>
+<p>Merchant digunakan untuk melihat data toko, membuat data toko, dan merubah data toko. </p>
+
+<aside class="notice">
+Memerlukan Authentikasi sebagai seller.
+</aside>
+<h2 id='data-merchant'>DATA Merchant</h2><h3 id='get-data'>GET Data</h3>
+<blockquote>
+<p>jenis: seller</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://staging.siapi.tokoladang.co.id/seller/merchants/{id}"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>,
+      <span class="s1">'Authorization'</span>: Bearer <span class="o">{{</span>TOKEN<span class="o">}}</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">371</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Merchant Satu"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alamat Merchant"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"province_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"220000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"city_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"220200"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"district_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"220205"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"village_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"220205AI"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"67165"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk mendapatkan data Toko.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://staging.siapi.tokoladang.co.id/seller/merchants/{id}</code></p>
+<h3 id='post-insert-merchant'>POST Insert Merchant</h3>
+<blockquote>
+<p>jenis: seller</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://staging.siapi.tokoladang.co.id/seller/merchants"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+      <span class="s1">'Authorization'</span>: Bearer <span class="o">{{</span>TOKEN<span class="o">}}</span>
+  <span class="nt">-d</span> <span class="s1">'{
+        "name" : "Merchant Satu",
+        "address" : "Alamat Merchant",
+        "province_id" : "220000",
+        "city_id" : "220200",
+        "district_id" : "220205",
+        "village_id" : "220205AI",
+        "postal_code" : "67165",
+        "slogan" : "Anda Senang Kami Senang",
+        "note" : "Toko Buka Setiap Hari",
+        "image" : "merchant/17/profile/MeQ3oSOHpLnaw5ykBC3CTe7z4OLXGrqTntPd37Th.jpeg",
+        "longitude" : "",
+        "latitude" : "",
+        "couriers" : "jne:jnt",
+        "is_umkm" : false,
+        "business_category" : "kecil",
+        "phone" : "08123456789",
+        "seller_type" : "individual",
+        "is_pkp" : false,
+        "documents" : {
+            "npwp" : {"no" : "", "image" : ""},
+            "siup" : {"no" : "", "image" : ""},
+            "ktp" : {"no" : "", "image" : ""},
+            "pkp" : {"no" : "", "image" : ""}
+        },
+        "bank_account" : {
+            "name" : "Merchant Satu",
+            "no" : "123457989",
+            "bank" : "BCA",
+            "branch" : "surabaya"
+        },
+        "sosmed" : {"fb" : "merchant", "ig" : "@merchant"},
+        "signature" : {
+            "name" : "Penjual Satu",
+            "position" : "Kepala Toko"
+        }
+      }'</span>
+</code></pre></div>
+<p>endpoint ini digunakan untuk membuat data toko apabila toko masih belum terdaftar.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://staging.siapi.tokoladang.co.id/seller/merchants</code></p>
+<h3 id='query-body'>Query Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>null</td>
+<td>true</td>
+<td>Nama Toko</td>
+</tr>
+<tr>
+<td>address</td>
+<td></td>
+<td>false</td>
+<td>Alamat Toko</td>
+</tr>
+<tr>
+<td>province_id</td>
+<td>null</td>
+<td>true</td>
+<td>Id Provinsi</td>
+</tr>
+<tr>
+<td>city_id</td>
+<td>null</td>
+<td>true</td>
+<td>Id Kota</td>
+</tr>
+<tr>
+<td>district_id</td>
+<td>null</td>
+<td>true</td>
+<td>Id Kecamatan</td>
+</tr>
+<tr>
+<td>village_id</td>
+<td>null</td>
+<td>true</td>
+<td>Id Desa</td>
+</tr>
+<tr>
+<td>postal_code</td>
+<td></td>
+<td>false</td>
+<td>Kode Pos</td>
+</tr>
+<tr>
+<td>image</td>
+<td></td>
+<td>false</td>
+<td>path Gambar</td>
+</tr>
+<tr>
+<td>longitude</td>
+<td></td>
+<td>false</td>
+<td>Longitude Toko</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td></td>
+<td>false</td>
+<td>Latitude Toko</td>
+</tr>
+<tr>
+<td>slogan</td>
+<td></td>
+<td>false</td>
+<td>Latitude Toko</td>
+</tr>
+<tr>
+<td>note</td>
+<td></td>
+<td>false</td>
+<td>Catatan Toko</td>
+</tr>
+<tr>
+<td>couriers</td>
+<td></td>
+<td>false</td>
+<td>Kurir Toko</td>
+</tr>
+<tr>
+<td>is_umkm</td>
+<td></td>
+<td>true</td>
+<td>Jenis Toko</td>
+</tr>
+<tr>
+<td>business_category</td>
+<td></td>
+<td>true</td>
+<td>Kategori Bisnis</td>
+</tr>
+<tr>
+<td>phone</td>
+<td></td>
+<td>false</td>
+<td>Kategori Bisnis</td>
+</tr>
+<tr>
+<td>seller_type</td>
+<td></td>
+<td>false</td>
+<td>Tipe Penjual</td>
+</tr>
+<tr>
+<td>is_pkp</td>
+<td></td>
+<td>true</td>
+<td>Pajak Penjual</td>
+</tr>
+<tr>
+<td>documents</td>
+<td>null</td>
+<td>true</td>
+<td>Dokument Penjual</td>
+</tr>
+<tr>
+<td>bank_account</td>
+<td>null</td>
+<td>true</td>
+<td>Akun bank Penjual</td>
+</tr>
+<tr>
+<td>sosmed</td>
+<td>null</td>
+<td>false</td>
+<td>Akun Sosial Media</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>null</td>
+<td>true</td>
+<td>Tanda Penjual</td>
+</tr>
+</tbody></table>
+<h3 id='put-update-merchant'>PUT Update Merchant</h3>
+<blockquote>
+<p>jenis: seller</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="s2">"https://staging.siapi.tokoladang.co.id/seller/merchants/{id}"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+      <span class="s1">'Authorization'</span>: Bearer <span class="o">{{</span>TOKEN<span class="o">}}</span>
+  <span class="nt">-d</span> <span class="s1">'{
+        "name" : "Merchant Satu",
+        "address" : "Alamat Merchant",
+        "province_id" : "220000",
+        "city_id" : "220200",
+        "district_id" : "220205",
+        "village_id" : "220205AI",
+        "postal_code" : "67165",
+        "slogan" : "Anda Senang Kami Senang",
+        "note" : "Toko Buka Setiap Hari",
+        "image" : "merchant/17/profile/MeQ3oSOHpLnaw5ykBC3CTe7z4OLXGrqTntPd37Th.jpeg",
+        "longitude" : "",
+        "latitude" : "",
+        "couriers" : "jne:jnt",
+        "is_umkm" : false,
+        "business_category" : "kecil",
+        "phone" : "08123456789",
+        "seller_type" : "individual",
+        "is_pkp" : false,
+        "documents" : {
+            "npwp" : {"no" : "", "image" : ""},
+            "siup" : {"no" : "", "image" : ""},
+            "ktp" : {"no" : "", "image" : ""},
+            "pkp" : {"no" : "", "image" : ""}
+        },
+        "bank_account" : {
+            "name" : "Merchant Satu",
+            "no" : "123457989",
+            "bank" : "BCA",
+            "branch" : "surabaya"
+        },
+        "sosmed" : {"fb" : "merchant", "ig" : "@merchant"},
+        "signature" : {
+            "name" : "Penjual Satu",
+            "position" : "Kepala Toko"
+        }
+      }'</span>
+</code></pre></div>
+<p>endpoint ini digunakan untuk merubah data toko.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>PUT https://staging.siapi.tokoladang.co.id/seller/merchants/{id}</code></p>
+<h3 id='query-body-2'>Query Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>null</td>
+<td>true</td>
+<td>Nama Toko</td>
+</tr>
+<tr>
+<td>address</td>
+<td></td>
+<td>false</td>
+<td>Alamat Toko</td>
+</tr>
+<tr>
+<td>province_id</td>
+<td>null</td>
+<td>true</td>
+<td>Id Provinsi</td>
+</tr>
+<tr>
+<td>city_id</td>
+<td>null</td>
+<td>true</td>
+<td>Id Kota</td>
+</tr>
+<tr>
+<td>district_id</td>
+<td>null</td>
+<td>true</td>
+<td>Id Kecamatan</td>
+</tr>
+<tr>
+<td>village_id</td>
+<td>null</td>
+<td>true</td>
+<td>Id Desa</td>
+</tr>
+<tr>
+<td>postal_code</td>
+<td></td>
+<td>false</td>
+<td>Kode Pos</td>
+</tr>
+<tr>
+<td>image</td>
+<td></td>
+<td>false</td>
+<td>path Gambar</td>
+</tr>
+<tr>
+<td>longitude</td>
+<td></td>
+<td>false</td>
+<td>Longitude Toko</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td></td>
+<td>false</td>
+<td>Latitude Toko</td>
+</tr>
+<tr>
+<td>slogan</td>
+<td></td>
+<td>false</td>
+<td>Latitude Toko</td>
+</tr>
+<tr>
+<td>note</td>
+<td></td>
+<td>false</td>
+<td>Catatan Toko</td>
+</tr>
+<tr>
+<td>couriers</td>
+<td></td>
+<td>false</td>
+<td>Kurir Toko</td>
+</tr>
+<tr>
+<td>is_umkm</td>
+<td></td>
+<td>true</td>
+<td>Jenis Toko</td>
+</tr>
+<tr>
+<td>business_category</td>
+<td></td>
+<td>true</td>
+<td>Kategori Bisnis</td>
+</tr>
+<tr>
+<td>phone</td>
+<td></td>
+<td>false</td>
+<td>Kategori Bisnis</td>
+</tr>
+<tr>
+<td>seller_type</td>
+<td></td>
+<td>false</td>
+<td>Tipe Penjual</td>
+</tr>
+<tr>
+<td>is_pkp</td>
+<td></td>
+<td>true</td>
+<td>Pajak Penjual</td>
+</tr>
+<tr>
+<td>documents</td>
+<td>null</td>
+<td>true</td>
+<td>Dokument Penjual</td>
+</tr>
+<tr>
+<td>bank_account</td>
+<td>null</td>
+<td>true</td>
+<td>Akun bank Penjual</td>
+</tr>
+<tr>
+<td>sosmed</td>
+<td>null</td>
+<td>false</td>
+<td>Akun Sosial Media</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>null</td>
+<td>true</td>
+<td>Tanda Penjual</td>
+</tr>
+</tbody></table>
+<h1 id='seller-product'>[Seller] Product</h1>
+<p>Product digunakan untuk mengambil data Produk toko, membuat data produk toko, mengupdate data produk toko, dan merubah status produk toko.</p>
+
+<aside class="notice">
+Memerlukan Authentikasi sebagai seller.
+</aside>
+<h2 id='data-product'>DATA Product</h2><h3 id='get-data'>GET Data</h3>
+<blockquote>
+<p>jenis: seller</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://staging.siapi.tokoladang.co.id/seller/products"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>,
+      <span class="s1">'Authorization'</span>: Bearer <span class="o">{{</span>TOKEN<span class="o">}}</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">304</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SKU5FEC2EFBA8C4B"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"barang Baru"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deskripsi Barang Baru"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"product_category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"wholesales"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"{quantity: 10,price: 9900},{quantity: 20,price: 9800}"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"merchant/17/profile/ujzQ4kHZPIt4uQrLeOEfNRoL0TOxJee4AhvJPh7P.jpeg"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Non Buku"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk mendapatkan data Produk toko.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://staging.siapi.tokoladang.co.id/seller/products</code></p>
+<h3 id='post-insert'>POST Insert</h3>
+<blockquote>
+<p>jenis: seller</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://staging.siapi.tokoladang.co.id/seller/products"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+      <span class="s1">'Authorization'</span>: Bearer <span class="o">{{</span>TOKEN<span class="o">}}</span>
+  <span class="nt">-d</span> <span class="s1">'{
+        "kind": "Buku",
+        "name": "Arwana Biru",
+        "description": "Deskripsi Barang Buku",
+        "product_category_id": "2",
+        "image": "merchant/17/profile/ujzQ4kHZPIt4uQrLeOEfNRoL0TOxJee4AhvJPh7P.jpeg",
+        "images": [
+            "merchant/17/profile/ujzQ4kHZPIt4uQrLeOEfNRoL0TOxJee4AhvJPh7P.jpeg",
+            "merchant/17/profile/ujzQ4kHZPIt4uQrLeOEfNRoL0TOxJee4AhvJPh7P.jpeg"
+        ],
+        "price": "10000",
+        "price_zone_1": "11000",
+        "price_zone_2": "12000",
+        "price_zone_3": "13000",
+        "price_zone_4": "14000",
+        "price_zone_5": "15000",
+        "wholesales": [
+            {
+                "quantity": 10,
+                "price": 9900
+            },
+            {
+                "quantity": 20,
+                "price": 9800
+            }
+        ],
+        "discount": "1",
+        "taxed": "1",
+        "qty_available": "5",
+        "weight": "1500",
+        "is_secondhand": "0",
+        "with_shipping_cost": "1",
+        "merchant_storage_id": null,
+        "is_goods": "1",
+        "is_umkm": "1",
+        "is_domestic": "1",
+        "isbn": "456165216884"
+      }'</span>
+</code></pre></div>
+<p>endpoint ini digunakan untuk membuat data produk toko,
+membutuhkan isbn apabila kind = Buku.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://staging.siapi.tokoladang.co.id/seller/products</code></p>
+<h3 id='query-body'>Query Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>kind</td>
+<td>Non Buku/Buku</td>
+<td>true</td>
+<td>Termasuk buku atau bukan</td>
+</tr>
+<tr>
+<td>name</td>
+<td></td>
+<td>true</td>
+<td>Nama barang</td>
+</tr>
+<tr>
+<td>description</td>
+<td></td>
+<td>true</td>
+<td>Deskripsi barang</td>
+</tr>
+<tr>
+<td>product_category_id</td>
+<td></td>
+<td>true</td>
+<td>Id kategori product</td>
+</tr>
+<tr>
+<td>image</td>
+<td></td>
+<td>false</td>
+<td>path Gambar</td>
+</tr>
+<tr>
+<td>images</td>
+<td></td>
+<td>false</td>
+<td>path Gambar</td>
+</tr>
+<tr>
+<td>price</td>
+<td></td>
+<td>true</td>
+<td>Harga Awal</td>
+</tr>
+<tr>
+<td>price_zone_1</td>
+<td></td>
+<td>true</td>
+<td>Harga menurut zona 1</td>
+</tr>
+<tr>
+<td>price_zone_2</td>
+<td></td>
+<td>true</td>
+<td>Harga menurut zona 2</td>
+</tr>
+<tr>
+<td>price_zone_3</td>
+<td></td>
+<td>true</td>
+<td>Harga menurut zona 3</td>
+</tr>
+<tr>
+<td>price_zone_4</td>
+<td></td>
+<td>true</td>
+<td>Harga menurut zona 4</td>
+</tr>
+<tr>
+<td>price_zone_5</td>
+<td></td>
+<td>true</td>
+<td>Harga menurut zona 5</td>
+</tr>
+<tr>
+<td>wholesales</td>
+<td>null</td>
+<td>true</td>
+<td>Harga grosir</td>
+</tr>
+<tr>
+<td>discount</td>
+<td>null</td>
+<td>true</td>
+<td>Diskon produk</td>
+</tr>
+<tr>
+<td>taxed</td>
+<td>null</td>
+<td>true</td>
+<td>Pajak produk</td>
+</tr>
+<tr>
+<td>qty_available</td>
+<td></td>
+<td>true</td>
+<td>Banyak produk</td>
+</tr>
+<tr>
+<td>weight</td>
+<td></td>
+<td>true</td>
+<td>Berat produk</td>
+</tr>
+<tr>
+<td>is_secondhand</td>
+<td></td>
+<td>true</td>
+<td>Pihak kedua</td>
+</tr>
+<tr>
+<td>isbn</td>
+<td></td>
+<td>true if kind=Buku</td>
+<td>Nomor isbn buku</td>
+</tr>
+<tr>
+<td>with_shipping_cost</td>
+<td></td>
+<td>true</td>
+<td>Apakah dengan biaya pengiriman</td>
+</tr>
+<tr>
+<td>merchant_storage_id</td>
+<td>null</td>
+<td>false</td>
+<td>Id Toko</td>
+</tr>
+<tr>
+<td>is_goods</td>
+<td></td>
+<td>true</td>
+<td>Apakah ini termasuk barang</td>
+</tr>
+<tr>
+<td>is_umkm</td>
+<td></td>
+<td>true</td>
+<td>Apakah termasuk usaha umkm</td>
+</tr>
+<tr>
+<td>is_domestic</td>
+<td></td>
+<td>true</td>
+<td>Apakah termasuk produk domestik</td>
+</tr>
+</tbody></table>
+<h3 id='put-update'>PUT Update</h3>
+<blockquote>
+<p>jenis: seller</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="s2">"https://staging.siapi.tokoladang.co.id/seller/products/{id}"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+      <span class="s1">'Authorization'</span>: Bearer <span class="o">{{</span>TOKEN<span class="o">}}</span>
+  <span class="nt">-d</span> <span class="s1">'{
+        "kind": "Buku",
+        "name": "Arwana Biru",
+        "description": "Deskripsi Barang Buku",
+        "product_category_id": "2",
+        "image": "merchant/17/profile/ujzQ4kHZPIt4uQrLeOEfNRoL0TOxJee4AhvJPh7P.jpeg",
+        "images": [
+            "merchant/17/profile/ujzQ4kHZPIt4uQrLeOEfNRoL0TOxJee4AhvJPh7P.jpeg",
+            "merchant/17/profile/ujzQ4kHZPIt4uQrLeOEfNRoL0TOxJee4AhvJPh7P.jpeg"
+        ],
+        "price": "10000",
+        "price_zone_1": "11000",
+        "price_zone_2": "12000",
+        "price_zone_3": "13000",
+        "price_zone_4": "14000",
+        "price_zone_5": "15000",
+        "wholesales": [
+            {
+                "quantity": 10,
+                "price": 9900
+            },
+            {
+                "quantity": 20,
+                "price": 9800
+            }
+        ],
+        "discount": "1",
+        "taxed": "1",
+        "qty_available": "5",
+        "weight": "1500",
+        "is_secondhand": "0",
+        "with_shipping_cost": "1",
+        "merchant_storage_id": null,
+        "is_goods": "1",
+        "is_umkm": "1",
+        "is_domestic": "1",
+        "isbn": "456165216884"
+      }'</span>
+</code></pre></div>
+<p>endpoint ini digunakan untuk merubah data produk toko,
+membutuhkan isbn apabila kind = Buku.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>PUT https://staging.siapi.tokoladang.co.id/seller/products/{id}</code></p>
+<h3 id='query-body-2'>Query Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>kind</td>
+<td>Non Buku/Buku</td>
+<td>true</td>
+<td>Termasuk buku atau bukan</td>
+</tr>
+<tr>
+<td>name</td>
+<td></td>
+<td>true</td>
+<td>Nama barang</td>
+</tr>
+<tr>
+<td>description</td>
+<td></td>
+<td>true</td>
+<td>Deskripsi barang</td>
+</tr>
+<tr>
+<td>product_category_id</td>
+<td></td>
+<td>true</td>
+<td>Id kategori product</td>
+</tr>
+<tr>
+<td>image</td>
+<td></td>
+<td>false</td>
+<td>path Gambar</td>
+</tr>
+<tr>
+<td>images</td>
+<td></td>
+<td>false</td>
+<td>path Gambar</td>
+</tr>
+<tr>
+<td>price</td>
+<td></td>
+<td>true</td>
+<td>Harga Awal</td>
+</tr>
+<tr>
+<td>price_zone_1</td>
+<td></td>
+<td>true</td>
+<td>Harga menurut zona 1</td>
+</tr>
+<tr>
+<td>price_zone_2</td>
+<td></td>
+<td>true</td>
+<td>Harga menurut zona 2</td>
+</tr>
+<tr>
+<td>price_zone_3</td>
+<td></td>
+<td>true</td>
+<td>Harga menurut zona 3</td>
+</tr>
+<tr>
+<td>price_zone_4</td>
+<td></td>
+<td>true</td>
+<td>Harga menurut zona 4</td>
+</tr>
+<tr>
+<td>price_zone_5</td>
+<td></td>
+<td>true</td>
+<td>Harga menurut zona 5</td>
+</tr>
+<tr>
+<td>wholesales</td>
+<td>null</td>
+<td>true</td>
+<td>Harga grosir</td>
+</tr>
+<tr>
+<td>discount</td>
+<td>null</td>
+<td>true</td>
+<td>Diskon produk</td>
+</tr>
+<tr>
+<td>taxed</td>
+<td>null</td>
+<td>true</td>
+<td>Pajak produk</td>
+</tr>
+<tr>
+<td>qty_available</td>
+<td></td>
+<td>true</td>
+<td>Banyak produk</td>
+</tr>
+<tr>
+<td>weight</td>
+<td></td>
+<td>true</td>
+<td>Berat produk</td>
+</tr>
+<tr>
+<td>is_secondhand</td>
+<td></td>
+<td>true</td>
+<td>Pihak kedua</td>
+</tr>
+<tr>
+<td>isbn</td>
+<td></td>
+<td>true if kind=Buku</td>
+<td>Nomor isbn buku</td>
+</tr>
+<tr>
+<td>with_shipping_cost</td>
+<td></td>
+<td>true</td>
+<td>Apakah dengan biaya pengiriman</td>
+</tr>
+<tr>
+<td>merchant_storage_id</td>
+<td>null</td>
+<td>false</td>
+<td>Id Toko</td>
+</tr>
+<tr>
+<td>is_goods</td>
+<td></td>
+<td>true</td>
+<td>Apakah ini termasuk barang</td>
+</tr>
+<tr>
+<td>is_umkm</td>
+<td></td>
+<td>true</td>
+<td>Apakah termasuk usaha umkm</td>
+</tr>
+<tr>
+<td>is_domestic</td>
+<td></td>
+<td>true</td>
+<td>Apakah termasuk produk domestik</td>
+</tr>
+</tbody></table>
+<h3 id='put-status'>PUT Status</h3>
+<blockquote>
+<p>jenis: seller</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="s2">"https://staging.siapi.tokoladang.co.id/seller/products/{id}/status"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+      <span class="s1">'Authorization'</span>: Bearer <span class="o">{{</span>TOKEN<span class="o">}}</span>
+  <span class="nt">-d</span> <span class="s1">'{
+        "negotiation_id" : "1",
+      }'</span>
+</code></pre></div>
+<p>endpoint ini digunakan untuk mengubah status produk toko.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>PUT https://staging.siapi.tokoladang.co.id/seller/products/{id}/status</code></p>
+<h3 id='query-body-3'>Query Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>available/unavailable/archived</td>
+<td>true</td>
+<td>status produk</td>
+</tr>
+</tbody></table>
+<h1 id='seller-order'>[Seller] Order</h1>
+<p>Order digunakan untuk mengambil data riwayat Pembelian toko, merubah status dari Proses pesanan, menolah pesanan dan mengirim pesanan.</p>
+
+<aside class="notice">
+Memerlukan Authentikasi sebagai seller.
+</aside>
+<h2 id='data-order'>DATA Order</h2>
+<!-- ### GET Data
+
+> jenis: seller
+
+```shell
+curl -X GET "https://staging.siapi.tokoladang.co.id/seller/products"
+  -H 'Content-Type: application/json',
+      'Authorization': Bearer {{TOKEN}}
+```
+
+> Contoh Json Response :
+
+```json
+{
+    "id": 304,
+    "sku": "SKU5FEC2EFBA8C4B",
+    "name": "barang Baru",
+    "description": "Deskripsi Barang Baru",
+    "product_category_id": 2,
+    "wholesales": [
+        "{quantity: 10,price: 9900},{quantity: 20,price: 9800}"
+    ],
+    "image": "merchant/17/profile/ujzQ4kHZPIt4uQrLeOEfNRoL0TOxJee4AhvJPh7P.jpeg",
+    "kind": "Non Buku",
+}
+```
+endpoint ini digunakan untuk mendapatkan data Produk toko.
+
+### HTTP Request
+
+`GET https://staging.siapi.tokoladang.co.id/seller/products` -->
+<h3 id='post-process'>POST Process</h3>
+<blockquote>
+<p>jenis: seller</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://staging.siapi.tokoladang.co.id/seller/orders/{id}/process"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+      <span class="s1">'Authorization'</span>: Bearer <span class="o">{{</span>TOKEN<span class="o">}}</span>
+  <span class="nt">-d</span> <span class="s1">'{
+        "time_limit" : 10,
+        "shipping_cost" : 50000,
+        "shipping_etd" : 7
+      }'</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order Berhasil di proses dan Menunggu Respon Pembeli."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk memproses pesanan dari pembeli.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://staging.siapi.tokoladang.co.id/seller/orders/{id}/process</code></p>
+<h3 id='query-body'>Query Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>time_limit</td>
+<td></td>
+<td>true</td>
+<td>Lama estimasi pengerjaan</td>
+</tr>
+<tr>
+<td>shipping_cost</td>
+<td></td>
+<td>false</td>
+<td>Ongkos pengerjaan</td>
+</tr>
+<tr>
+<td>shipping_etd</td>
+<td></td>
+<td>false</td>
+<td>Estimasi pengiriman</td>
+</tr>
+</tbody></table>
+<h3 id='post-reject'>POST Reject</h3>
+<blockquote>
+<p>jenis: seller</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://staging.siapi.tokoladang.co.id/seller/orders/{id}/reject"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+      <span class="s1">'Authorization'</span>: Bearer <span class="o">{{</span>TOKEN<span class="o">}}</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order Berhasil ditolak."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk menolak pesanan dari pembeli.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://staging.siapi.tokoladang.co.id/seller/orders/{id}/reject</code></p>
+<h3 id='post-send'>POST Send</h3>
+<blockquote>
+<p>jenis: seller</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://staging.siapi.tokoladang.co.id/seller/orders/{id}/send"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+      <span class="s1">'Authorization'</span>: Bearer <span class="o">{{</span>TOKEN<span class="o">}}</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Status Order Berhasil diubah menjadi dikirim."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk menyetujui dan mengirim pesanan pembeli.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://staging.siapi.tokoladang.co.id/seller/orders/{id}/send</code></p>
+<h1 id='seller-merchant-storage'>[Seller] Merchant Storage</h1>
+<p>Merchant Storage digunakan untuk mengambil data etalase toko, membuat data etalase, merubah data etalase, dan menghapus etalase.</p>
+
+<aside class="notice">
+Memerlukan Authentikasi sebagai seller.
+</aside>
+<h2 id='data-merchant-storage'>DATA Merchant Storage</h2><h3 id='get-data'>GET Data</h3>
+<blockquote>
+<p>jenis: seller</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://staging.siapi.tokoladang.co.id/seller/merchant-storages"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>,
+      <span class="s1">'Authorization'</span>: Bearer <span class="o">{{</span>TOKEN<span class="o">}}</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"merchant_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">92</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buku Gambar"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"merchant_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">92</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buku Menulis"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk mendapatkan data etalase.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://staging.siapi.tokoladang.co.id/seller/merchant-storages</code></p>
+<h3 id='post-insert-etalase'>POST Insert Etalase</h3>
+<blockquote>
+<p>jenis: seller</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://staging.siapi.tokoladang.co.id/seller/merchant-storages"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+      <span class="s1">'Authorization'</span>: Bearer <span class="o">{{</span>TOKEN<span class="o">}}</span>
+  <span class="nt">-d</span> <span class="s1">'{
+        "name": "Buku Gambar",
+      }'</span>
+</code></pre></div>
+<p>endpoint ini digunakan untuk membuat data etalase sesuai toko.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://staging.siapi.tokoladang.co.id/seller/merchant-storages</code></p>
+<h3 id='query-body'>Query Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>null</td>
+<td>true</td>
+<td>Nama Etalase</td>
+</tr>
+</tbody></table>
+<h3 id='put-update-etalase'>PUT Update Etalase</h3>
+<blockquote>
+<p>jenis: seller</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="s2">"https://staging.siapi.tokoladang.co.id/merchant-storages/{id}"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+      <span class="s1">'Authorization'</span>: Bearer <span class="o">{{</span>TOKEN<span class="o">}}</span>
+  <span class="nt">-d</span> <span class="s1">'{
+        "name": "Buku Menulis",
+      }'</span>
+</code></pre></div>
+<p>endpoint ini digunakan untuk mengubah data nama etalase toko.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>PUT https://staging.siapi.tokoladang.co.id/seller/merchant-storages/{id}</code></p>
+<h3 id='query-body-2'>Query Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>null</td>
+<td>true</td>
+<td>Nama Etalase</td>
+</tr>
+</tbody></table>
+<h3 id='delete-hapus-etalase'>DELETE Hapus Etalase</h3>
+<blockquote>
+<p>jenis: seller</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE <span class="s2">"https://staging.siapi.tokoladang.co.id/merchant-storages/{id}"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+      <span class="s1">'Authorization'</span>: Bearer <span class="o">{{</span>TOKEN<span class="o">}}</span>
+</code></pre></div>
+<p>endpoint ini digunakan untuk menghapus data etalase toko.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>DELETE https://staging.siapi.tokoladang.co.id/seller/merchant-storages/{id}</code></p>
+<h1 id='seller-negotations'>[Seller] Negotations</h1>
+<p>Negotations digunakan untuk mengambil data negosiasi antara penjual dan pembeli, membalas negoisasi dari pembeli, menyetujui negoisasi dari pembli dan menolak negoisasi dari pembeli.</p>
+
+<aside class="notice">
+Memerlukan Authentikasi sebagai seller.
+</aside>
+<h2 id='data-negotations'>DATA Negotations</h2><h3 id='get-data'>GET Data</h3>
+<blockquote>
+<p>jenis: seller</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://staging.siapi.tokoladang.co.id/seller/negotiations"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>,
+      <span class="s1">'Authorization'</span>: Bearer <span class="o">{{</span>TOKEN<span class="o">}}</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">23</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"merchant_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">92</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status_response"</span><span class="p">:</span><span class="w"> </span><span class="s2">"waiting_seller"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status_nego"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"initial_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">456465468</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"nego_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">20000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"nego_qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"school_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"85491D19"</span><span class="p">,</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk mendapatkan data negosiasi dari pembeli.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://staging.siapi.tokoladang.co.id/seller/negotiations</code></p>
+<h3 id='post-reply'>POST Reply</h3>
+<blockquote>
+<p>jenis: seller</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://staging.siapi.tokoladang.co.id/seller/negotiations/reply"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+      <span class="s1">'Authorization'</span>: Bearer <span class="o">{{</span>TOKEN<span class="o">}}</span>
+  <span class="nt">-d</span> <span class="s1">'{
+        "negotiation_id" : "1",
+        "nego_price" : "18000",
+        "nego_qty" : "20",
+        "message" : "Response Penjual"
+      }'</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Negosiasi Berhasil direspon"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk membalas negosiasi dari pembeli.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://staging.siapi.tokoladang.co.id/seller/negotiations/reply</code></p>
+<h3 id='query-body'>Query Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>negotiation_id</td>
+<td></td>
+<td>true</td>
+<td>Id Negosiasi</td>
+</tr>
+<tr>
+<td>nego_price</td>
+<td></td>
+<td>true</td>
+<td>Harga Nego dari penjual</td>
+</tr>
+<tr>
+<td>nego_qty</td>
+<td></td>
+<td>true</td>
+<td>Banyak barang nego penjual</td>
+</tr>
+<tr>
+<td>message</td>
+<td>null</td>
+<td>false</td>
+<td>Pesan dari Penjual</td>
+</tr>
+</tbody></table>
+<h3 id='post-accept'>POST Accept</h3>
+<blockquote>
+<p>jenis: seller</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://staging.siapi.tokoladang.co.id/seller/negotiations/accept"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+      <span class="s1">'Authorization'</span>: Bearer <span class="o">{{</span>TOKEN<span class="o">}}</span>
+  <span class="nt">-d</span> <span class="s1">'{
+        "negotiation_id" : "1",
+      }'</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Negosiasi Berhasil diterima"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk menyetujui negosiasi dari pembeli.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://staging.siapi.tokoladang.co.id/seller/negotiations/accept</code></p>
+<h3 id='query-body-2'>Query Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>negotiation_id</td>
+<td></td>
+<td>true</td>
+<td>Id Negosiasi</td>
+</tr>
+</tbody></table>
+<h3 id='post-reject'>POST Reject</h3>
+<blockquote>
+<p>jenis: seller</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://staging.siapi.tokoladang.co.id/seller/negotiations/reject"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+      <span class="s1">'Authorization'</span>: Bearer <span class="o">{{</span>TOKEN<span class="o">}}</span>
+  <span class="nt">-d</span> <span class="s1">'{
+        "negotiation_id" : "1",
+      }'</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Negosiasi Berhasil ditolak"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk menolak negosiasi dari pembeli.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST https://staging.siapi.tokoladang.co.id/seller/negotiations/reject</code></p>
+<h3 id='query-body-3'>Query Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>negotiation_id</td>
+<td></td>
+<td>true</td>
+<td>Id Negosiasi</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
