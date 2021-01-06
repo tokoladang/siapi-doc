@@ -319,4 +319,67 @@ endpoint ini digunakan untuk mengatur BAST.
 | id             |         | true     | id bast items               |
 | quantity       |         | true     | jumlah bast items           |
 
-##
+## Mengatur pembayaran transfer bank
+
+> jenis: buyer
+
+```shell
+curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/orders/75/receive"
+  -H 'Authorization: Bearer {{TOKEN}}'
+  -H 'Content-Type: application/json'
+  -d '{
+    "date": "2021-01-04 12:54:38",
+    "bankOrigin": "BNI",
+    "bankAccount": "987654321"
+    "bankDestination": 2
+    "transferred": 54450
+    "paymentFile":"school/85491D19-0BA8-4946-90E6-2R0R8DFB985R/KFNoNR2ZnjdBMnH6OnR95sT10zoSGiwoKj0ZoQje.png"
+  }'
+```
+
+endpoint ini digunakan untuk mengatur pembayaran bank transfer.
+
+`POST https://staging.siapi.tokoladang.co.id/buyer/orders/{$order->id}/payment1`
+
+### Query Body
+
+| Parameter       | Default | required | Deskripsi              |
+| --------------- | ------- | -------- | ---------------------- |
+| date            |         | true     | Tanggal Pembayaran     |
+| bankOrigin      | null    | true     | Nama Bank              |
+| bankAccount     | null    | true     | Akun Bank              |
+| bankDestination | null    | true     | Bank Tujuan            |
+| transferred     | null    | true     | Jumlah yang ditransfer |
+| paymentFile     | null    | true     | Bukti Pembayaran       |
+
+## Mengatur Pembayaran BRIVA
+
+> jenis: buyer
+
+```shell
+curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/orders/75/payment2"
+  -H 'Authorization: Bearer {{TOKEN}}'
+  -H 'Content-Type: application/json'
+  -d '{}'
+```
+
+> response example
+
+```shell
+{
+    "code": 200,
+    "message": "Berhasil Mengatur Pembayaran Briva Virtual Account",
+    "data": {
+        "pm2": {
+            "va": "0695456033",
+            "amount": 147811,
+            "expired": "2021-01-19 10:14:37",
+            "paid": false
+        }
+    }
+}
+```
+
+endpoint ini digunakan untuk mengatur pembayaran bank transfer.
+
+`POST https://staging.siapi.tokoladang.co.id/buyer/orders/{$order->id}/payment2`
