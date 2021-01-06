@@ -8,7 +8,7 @@ Memerlukan Authentikasi sebagai seller.
 
 ## DATA Merchant
 
-### GET Data
+## Get Data Toko
 
 > jenis: seller
 
@@ -39,7 +39,7 @@ endpoint ini digunakan untuk mendapatkan data Toko.
 `GET https://staging.siapi.tokoladang.co.id/seller/merchants/{id}`
 
 
-### POST Insert Merchant
+## Post Tambah Toko
 
 > jenis: seller
 
@@ -119,7 +119,7 @@ bank_account | null | true | Akun bank Penjual
 sosmed | null | false | Akun Sosial Media
 signature | null | true | Tanda Penjual
 
-### PUT Update Merchant
+## Put Ubah Toko
 
 > jenis: seller
 

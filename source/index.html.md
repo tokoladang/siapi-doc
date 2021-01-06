@@ -22,6 +22,10 @@ includes:
   - seller_Order
   - seller_Merc_storage
   - seller_Negotation
+  - buyer_negotiation
+  - buyer_compares
+  - buyer_cart
+  - buyer_order
   - errors
 
 search: true
@@ -32,4 +36,3 @@ code_clipboard: true
 # Perkenalan
 
 Selamat Datang di dokumentasi API Siplah Toko Ladang! Anda dapat menggunakan API kami untuk mengakses beberapa informasi yang ada pada database kami.
-

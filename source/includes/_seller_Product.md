@@ -8,7 +8,7 @@ Memerlukan Authentikasi sebagai seller.
 
 ## DATA Product
 
-### GET Data
+## Get Semua Produk Toko
 
 > jenis: seller
 
@@ -40,7 +40,7 @@ endpoint ini digunakan untuk mendapatkan data Produk toko.
 
 `GET https://staging.siapi.tokoladang.co.id/seller/products`
 
-### POST Insert
+## Post Tambah data Produk Toko
 
 > jenis: seller
 
@@ -124,7 +124,7 @@ is_goods |  | true | Apakah ini termasuk barang
 is_umkm |  | true | Apakah termasuk usaha umkm
 is_domestic |  | true | Apakah termasuk produk domestik
 
-### PUT Update
+## Put Ubah Data Toko
 
 > jenis: seller
 
@@ -208,7 +208,7 @@ is_goods |  | true | Apakah ini termasuk barang
 is_umkm |  | true | Apakah termasuk usaha umkm
 is_domestic |  | true | Apakah termasuk produk domestik
 
-### PUT Status
+## Put Ubah Status Produk Toko
 
 > jenis: seller
 

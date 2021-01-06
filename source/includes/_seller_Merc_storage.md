@@ -8,7 +8,7 @@ Memerlukan Authentikasi sebagai seller.
 
 ## DATA Merchant Storage
 
-### GET Data 
+## Get Semua data Etalase 
 
 > jenis: seller
 
@@ -39,8 +39,7 @@ endpoint ini digunakan untuk mendapatkan data etalase.
 
 `GET https://staging.siapi.tokoladang.co.id/seller/merchant-storages`
 
-
-### POST Insert Etalase
+## Post Tambah data Etalase
 
 > jenis: seller
 
@@ -65,7 +64,7 @@ Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
 name | null | true | Nama Etalase
 
-### PUT Update Etalase
+## Put Ubah data etalase
 
 > jenis: seller
 
@@ -91,7 +90,7 @@ Parameter | Default | required | Deskripsi
 name | null | true | Nama Etalase
 
 
-### DELETE Hapus Etalase
+## Delete Hapus data Etalase
 
 > jenis: seller
 

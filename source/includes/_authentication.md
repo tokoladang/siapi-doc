@@ -9,10 +9,6 @@ ada 4 jenis endpoint dalam API:
 3. `seller` adalah endpoint yang memerlukan login/token penjual.
 4. `buyer` adalah endpoint yang memerlukan login/token pembeli.
 
-<aside class="notice">
-Setiap API endpoint selain jenis <strong>public</strong> membutuhkan Autentikasi.
-</aside>
-
 ## Session API
 
 > jenis: public
@@ -48,10 +44,10 @@ endpoint ini digunakan untuk login sebagai Admin.
 
 ### Query Body
 
-Parameter | Default | required | Deskripsi
---------- | ------- | -------- | -----------
-email | null | true | Email Admin
-password | null | true | Password Admin
+| Parameter | Default | required | Deskripsi      |
+| --------- | ------- | -------- | -------------- |
+| email     | null    | true     | Email Admin    |
+| password  | null    | true     | Password Admin |
 
 ### Login Penjual
 
@@ -74,10 +70,10 @@ endpoint ini digunakan untuk login sebagai Penjual.
 
 ### Query Body
 
-Parameter | Default | required | Deskripsi
---------- | ------- | -------- | -----------
-email | null | true | Email Penjual
-password | null | true | Password Penjual
+| Parameter | Default | required | Deskripsi        |
+| --------- | ------- | -------- | ---------------- |
+| email     | null    | true     | Email Penjual    |
+| password  | null    | true     | Password Penjual |
 
 ### Login Pembeli
 
@@ -100,10 +96,10 @@ untuk login pembeli berbeda dengan login admin dan login penjual. pembeli harus 
 
 ### Query Body
 
-Parameter | Default | required | Deskripsi
---------- | ------- | -------- | -----------
-code | null | true | Code dari dapodik untuk login
-device | null | true | Jenis Perangkat `web, android, ios`
+| Parameter | Default | required | Deskripsi                           |
+| --------- | ------- | -------- | ----------------------------------- |
+| code      | null    | true     | Code dari dapodik untuk login       |
+| device    | null    | true     | Jenis Perangkat `web, android, ios` |
 
 ## API Token
 
@@ -144,11 +140,11 @@ endpoint ini digunakan untuk Mendapatkan Token Penjual.
 
 ### Query Body
 
-Parameter | Default | required | Deskripsi
---------- | ------- | -------- | -----------
-email | null | true | Email Admin
-password | null | true | Password Admin
-device | null | true | Jenis Perangkat `web, android, ios`
+| Parameter | Default | required | Deskripsi                           |
+| --------- | ------- | -------- | ----------------------------------- |
+| email     | null    | true     | Email Admin                         |
+| password  | null    | true     | Password Admin                      |
+| device    | null    | true     | Jenis Perangkat `web, android, ios` |
 
 ### Get Token Penjual
 
@@ -181,11 +177,11 @@ endpoint ini digunakan untuk Mendapatkan Token Penjual.
 
 ### Query Body
 
-Parameter | Default | required | Deskripsi
---------- | ------- | -------- | -----------
-email | null | true | Email Penjual
-password | null | true | Password Penjual
-device | null | true | Jenis Perangkat `web, android, ios`
+| Parameter | Default | required | Deskripsi                           |
+| --------- | ------- | -------- | ----------------------------------- |
+| email     | null    | true     | Email Penjual                       |
+| password  | null    | true     | Password Penjual                    |
+| device    | null    | true     | Jenis Perangkat `web, android, ios` |
 
 ### Get Token Pembeli
 
@@ -216,6 +212,6 @@ untuk get token pembeli berbeda dengan get token admin dan get token penjual. pe
 
 ### Query Body
 
-Parameter | Default | required | Deskripsi
---------- | ------- | -------- | -----------
-code | null | true | Code dari dapodik
+| Parameter | Default | required | Deskripsi         |
+| --------- | ------- | -------- | ----------------- |
+| code      | null    | true     | Code dari dapodik |
