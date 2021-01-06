@@ -21,11 +21,13 @@ includes:
   - seller_Product
   - seller_Order
   - seller_Merc_storage
+  - seller_complain
   - seller_Negotation
   - buyer_negotiation
   - buyer_compares
   - buyer_cart
   - buyer_order
+  - buyer_complain
   - errors
 
 search: true
