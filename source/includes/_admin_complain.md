@@ -1,6 +1,6 @@
 # [Admin] Complain
 
-## Get Semua Komplain Toko
+## Get Semua Komplain Admin
 
 > jenis: admin
 
@@ -38,7 +38,7 @@ endpoint ini digunakan untuk mendapatkan data Komplain.
 
 `GET https://staging.siapi.tokoladang.co.id/admin/complains`
 
-## Get Komplain Toko berdasarkan ID
+## Get Komplain detail Admin
 
 > jenis: admin
 
@@ -74,7 +74,7 @@ endpoint ini digunakan untuk mendapatkan data Komplain berdasarkan ID.
 
 `GET https://staging.siapi.tokoladang.co.id/admin/complains/{complain}`
 
-## POST Komplain baru
+## POST Admin tanggapi Komplain
 
 > jenis: admin
 
@@ -104,7 +104,7 @@ Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
 message | null | true | Pesan
 
-## PUT status komplain
+## PUT Admin ubah status komplain
 
 > jenis: admin
 

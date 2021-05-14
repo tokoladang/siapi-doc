@@ -6,7 +6,7 @@ Order digunakan untuk mengambil data riwayat Pembelian toko, merubah status dari
 Memerlukan Authentikasi sebagai seller.
 </aside>
 
-<!-- ### GET Data
+## DATA Order
 
 > jenis: seller
 
@@ -97,7 +97,6 @@ endpoint ini digunakan untuk menolak pesanan dari pembeli.
 ### HTTP Request
 
 `POST https://staging.siapi.tokoladang.co.id/seller/orders/{id}/reject`
-
 
 ## Post Ubah Status (Kirim) Pemesanan
 

@@ -6,6 +6,8 @@ Merchant digunakan untuk melihat data toko, membuat data toko, dan merubah data 
 Memerlukan Authentikasi sebagai seller.
 </aside>
 
+## DATA Merchant
+
 ## Get Data Toko
 
 > jenis: seller

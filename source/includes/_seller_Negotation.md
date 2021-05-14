@@ -6,6 +6,8 @@ Negotations digunakan untuk mengambil data negosiasi antara penjual dan pembeli,
 Memerlukan Authentikasi sebagai seller.
 </aside>
 
+## DATA Negotations
+
 ## Get Semua data Negoisasi
 
 > jenis: seller

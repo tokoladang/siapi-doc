@@ -6,6 +6,8 @@ Merchant Storage digunakan untuk mengambil data etalase toko, membuat data etala
 Memerlukan Authentikasi sebagai seller.
 </aside>
 
+## DATA Merchant Storage
+
 ## Get Semua data Etalase 
 
 > jenis: seller
@@ -36,7 +38,6 @@ endpoint ini digunakan untuk mendapatkan data etalase.
 ### HTTP Request
 
 `GET https://staging.siapi.tokoladang.co.id/seller/merchant-storages`
-
 
 ## Post Tambah data Etalase
 

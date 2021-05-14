@@ -6,6 +6,8 @@ Product digunakan untuk mengambil data Produk toko, membuat data produk toko, me
 Memerlukan Authentikasi sebagai seller.
 </aside>
 
+## DATA Product
+
 ## Get Semua Produk Toko
 
 > jenis: seller
