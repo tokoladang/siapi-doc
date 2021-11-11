@@ -248,8 +248,11 @@
 .highlight .kd {
   color: #cb4b16;
 }
-.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
   color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
 }
 .highlight .sr {
   color: #2aa198;
@@ -281,7 +284,7 @@
     </style>
     <link href="stylesheets/screen-d374d1e7.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all-e9bde216.js"></script>
+      <script src="javascripts/all-b12a2749.js"></script>
 
     <script>
       $(function() { setupCodeCopy(); });
@@ -296,7 +299,7 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo-461c8806.png" class="logo" alt="" />
+      <img src="images/logo-1e815a84.png" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
               <a href="#" data-language-name="javascript">javascript</a>
@@ -432,22 +435,25 @@
             <a href="#admin-complain" class="toc-h1 toc-link" data-title="[Admin] Complain">[Admin] Complain</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-semua-komplain-toko" class="toc-h2 toc-link" data-title="Get Semua Komplain Toko">Get Semua Komplain Toko</a>
+                    <a href="#get-semua-komplain-admin" class="toc-h2 toc-link" data-title="Get Semua Komplain Admin">Get Semua Komplain Admin</a>
                   </li>
                   <li>
-                    <a href="#get-komplain-toko-berdasarkan-id" class="toc-h2 toc-link" data-title="Get Komplain Toko berdasarkan ID">Get Komplain Toko berdasarkan ID</a>
+                    <a href="#get-komplain-detail-admin" class="toc-h2 toc-link" data-title="Get Komplain detail Admin">Get Komplain detail Admin</a>
                   </li>
                   <li>
-                    <a href="#post-komplain-baru" class="toc-h2 toc-link" data-title="POST Komplain baru">POST Komplain baru</a>
+                    <a href="#post-admin-tanggapi-komplain" class="toc-h2 toc-link" data-title="POST Admin tanggapi Komplain">POST Admin tanggapi Komplain</a>
                   </li>
                   <li>
-                    <a href="#put-status-komplain" class="toc-h2 toc-link" data-title="PUT status komplain">PUT status komplain</a>
+                    <a href="#put-admin-ubah-status-komplain" class="toc-h2 toc-link" data-title="PUT Admin ubah status komplain">PUT Admin ubah status komplain</a>
                   </li>
               </ul>
           </li>
           <li>
             <a href="#seller-merchant" class="toc-h1 toc-link" data-title="[Seller] Merchant">[Seller] Merchant</a>
               <ul class="toc-list-h2">
+                  <li>
+                    <a href="#data-merchant" class="toc-h2 toc-link" data-title="DATA Merchant">DATA Merchant</a>
+                  </li>
                   <li>
                     <a href="#get-data-toko" class="toc-h2 toc-link" data-title="Get Data Toko">Get Data Toko</a>
                   </li>
@@ -462,6 +468,9 @@
           <li>
             <a href="#seller-product" class="toc-h1 toc-link" data-title="[Seller] Product">[Seller] Product</a>
               <ul class="toc-list-h2">
+                  <li>
+                    <a href="#data-product" class="toc-h2 toc-link" data-title="DATA Product">DATA Product</a>
+                  </li>
                   <li>
                     <a href="#get-semua-produk-toko" class="toc-h2 toc-link" data-title="Get Semua Produk Toko">Get Semua Produk Toko</a>
                   </li>
@@ -480,6 +489,9 @@
             <a href="#seller-order" class="toc-h1 toc-link" data-title="[Seller] Order">[Seller] Order</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#data-order" class="toc-h2 toc-link" data-title="DATA Order">DATA Order</a>
+                  </li>
+                  <li>
                     <a href="#post-ubah-status-proses-pemesanan" class="toc-h2 toc-link" data-title="Post Ubah Status (Proses) Pemesanan">Post Ubah Status (Proses) Pemesanan</a>
                   </li>
                   <li>
@@ -493,6 +505,9 @@
           <li>
             <a href="#seller-merchant-storage" class="toc-h1 toc-link" data-title="[Seller] Merchant Storage">[Seller] Merchant Storage</a>
               <ul class="toc-list-h2">
+                  <li>
+                    <a href="#data-merchant-storage" class="toc-h2 toc-link" data-title="DATA Merchant Storage">DATA Merchant Storage</a>
+                  </li>
                   <li>
                     <a href="#get-semua-data-etalase" class="toc-h2 toc-link" data-title="Get Semua data Etalase">Get Semua data Etalase</a>
                   </li>
@@ -508,8 +523,28 @@
               </ul>
           </li>
           <li>
+            <a href="#seller-complain" class="toc-h1 toc-link" data-title="[Seller] Complain">[Seller] Complain</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-semua-komplain-penjual" class="toc-h2 toc-link" data-title="Get Semua Komplain Penjual">Get Semua Komplain Penjual</a>
+                  </li>
+                  <li>
+                    <a href="#get-komplain-detail-penjual" class="toc-h2 toc-link" data-title="Get Komplain Detail Penjual">Get Komplain Detail Penjual</a>
+                  </li>
+                  <li>
+                    <a href="#post-penjual-tanggapi-komplain" class="toc-h2 toc-link" data-title="POST penjual tanggapi Komplain">POST penjual tanggapi Komplain</a>
+                  </li>
+                  <li>
+                    <a href="#put-penjual-ubah-status-komplain" class="toc-h2 toc-link" data-title="PUT Penjual ubah status komplain">PUT Penjual ubah status komplain</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#seller-negotations" class="toc-h1 toc-link" data-title="[Seller] Negotations">[Seller] Negotations</a>
               <ul class="toc-list-h2">
+                  <li>
+                    <a href="#data-negotations" class="toc-h2 toc-link" data-title="DATA Negotations">DATA Negotations</a>
+                  </li>
                   <li>
                     <a href="#get-semua-data-negoisasi" class="toc-h2 toc-link" data-title="Get Semua data Negoisasi">Get Semua data Negoisasi</a>
                   </li>
@@ -595,6 +630,26 @@
                   </li>
                   <li>
                     <a href="#mengatur-pembayaran-briva" class="toc-h2 toc-link" data-title="Mengatur Pembayaran BRIVA">Mengatur Pembayaran BRIVA</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#buyer-complain" class="toc-h1 toc-link" data-title="[Buyer] Complain">[Buyer] Complain</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-semua-komplain-pembeli" class="toc-h2 toc-link" data-title="Get Semua Komplain Pembeli">Get Semua Komplain Pembeli</a>
+                  </li>
+                  <li>
+                    <a href="#get-komplain-detail-pembeli" class="toc-h2 toc-link" data-title="Get Komplain detail Pembeli">Get Komplain detail Pembeli</a>
+                  </li>
+                  <li>
+                    <a href="#post-pembeli-komplain-baru" class="toc-h2 toc-link" data-title="POST Pembeli Komplain baru.">POST Pembeli Komplain baru.</a>
+                  </li>
+                  <li>
+                    <a href="#post-pembeli-tanggapi-komplain" class="toc-h2 toc-link" data-title="POST Pembeli tanggapi Komplain.">POST Pembeli tanggapi Komplain.</a>
+                  </li>
+                  <li>
+                    <a href="#put-pembeli-ubah-status-komplain" class="toc-h2 toc-link" data-title="PUT Pembeli ubah status komplain">PUT Pembeli ubah status komplain</a>
                   </li>
               </ul>
           </li>
@@ -2329,7 +2384,7 @@
 <td>tanggal</td>
 </tr>
 </tbody></table>
-<h1 id='admin-complain'>[Admin] Complain</h1><h2 id='get-semua-komplain-toko'>Get Semua Komplain Toko</h2>
+<h1 id='admin-complain'>[Admin] Complain</h1><h2 id='get-semua-komplain-admin'>Get Semua Komplain Admin</h2>
 <blockquote>
 <p>jenis: admin</p>
 </blockquote>
@@ -2362,7 +2417,7 @@
 <p>endpoint ini digunakan untuk mendapatkan data Komplain.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://staging.siapi.tokoladang.co.id/admin/complains</code></p>
-<h2 id='get-komplain-toko-berdasarkan-id'>Get Komplain Toko berdasarkan ID</h2>
+<h2 id='get-komplain-detail-admin'>Get Komplain detail Admin</h2>
 <blockquote>
 <p>jenis: admin</p>
 </blockquote>
@@ -2393,7 +2448,7 @@
 <p>endpoint ini digunakan untuk mendapatkan data Komplain berdasarkan ID.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://staging.siapi.tokoladang.co.id/admin/complains/{complain}</code></p>
-<h2 id='post-komplain-baru'>POST Komplain baru</h2>
+<h2 id='post-admin-tanggapi-komplain'>POST Admin tanggapi Komplain</h2>
 <blockquote>
 <p>jenis: admin</p>
 </blockquote>
@@ -2428,7 +2483,7 @@
 <td>Pesan</td>
 </tr>
 </tbody></table>
-<h2 id='put-status-komplain'>PUT status komplain</h2>
+<h2 id='put-admin-ubah-status-komplain'>PUT Admin ubah status komplain</h2>
 <blockquote>
 <p>jenis: admin</p>
 </blockquote>
@@ -2469,7 +2524,7 @@
 <aside class="notice">
 Memerlukan Authentikasi sebagai seller.
 </aside>
-<h2 id='get-data-toko'>Get Data Toko</h2>
+<h2 id='data-merchant'>DATA Merchant</h2><h2 id='get-data-toko'>Get Data Toko</h2>
 <blockquote>
 <p>jenis: seller</p>
 </blockquote>
@@ -2880,7 +2935,7 @@ Memerlukan Authentikasi sebagai seller.
 <aside class="notice">
 Memerlukan Authentikasi sebagai seller.
 </aside>
-<h2 id='get-semua-produk-toko'>Get Semua Produk Toko</h2>
+<h2 id='data-product'>DATA Product</h2><h2 id='get-semua-produk-toko'>Get Semua Produk Toko</h2>
 <blockquote>
 <p>jenis: seller</p>
 </blockquote>
@@ -3351,38 +3406,33 @@ membutuhkan isbn apabila kind = Buku.</p>
 <aside class="notice">
 Memerlukan Authentikasi sebagai seller.
 </aside>
-
-<!-- ### GET Data
-
-> jenis: seller
-
-```shell
-curl -X GET "https://staging.siapi.tokoladang.co.id/seller/products"
-  -H 'Content-Type: application/json',
-      'Authorization': Bearer {{TOKEN}}
-```
-
-> Contoh Json Response :
-
-```json
-{
-    "id": 304,
-    "sku": "SKU5FEC2EFBA8C4B",
-    "name": "barang Baru",
-    "description": "Deskripsi Barang Baru",
-    "product_category_id": 2,
-    "wholesales": [
-        "{quantity: 10,price: 9900},{quantity: 20,price: 9800}"
-    ],
-    "image": "merchant/17/profile/ujzQ4kHZPIt4uQrLeOEfNRoL0TOxJee4AhvJPh7P.jpeg",
-    "kind": "Non Buku",
-}
-```
-endpoint ini digunakan untuk mendapatkan data Produk toko.
-
-### HTTP Request
-
-`GET https://staging.siapi.tokoladang.co.id/seller/products` -->
+<h2 id='data-order'>DATA Order</h2>
+<blockquote>
+<p>jenis: seller</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://staging.siapi.tokoladang.co.id/seller/products"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>,
+      <span class="s1">'Authorization'</span>: Bearer <span class="o">{{</span>TOKEN<span class="o">}}</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">304</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SKU5FEC2EFBA8C4B"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"barang Baru"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deskripsi Barang Baru"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"product_category_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wholesales"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"{quantity: 10,price: 9900},{quantity: 20,price: 9800}"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"merchant/17/profile/ujzQ4kHZPIt4uQrLeOEfNRoL0TOxJee4AhvJPh7P.jpeg"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Non Buku"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk mendapatkan data Produk toko.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://staging.siapi.tokoladang.co.id/seller/products</code> --&gt;</p>
 <h2 id='post-ubah-status-proses-pemesanan'>Post Ubah Status (Proses) Pemesanan</h2>
 <blockquote>
 <p>jenis: seller</p>
@@ -3404,7 +3454,7 @@ endpoint ini digunakan untuk mendapatkan data Produk toko.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>endpoint ini digunakan untuk memproses pesanan dari pembeli.</p>
-<h3 id='http-request'>HTTP Request</h3>
+<h3 id='http-request-2'>HTTP Request</h3>
 <p><code>POST https://staging.siapi.tokoladang.co.id/seller/orders/{id}/process</code></p>
 <h3 id='query-body'>Query Body</h3>
 <table><thead>
@@ -3450,7 +3500,7 @@ endpoint ini digunakan untuk mendapatkan data Produk toko.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>endpoint ini digunakan untuk menolak pesanan dari pembeli.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
+<h3 id='http-request-3'>HTTP Request</h3>
 <p><code>POST https://staging.siapi.tokoladang.co.id/seller/orders/{id}/reject</code></p>
 <h2 id='post-ubah-status-kirim-pemesanan'>Post Ubah Status (Kirim) Pemesanan</h2>
 <blockquote>
@@ -3468,7 +3518,7 @@ endpoint ini digunakan untuk mendapatkan data Produk toko.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>endpoint ini digunakan untuk menyetujui dan mengirim pesanan pembeli.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+<h3 id='http-request-4'>HTTP Request</h3>
 <p><code>POST https://staging.siapi.tokoladang.co.id/seller/orders/{id}/send</code></p>
 <h1 id='seller-merchant-storage'>[Seller] Merchant Storage</h1>
 <p>Merchant Storage digunakan untuk mengambil data etalase toko, membuat data etalase, merubah data etalase, dan menghapus etalase.</p>
@@ -3476,7 +3526,7 @@ endpoint ini digunakan untuk mendapatkan data Produk toko.
 <aside class="notice">
 Memerlukan Authentikasi sebagai seller.
 </aside>
-<h2 id='get-semua-data-etalase'>Get Semua data Etalase</h2>
+<h2 id='data-merchant-storage'>DATA Merchant Storage</h2><h2 id='get-semua-data-etalase'>Get Semua data Etalase</h2>
 <blockquote>
 <p>jenis: seller</p>
 </blockquote>
@@ -3572,13 +3622,148 @@ Memerlukan Authentikasi sebagai seller.
 <p>endpoint ini digunakan untuk menghapus data etalase toko.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
 <p><code>DELETE https://staging.siapi.tokoladang.co.id/seller/merchant-storages/{id}</code></p>
+<h1 id='seller-complain'>[Seller] Complain</h1><h2 id='get-semua-komplain-penjual'>Get Semua Komplain Penjual</h2>
+<blockquote>
+<p>jenis: seller</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://staging.siapi.tokoladang.co.id/seller/complains"</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+<span class="nt">-d</span> <span class="s1">'{}'</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"merchant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer_order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"school_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"merchant"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+        </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+        </span><span class="nl">"customer_order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk mendapatkan data Komplain.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://staging.siapi.tokoladang.co.id/seller/complains</code></p>
+<h2 id='get-komplain-detail-penjual'>Get Komplain Detail Penjual</h2>
+<blockquote>
+<p>jenis: seller</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://staging.siapi.tokoladang.co.id/seller/complains/{complain}"</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+<span class="nt">-d</span> <span class="s1">'{}'</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"merchant_id"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customer_order_id"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"school_id"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"merchant"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+    </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+    </span><span class="nl">"customer_order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+    </span><span class="nl">"merchant_complain_history"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="err">...</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk mendapatkan data detail Komplain.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://staging.siapi.tokoladang.co.id/seller/complains/{complain}</code></p>
+<h2 id='post-penjual-tanggapi-komplain'>POST penjual tanggapi Komplain</h2>
+<blockquote>
+<p>jenis: seller</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://staging.siapi.tokoladang.co.id/seller/complains/{complain}"</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+<span class="nt">-d</span> <span class="s1">'{}'</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Berhasil menyimpan data"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk menambah pesan pada komplain.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://staging.siapi.tokoladang.co.id/seller/complains/{complain}</code></p>
+<h3 id='query-body'>Query Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>message</td>
+<td>null</td>
+<td>true</td>
+<td>Pesan</td>
+</tr>
+</tbody></table>
+<h2 id='put-penjual-ubah-status-komplain'>PUT Penjual ubah status komplain</h2>
+<blockquote>
+<p>jenis: seller</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="s2">"https://staging.siapi.tokoladang.co.id/seller/complains/{complain}"</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+<span class="nt">-d</span> <span class="s1">'{}'</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Berhasil menyimpan data"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk mengubah status komplain.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>PUT https://staging.siapi.tokoladang.co.id/seller/complains/{complain}</code></p>
+<h3 id='query-body-2'>Query Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>message</td>
+<td>null</td>
+<td>true</td>
+<td>Pesan</td>
+</tr>
+</tbody></table>
 <h1 id='seller-negotations'>[Seller] Negotations</h1>
 <p>Negotations digunakan untuk mengambil data negosiasi antara penjual dan pembeli, membalas negoisasi dari pembeli, menyetujui negoisasi dari pembli dan menolak negoisasi dari pembeli.</p>
 
 <aside class="notice">
 Memerlukan Authentikasi sebagai seller.
 </aside>
-<h2 id='get-semua-data-negoisasi'>Get Semua data Negoisasi</h2>
+<h2 id='data-negotations'>DATA Negotations</h2><h2 id='get-semua-data-negoisasi'>Get Semua data Negoisasi</h2>
 <blockquote>
 <p>jenis: seller</p>
 </blockquote>
@@ -4668,6 +4853,194 @@ membutuhkan Autentikasi/Token <strong>buyer</strong>.
 <p>endpoint ini digunakan untuk mengatur pembayaran bank transfer.</p>
 
 <p><code>POST https://staging.siapi.tokoladang.co.id/buyer/orders/{$order-&gt;id}/payment2</code></p>
+<h1 id='buyer-complain'>[Buyer] Complain</h1><h2 id='get-semua-komplain-pembeli'>Get Semua Komplain Pembeli</h2>
+<blockquote>
+<p>jenis: buyer</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://staging.siapi.tokoladang.co.id/buyer/complains"</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+<span class="nt">-d</span> <span class="s1">'{}'</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"merchant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer_order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"school_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"merchant"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+        </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+        </span><span class="nl">"customer_order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk mendapatkan data Komplain.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://staging.siapi.tokoladang.co.id/buyer/complains</code></p>
+<h2 id='get-komplain-detail-pembeli'>Get Komplain detail Pembeli</h2>
+<blockquote>
+<p>jenis: buyer</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://staging.siapi.tokoladang.co.id/buyer/complains/{complain}"</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+<span class="nt">-d</span> <span class="s1">'{}'</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"merchant_id"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customer_order_id"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"school_id"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"merchant"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+    </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+    </span><span class="nl">"customer_order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+    </span><span class="nl">"merchant_complain_history"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="err">...</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk mendapatkan data detail Komplain.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://staging.siapi.tokoladang.co.id/buyer/complains/{complain}</code></p>
+<h2 id='post-pembeli-komplain-baru'>POST Pembeli Komplain baru.</h2>
+<blockquote>
+<p>jenis: buyer</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://staging.siapi.tokoladang.co.id/buyer/complains"</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+<span class="nt">-d</span> <span class="s1">'{}'</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Berhasil menyimpan data"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk komplain baru.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://staging.siapi.tokoladang.co.id/buyer/complains</code></p>
+<h3 id='query-body'>Query Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>customer_order_id</td>
+<td>null</td>
+<td>true</td>
+<td>id pesanan</td>
+</tr>
+<tr>
+<td>code</td>
+<td>null</td>
+<td>true</td>
+<td>Kode</td>
+</tr>
+<tr>
+<td>merchant_id</td>
+<td>null</td>
+<td>true</td>
+<td>id Toko</td>
+</tr>
+<tr>
+<td>message</td>
+<td>null</td>
+<td>true</td>
+<td>Pesan</td>
+</tr>
+</tbody></table>
+<h2 id='post-pembeli-tanggapi-komplain'>POST Pembeli tanggapi Komplain.</h2>
+<blockquote>
+<p>jenis: buyer</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://staging.siapi.tokoladang.co.id/buyer/complains/{complain}"</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+<span class="nt">-d</span> <span class="s1">'{}'</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Berhasil menyimpan data"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk menanggapi pesan pada komplain.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST https://staging.siapi.tokoladang.co.id/buyer/complains/{complain}</code></p>
+<h3 id='query-body-2'>Query Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>message</td>
+<td>null</td>
+<td>true</td>
+<td>Pesan</td>
+</tr>
+</tbody></table>
+<h2 id='put-pembeli-ubah-status-komplain'>PUT Pembeli ubah status komplain</h2>
+<blockquote>
+<p>jenis: buyer</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="s2">"https://staging.siapi.tokoladang.co.id/admin/complains/{complain}"</span>
+<span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+<span class="nt">-d</span> <span class="s1">'{}'</span>
+</code></pre></div>
+<blockquote>
+<p>Contoh Json Response :</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Berhasil menyimpan data"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>endpoint ini digunakan untuk mengubah status komplain.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>PUT https://staging.siapi.tokoladang.co.id/buyer/complains/{complain}</code></p>
+<h3 id='query-body-3'>Query Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>message</td>
+<td>null</td>
+<td>true</td>
+<td>Pesan</td>
+</tr>
+</tbody></table>
 <h1 id='errors'>Errors</h1>
 <p>Siplah Menggunakan code error berikut:</p>
 
