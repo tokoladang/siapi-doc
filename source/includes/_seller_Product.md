@@ -322,9 +322,40 @@ Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
 page | string | false | Halaman
 
+## Post balas diskusi produk
+
+> jenis: seller
+
+```shell
+curl -X POST "https://staging.siapi.tokoladang.co.id/seller/products/{discussId}/discussion-reply"
+  -H 'Content-Type: application/json',
+      'Authorization': Bearer {{TOKEN}}
+```
+
+> Contoh Json Response :
+
+```json
+
+{
+  "created_at": "datetime",
+  "id": "integer",
+  "merchant_discuss_id": "integer",
+  "message": "string",
+  "updated_at": "datetime"
+}
+
+```
+endpoint ini digunakan untuk membalas diskusi Produk.
+
 ### HTTP Request
 
-`GET https://staging.siapi.tokoladang.co.id/seller/products`
+`POST https://staging.siapi.tokoladang.co.id/seller/products/book/{id}/discussion-reply`
+
+### Query Parameter
+
+Parameter | Default | required | Deskripsi
+--------- | ------- | -------- | -----------
+message | string | true | Pesan
 
 ## Post Tambah Produk baru
 
