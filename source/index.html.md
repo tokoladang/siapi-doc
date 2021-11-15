@@ -10,7 +10,7 @@ toc_footers:
 
 includes:
   - authentication
-  # - admin_merchant
+  - admin_merchant
   # - admin_product_category
   # - admin_product
   # - admin_admins
