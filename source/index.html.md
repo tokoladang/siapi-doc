@@ -19,7 +19,7 @@ includes:
   # - admin_complain
   - seller_merchant
   - seller_product
-  # - seller_Order
+  - seller_order
   - seller_merchant_storage
   - seller_complain
   - seller_negotation
