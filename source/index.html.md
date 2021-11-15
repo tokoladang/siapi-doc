@@ -20,7 +20,7 @@ includes:
   - seller_merchant
   - seller_product
   # - seller_Order
-  # - seller_Merc_storage
+  - seller_merchant_storage
   # - seller_complain
   # - seller_Negotation
   # - buyer_negotiation

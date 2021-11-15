@@ -1,6 +1,6 @@
 # [Seller] Toko
 
-Merchant digunakan untuk melihat data toko, membuat data toko, dan merubah data toko. 
+Toko digunakan untuk melihat data toko, membuat data toko, dan merubah data toko. 
 
 <aside class="notice">
 Memerlukan Authentikasi sebagai seller.
