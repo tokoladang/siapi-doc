@@ -1,4 +1,4 @@
-# [Seller] Product
+# [Seller] Produk
 
 Product digunakan untuk mengambil data Produk toko, membuat data produk toko, mengupdate data produk toko, dan merubah status produk toko.
 
@@ -6,7 +6,7 @@ Product digunakan untuk mengambil data Produk toko, membuat data produk toko, me
 Memerlukan Authentikasi sebagai seller.
 </aside>
 
-## DATA Product
+## DATA Produk
 
 ## Get Semua Produk Toko
 
@@ -400,7 +400,65 @@ curl -X POST "https://staging.siapi.tokoladang.co.id/seller/products"
         "classification_catalogue": "string",
       }'
 ```
+> Contoh Json Response :
 
+```json
+{
+  "admin_note": "string",
+  "availability_status": "string",
+  "brand": "string",
+  "catalogue_id": "string",
+  "categories": [{"id": "integer", "name": "string"}],
+  "classification_catalogue": "string",
+  "created_at": "datetime",
+  "created_by": "string",
+  "description": "string",
+  "dimension": {"l": "integer", "w": "integer", "h": "integer"},
+  "discount": "integer",
+  "guaranty": "string",
+  "id": "integer",
+  "image": "string",
+  "images": "array",
+  "is_domestic": "boolean",
+  "is_kemdikbud": "boolean",
+  "is_secondhand": "boolean",
+  "is_umkm": "boolean",
+  "isbn": "string",
+  "kind": "string",
+  "merchant_id": "integer",
+  "merchant_storage_id": "integer",
+  "min_order": "integer",
+  "name": "string",
+  "power": "integer",
+  "price": "integer",
+  "price_zone_1": "integer",
+  "price_zone_2": "integer",
+  "price_zone_3": "integer",
+  "price_zone_4": "integer",
+  "price_zone_5": "integer",
+  "product_category_id": "integer",
+  "product_upload_id": "integer",
+  "qty_available": "integer",
+  "qty_sell": "integer",
+  "qualified": "boolean",
+  "rating": "string",
+  "review_count": "integer",
+  "review_total": "integer",
+  "sku": "string",
+  "slug": "string",
+  "status": "string",
+  "taxed": "boolean",
+  "updated_at": "datetime",
+  "updated_by": "string",
+  "verified_at": "datetime",
+  "verified_by": "string",
+  "warranty": "string",
+  "weight": "integer",
+  "wholesales": [{"quantity": "integer", "price": "integer"}],
+  "with_shipping_cost": "boolean"
+}
+
+```
 endpoint ini digunakan untuk membuat data produk baru.
 
 ### HTTP Request
@@ -444,7 +502,7 @@ is_kemdikbud | boolean | true | Apakah produk Kemdikbud?
 catalogue_id | string | true if kind=buku | id katalog buku
 classification_catalogue | string | false | klasifikasi id katalog buku
 
-## Put Ubah Data Toko
+## Put Ubah Data Produk
 
 > jenis: seller
 
@@ -487,7 +545,65 @@ curl -X PUT "https://staging.siapi.tokoladang.co.id/seller/products/{id}"
         "classification_catalogue": "string",
       }'
 ```
+> Contoh Json Response :
 
+```json
+{
+  "admin_note": "string",
+  "availability_status": "string",
+  "brand": "string",
+  "catalogue_id": "string",
+  "categories": [{"id": "integer", "name": "string"}],
+  "classification_catalogue": "string",
+  "created_at": "datetime",
+  "created_by": "string",
+  "description": "string",
+  "dimension": {"l": "integer", "w": "integer", "h": "integer"},
+  "discount": "integer",
+  "guaranty": "string",
+  "id": "integer",
+  "image": "string",
+  "images": "array",
+  "is_domestic": "boolean",
+  "is_kemdikbud": "boolean",
+  "is_secondhand": "boolean",
+  "is_umkm": "boolean",
+  "isbn": "string",
+  "kind": "string",
+  "merchant_id": "integer",
+  "merchant_storage_id": "integer",
+  "min_order": "integer",
+  "name": "string",
+  "power": "integer",
+  "price": "integer",
+  "price_zone_1": "integer",
+  "price_zone_2": "integer",
+  "price_zone_3": "integer",
+  "price_zone_4": "integer",
+  "price_zone_5": "integer",
+  "product_category_id": "integer",
+  "product_upload_id": "integer",
+  "qty_available": "integer",
+  "qty_sell": "integer",
+  "qualified": "boolean",
+  "rating": "string",
+  "review_count": "integer",
+  "review_total": "integer",
+  "sku": "string",
+  "slug": "string",
+  "status": "string",
+  "taxed": "boolean",
+  "updated_at": "datetime",
+  "updated_by": "string",
+  "verified_at": "datetime",
+  "verified_by": "string",
+  "warranty": "string",
+  "weight": "integer",
+  "wholesales": [{"quantity": "integer", "price": "integer"}],
+  "with_shipping_cost": "boolean"
+}
+
+```
 endpoint ini digunakan untuk merubah data produk.
 
 ### HTTP Request
@@ -543,7 +659,65 @@ curl -X PUT "https://staging.siapi.tokoladang.co.id/seller/products/{id}/status"
         "status" : "string",
       }'
 ```
+> Contoh Json Response :
 
+```json
+{
+  "admin_note": "string",
+  "availability_status": "string",
+  "brand": "string",
+  "catalogue_id": "string",
+  "categories": [{"id": "integer", "name": "string"}],
+  "classification_catalogue": "string",
+  "created_at": "datetime",
+  "created_by": "string",
+  "description": "string",
+  "dimension": {"l": "integer", "w": "integer", "h": "integer"},
+  "discount": "integer",
+  "guaranty": "string",
+  "id": "integer",
+  "image": "string",
+  "images": "array",
+  "is_domestic": "boolean",
+  "is_kemdikbud": "boolean",
+  "is_secondhand": "boolean",
+  "is_umkm": "boolean",
+  "isbn": "string",
+  "kind": "string",
+  "merchant_id": "integer",
+  "merchant_storage_id": "integer",
+  "min_order": "integer",
+  "name": "string",
+  "power": "integer",
+  "price": "integer",
+  "price_zone_1": "integer",
+  "price_zone_2": "integer",
+  "price_zone_3": "integer",
+  "price_zone_4": "integer",
+  "price_zone_5": "integer",
+  "product_category_id": "integer",
+  "product_upload_id": "integer",
+  "qty_available": "integer",
+  "qty_sell": "integer",
+  "qualified": "boolean",
+  "rating": "string",
+  "review_count": "integer",
+  "review_total": "integer",
+  "sku": "string",
+  "slug": "string",
+  "status": "string",
+  "taxed": "boolean",
+  "updated_at": "datetime",
+  "updated_by": "string",
+  "verified_at": "datetime",
+  "verified_by": "string",
+  "warranty": "string",
+  "weight": "integer",
+  "wholesales": [{"quantity": "integer", "price": "integer"}],
+  "with_shipping_cost": "boolean"
+}
+
+```
 endpoint ini digunakan untuk mengubah status produk toko.
 
 ### HTTP Request
@@ -556,3 +730,76 @@ Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
 status | string | true | status produk
 
+## Expor Data Produk
+
+> jenis: seller
+
+```shell
+curl -X GET "https://staging.siapi.tokoladang.co.id/seller/products/document/export?page="
+  -H 'Content-Type: application/json',
+      'Authorization': Bearer {{TOKEN}}
+  -d '{
+        "page" => "integer"
+      }'
+```
+
+> Contoh Json Response :
+
+```json
+"File Excel"
+
+```
+endpoint ini digunakan untuk mendapatkan data jumlah Produk.
+
+### HTTP Request
+
+`POST https://staging.siapi.tokoladang.co.id/seller/products/document/export?page=`
+
+### Query Parameter
+
+Parameter | Default | required | Deskripsi
+--------- | ------- | -------- | -----------
+page | integer | true | setiap halaman max. 500 data
+
+## Impor Data Produk
+
+> jenis: seller
+
+```shell
+curl -X GET "https://staging.siapi.tokoladang.co.id/seller/products/document/import"
+  -H 'Content-Type: application/json',
+      'Authorization': Bearer {{TOKEN}}
+  -d '{
+        "file" => "file",
+        "type" => "string"
+      }'
+```
+
+> Contoh Json Response :
+
+```json
+{
+  "id": "integer",
+  "merchant_id": "integer",
+  "type": "string",
+  "done": "boolean",
+  "note": "string",
+  "uploaded": "string",
+  "downloadable": "string",
+  "created_at": "datetime",
+  "updated_at": "datetime"
+}
+
+```
+endpoint ini digunakan untuk mendapatkan data jumlah Produk.
+
+### HTTP Request
+
+`POST https://staging.siapi.tokoladang.co.id/seller/products/document/import`
+
+### Query Parameter
+
+Parameter | Default | required | Deskripsi
+--------- | ------- | -------- | -----------
+file | file | true | file excel
+type | string | true | tipe
