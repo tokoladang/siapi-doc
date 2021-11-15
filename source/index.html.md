@@ -17,12 +17,14 @@ includes:
   # - admin_sekolah
   # - admin_payment
   # - admin_complain
+  - seller_compare
+  - seller_complain
+  - seller_dashboard
   - seller_merchant
+  - seller_merchant_storage
+  - seller_negotation
   - seller_product
   - seller_order
-  - seller_merchant_storage
-  - seller_complain
-  - seller_negotation
   # - buyer_negotiation
   # - buyer_compares
   # - buyer_cart
