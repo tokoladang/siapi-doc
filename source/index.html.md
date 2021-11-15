@@ -17,8 +17,8 @@ includes:
   # - admin_sekolah
   # - admin_payment
   # - admin_complain
-  - seller_Merchant
-  - seller_Product
+  - seller_merchant
+  - seller_product
   # - seller_Order
   # - seller_Merc_storage
   # - seller_complain
