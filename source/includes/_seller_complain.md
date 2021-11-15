@@ -1,136 +1,145 @@
 # [Seller] Complain
 
-## Get Semua Komplain Penjual
+<aside class="notice">
+Memerlukan Authentikasi sebagai seller.
+</aside>
+
+## Get Komplain Berdasarkan Pesanan
 
 > jenis: seller
 
 ```shell
-curl -X GET "https://staging.siapi.tokoladang.co.id/seller/complains"
+curl -X GET "https://staging.siapi.tokoladang.co.id/seller/complains/{orderId}/details"
 -H 'Content-Type: application/json'
 -d '{}'
 ```
 > Contoh Json Response :
 
 ```json
-[
+{
+  "code": "string",
+  "created_at": "datetime",
+  "created_by": "string",
+  "customer_order_id": "integer",
+  "from": "string",
+  "id": "integer",
+  "merchant_id": "integer",
+  "message": "string",
+  "school": {"id": "string", "name": "string", "details": "string", "funding_sources": "json",…},
+  "school_id": "string",
+  "status": "string",
+  "title": "string",
+  "updated_at": "datetime",
+  "updated_by": "string",
+  "merchant_complain_histories": [
     {
-        "id": "",
-        "merchant_id": "",
-        "customer_id": "",
-        "code": "",
-        "message": "",
-        "status": "",
-        "customer_order_id": "",
-        "school_id": "",
-        "created_by": "",
-        "updated_by": "",
-        "created_at": "",
-        "updated_at": "",
-        "merchant": {...},
-        "customer": {...},
-        "customer_order": {...}
-    },
-    {...}
-]
+      "created_at": "datetime", "created_by": "string", "id": "integer", "merchant_complain_id": "integer", "message": "string", "role": "string",
+      "sender": {"id": "integer", "merchant_id": "string"}, "updated_at": "datetime", "updated_by": "string"
+    }
+  ]
+}
 ```
 
-endpoint ini digunakan untuk mendapatkan data Komplain.
+endpoint ini digunakan untuk mendapatkan data Komplain berdasarkan Pesanan.
 
 ### HTTP Request
 
-`GET https://staging.siapi.tokoladang.co.id/seller/complains`
+`GET https://staging.siapi.tokoladang.co.id/seller/complains/{orderId}/details`
 
-## Get Komplain Detail Penjual
+## Post Penjual Membuat Komplain Baru
 
 > jenis: seller
 
 ```shell
-curl -X GET "https://staging.siapi.tokoladang.co.id/seller/complains/{complain}"
+curl -X POST "https://staging.siapi.tokoladang.co.id/seller/complains/{orderId}"
 -H 'Content-Type: application/json'
--d '{}'
+-d '{
+      "title": "string",
+      "message": "string"
+    }'
 ```
 > Contoh Json Response :
 
 ```json
 {
-    "id":"",
-    "merchant_id":"",
-    "customer_id":"",
-    "code":"",
-    "message":"",
-    "status":"",
-    "customer_order_id":"",
-    "school_id":"",
-    "updated_at":"",
-    "merchant": {...},
-    "customer": {...},
-    "customer_order": {...},
-    "merchant_complain_history": [{...}, {...}]
+    "code": "integer",
+    "message": "string"
 }
 ```
 
-endpoint ini digunakan untuk mendapatkan data detail Komplain.
+endpoint ini digunakan untuk Membuat Komplain Baru.
 
 ### HTTP Request
 
-`GET https://staging.siapi.tokoladang.co.id/seller/complains/{complain}`
-
-## POST penjual tanggapi Komplain
-
-> jenis: seller
-
-```shell
-curl -X POST "https://staging.siapi.tokoladang.co.id/seller/complains/{complain}"
--H 'Content-Type: application/json'
--d '{}'
-```
-> Contoh Json Response :
-
-```json
-{
-    "code": 200,
-    "message": "Berhasil menyimpan data"
-}
-```
-
-endpoint ini digunakan untuk menambah pesan pada komplain.
-
-### HTTP Request
-
-`POST https://staging.siapi.tokoladang.co.id/seller/complains/{complain}`
+`POST https://staging.siapi.tokoladang.co.id/seller/complains/{orderId}`
 
 ### Query Body
 
 Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
-message | null | true | Pesan
+title | string | true | Judul
+message | string | true | Pesan Komplain
 
-## PUT Penjual ubah status komplain
+## Post Penjual Menanggapi Komplain
 
 > jenis: seller
 
 ```shell
-curl -X PUT "https://staging.siapi.tokoladang.co.id/seller/complains/{complain}"
+curl -X POST "https://staging.siapi.tokoladang.co.id/seller/complains/{id}/reply"
 -H 'Content-Type: application/json'
--d '{}'
+-d '{
+      "message": "string"
+    }'
 ```
 > Contoh Json Response :
 
 ```json
 {
-    "code": 200,
-    "message": "Berhasil menyimpan data"
+    "code": "integer",
+    "message": "string"
 }
 ```
 
-endpoint ini digunakan untuk mengubah status komplain.
+endpoint ini digunakan untuk menganggapi Komplain.
 
 ### HTTP Request
 
-`PUT https://staging.siapi.tokoladang.co.id/seller/complains/{complain}`
+`POST https://staging.siapi.tokoladang.co.id/seller/complains/{id}/reply`
 
 ### Query Body
 
 Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
-message | null | true | Pesan
+message | string | true | Pesan
+
+## Post Penjual Menutup komplain
+
+> jenis: seller
+
+```shell
+curl -X POST "https://staging.siapi.tokoladang.co.id/seller/complains/{id}/close"
+-H 'Content-Type: application/json'
+-d '{
+      "message": "string"
+    }'
+```
+> Contoh Json Response :
+
+```json
+{
+    "code": "integer",
+    "message": "string"
+}
+```
+
+endpoint ini digunakan untuk menutup komplain.
+
+### HTTP Request
+
+`POST https://staging.siapi.tokoladang.co.id/seller/complains/{id}/close`
+
+### Query Body
+
+Parameter | Default | required | Deskripsi
+--------- | ------- | -------- | -----------
+message | string | true | Pesan

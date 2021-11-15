@@ -21,7 +21,7 @@ includes:
   - seller_product
   # - seller_Order
   - seller_merchant_storage
-  # - seller_complain
+  - seller_complain
   # - seller_Negotation
   # - buyer_negotiation
   # - buyer_compares
