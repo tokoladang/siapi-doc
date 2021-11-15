@@ -9,7 +9,7 @@ toc_footers:
   - <a href='https://siplah.tokoladang.co.id'>Dokumentasi Oleh Siplah Toko Ladang</a>
 
 includes:
-  # - authentication
+  - authentication
   # - admin_merchant
   # - admin_product_category
   # - admin_product
@@ -22,7 +22,7 @@ includes:
   # - seller_Order
   - seller_merchant_storage
   - seller_complain
-  # - seller_Negotation
+  - seller_negotation
   # - buyer_negotiation
   # - buyer_compares
   # - buyer_cart
