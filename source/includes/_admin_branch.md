@@ -97,7 +97,7 @@ curl -X POST "https://staging.siapi.tokoladang.co.id/admin/branches/{id}"
 }
 ```
 
-endpoint ini digunakan untuk menambahkan data cabang baru.
+endpoint ini digunakan untuk merubah data cabang.
 
 ### HTTP Request
 
