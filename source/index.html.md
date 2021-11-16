@@ -13,10 +13,14 @@ includes:
   - admin_admins
   - admin_branch
   - admin_complain
+  - admin_dashboard
+  # - admin_inspector
   - admin_merchant
+  - admin_order
   - admin_payment
   - admin_product
   - admin_product_category
+  # - admin_promo
   - admin_sekolah
   - seller_compare
   - seller_complain
