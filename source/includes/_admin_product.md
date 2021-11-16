@@ -5,7 +5,7 @@
 > jenis: admin
 
 ```shell
-curl -X GET "https://staging.siapi.tokoladang.co.id/admin/products?q=&status="
+curl -X GET "https://staging.siapi.tokoladang.co.id/admin/products?q=&status=&page="
 -H 'Content-Type: application/json'
 -d '{}'
 ```
@@ -15,61 +15,59 @@ Contoh Json Response :
 ```json
 [
   {
-        "id": 1,
-        "sku": "SKU5FEAABAA5D151",
-        "upc": null,
-        "ean": null,
-        "name": "Culpa totam laudantium laudantium sit.",
-        "description": "Occaecati eaque aperiam laudantium accusamus. Ut a quia illo sequi culpa. Est expedita vel placeat cupiditate ut. Sunt ducimus nihil voluptatem minima ullam nihil ut.",
-        "product_category_id": 1,
-        "brand_id": null,
-        "merchant_id": 66,
-        "price": 41640902,
-        "qty_available": 37,
-        "qty_sell": 60,
-        "status": "unavailable",
-        "slug": "culpa-totam-laudantium-laudantium-sit",
-        "weight": 914,
-        "is_secondhand": true,
-        "discount": 1,
-        "taxed": false,
-        "price_zone_1": 41641902,
-        "price_zone_2": 41642902,
-        "price_zone_3": 41643902,
-        "price_zone_4": 41644902,
-        "price_zone_5": 41645902,
-        "wholesales": [
-            {
-                "quantity": 10,
-                "price": 41639902
-            },
-            {
-                "quantity": 20,
-                "price": 41638902
-            }
-        ],
-        "isbn": "9793846863434",
-        "rating": 5,
-        "review_total": 500,
-        "review_count": 100,
-        "with_shipping_cost": true,
-        "image": "https://lorempixel.com/640/480/?51590",
-        "images": [
-            "https://lorempixel.com/640/480/?51590",
-            "https://lorempixel.com/640/480/?58979"
-        ],
-        "kind": "Buku",
-        "merchant_storage_id": null,
-        "is_goods": true,
-        "is_umkm": true,
-        "is_domestic": true,
-        "qualified": true,
-        "created_by": null,
-        "updated_by": null,
-        "created_at": "2020-12-29T04:08:10.000000Z",
-        "updated_at": "2020-12-29T04:08:10.000000Z"
-    },
-    {...}
+    "admin_note": "string",
+    "availability_status": "string",
+    "brand": "string",
+    "catalogue_id": "string",
+    "categories": [{"id": "integer", "name": "string"}],
+    "classification_catalogue": "string",
+    "created_at": "datetime",
+    "created_by": "string",
+    "description": "string",
+    "dimension": {"l": "integer", "w": "integer", "h": "integer"},
+    "discount": "integer",
+    "guaranty": "string",
+    "id": "integer",
+    "image": "string",
+    "images": "array",
+    "is_domestic": "boolean",
+    "is_kemdikbud": "boolean",
+    "is_secondhand": "boolean",
+    "is_umkm": "boolean",
+    "isbn": "string",
+    "kind": "string",
+    "merchant_id": "integer",
+    "merchant_storage_id": "integer",
+    "min_order": "integer",
+    "name": "string",
+    "power": "integer",
+    "price": "integer",
+    "price_zone_1": "integer",
+    "price_zone_2": "integer",
+    "price_zone_3": "integer",
+    "price_zone_4": "integer",
+    "price_zone_5": "integer",
+    "product_category_id": "integer",
+    "product_upload_id": "integer",
+    "qty_available": "integer",
+    "qty_sell": "integer",
+    "qualified": "boolean",
+    "rating": "string",
+    "review_count": "integer",
+    "review_total": "integer",
+    "sku": "string",
+    "slug": "string",
+    "status": "string",
+    "taxed": "boolean",
+    "updated_at": "datetime",
+    "updated_by": "string",
+    "verified_at": "datetime",
+    "verified_by": "string",
+    "warranty": "string",
+    "weight": "integer",
+    "wholesales": [{"quantity": "integer", "price": "integer"}],
+    "with_shipping_cost": "boolean"
+  }
 ]
 ```
 
@@ -79,7 +77,15 @@ endpoint ini digunakan untuk mendapatkan data produk.
 
 `GET https://staging.siapi.tokoladang.co.id/admin/products?q=&status=`
 
-## Get salah satu Produk
+### Query Body
+
+Parameter | Default | required | Deskripsi
+--------- | ------- | -------- | -----------
+q | string | false | Kata Kunci Pencarian
+status | string | false | Status
+page | integer | false | Halaman
+
+## Get Detail Produk
 
 > jenis: admin
 
@@ -93,97 +99,170 @@ Contoh Json Response :
 
 ```json
 {
-    "id": 1,
-    "sku": "SKU5FEAABAA5D151",
-    "upc": null,
-    "ean": null,
-    "name": "Culpa totam laudantium laudantium sit.",
-    "description": "Occaecati eaque aperiam laudantium accusamus. Ut a quia illo sequi culpa. Est expedita vel placeat cupiditate ut. Sunt ducimus nihil voluptatem minima ullam nihil ut.",
-    "product_category_id": 1,
-    "brand_id": null,
-    "merchant_id": 66,
-    "price": 41640902,
-    "qty_available": 37,
-    "qty_sell": 60,
-    "status": "unavailable",
-    "slug": "culpa-totam-laudantium-laudantium-sit",
-    "weight": 914,
-    "is_secondhand": true,
-    "discount": 1,
-    "taxed": false,
-    "price_zone_1": 41641902,
-    "price_zone_2": 41642902,
-    "price_zone_3": 41643902,
-    "price_zone_4": 41644902,
-    "price_zone_5": 41645902,
-    "wholesales": [
-        {
-            "quantity": 10,
-            "price": 41639902
-        },
-        {
-            "quantity": 20,
-            "price": 41638902
-        }
-    ],
-    "isbn": "9793846863434",
-    "rating": 5,
-    "review_total": 500,
-    "review_count": 100,
-    "with_shipping_cost": true,
-    "image": "https://lorempixel.com/640/480/?51590",
-    "images": [
-        "https://lorempixel.com/640/480/?51590",
-        "https://lorempixel.com/640/480/?58979"
-    ],
-    "kind": "Buku",
-    "merchant_storage_id": null,
-    "is_goods": true,
-    "is_umkm": true,
-    "is_domestic": true,
-    "qualified": true,
-    "created_by": null,
-    "updated_by": null,
-    "created_at": "2020-12-29T04:08:10.000000Z",
-    "updated_at": "2020-12-29T04:08:10.000000Z"
+  "admin_note": "string",
+  "availability_status": "string",
+  "brand": "string",
+  "catalogue_id": "string",
+  "categories": [{"id": "integer", "name": "string"}],
+  "classification_catalogue": "string",
+  "created_at": "datetime",
+  "created_by": "string",
+  "description": "string",
+  "dimension": {"l": "integer", "w": "integer", "h": "integer"},
+  "discount": "integer",
+  "guaranty": "string",
+  "id": "integer",
+  "image": "string",
+  "images": "array",
+  "is_domestic": "boolean",
+  "is_kemdikbud": "boolean",
+  "is_secondhand": "boolean",
+  "is_umkm": "boolean",
+  "isbn": "string",
+  "kind": "string",
+  "merchant_id": "integer",
+  "merchant_storage_id": "integer",
+  "min_order": "integer",
+  "name": "string",
+  "power": "integer",
+  "price": "integer",
+  "price_zone_1": "integer",
+  "price_zone_2": "integer",
+  "price_zone_3": "integer",
+  "price_zone_4": "integer",
+  "price_zone_5": "integer",
+  "product_category_id": "integer",
+  "product_upload_id": "integer",
+  "qty_available": "integer",
+  "qty_sell": "integer",
+  "qualified": "boolean",
+  "rating": "string",
+  "review_count": "integer",
+  "review_total": "integer",
+  "sku": "string",
+  "slug": "string",
+  "status": "string",
+  "taxed": "boolean",
+  "updated_at": "datetime",
+  "updated_by": "string",
+  "verified_at": "datetime",
+  "verified_by": "string",
+  "warranty": "string",
+  "weight": "integer",
+  "wholesales": [{"quantity": "integer", "price": "integer"}],
+  "with_shipping_cost": "boolean"
 }
 ```
 
-endpoint ini digunakan untuk mendapatkan data produk berdasarkan id.
+endpoint ini digunakan untuk mendapatkan data detail produk.
 
 ### HTTP Request
 
 `GET https://staging.siapi.tokoladang.co.id/admin/products/{id}`
 
-## Update status produk
+## Post Verifikasi Produk
 
 > jenis: admin
 
 ```shell
-curl -X POST "https://staging.siapi.tokoladang.co.id/admin/products/{id}/status"
+curl -X POST "https://staging.siapi.tokoladang.co.id/admin/products/verify"
 -H 'Content-Type: application/json'
 -d '{
-    "status": "unavailable"
-}'
+      "id": "integer",
+      "verified": "boolean",
+      "status": "string"
+    }'
 ```
 
 Contoh Json Response :
 
 ```json
 {
-    "code": 200,
-    "message": "Status produk berhasil diubah."
+    "code": "integer",
+    "message": "string"
 }
 ```
 
-endpoint ini digunakan untuk mengubah status produk.
+endpoint ini digunakan untuk verifikasi produk.
 
 ### HTTP Request
 
-`POST https://staging.siapi.tokoladang.co.id/admin/products/{id}/status`
+`POST https://staging.siapi.tokoladang.co.id/admin/products/verify`
 
 ### Query Body
 
 Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
-status | null | true | Status produk
+id | integer | true | Id produk
+verified | boolean | true | Jika false produk bermasalah
+note | string | false | Catatan
+
+
+## Post Blokir Produk
+
+> jenis: admin
+
+```shell
+curl -X POST "https://staging.siapi.tokoladang.co.id/admin/products/suspend"
+-H 'Content-Type: application/json'
+-d '{
+      "id": "integer",
+      "note": "string"
+    }'
+```
+
+Contoh Json Response :
+
+```json
+{
+    "code": "integer",
+    "message": "string"
+}
+```
+
+endpoint ini digunakan untuk memblokir produk.
+
+### HTTP Request
+
+`POST https://staging.siapi.tokoladang.co.id/admin/products/suspend`
+
+### Query Body
+
+Parameter | Default | required | Deskripsi
+--------- | ------- | -------- | -----------
+id | integer | true | Id produk
+note | string | false | Catatan
+
+
+## Post Aktifkan Produk
+
+> jenis: admin
+
+```shell
+curl -X POST "https://staging.siapi.tokoladang.co.id/admin/products/unsuspend"
+-H 'Content-Type: application/json'
+-d '{
+      "id": "integer"
+    }'
+```
+
+Contoh Json Response :
+
+```json
+{
+    "code": "integer",
+    "message": "string"
+}
+```
+
+endpoint ini digunakan untuk aktifkan kembali produk.
+
+### HTTP Request
+
+`POST https://staging.siapi.tokoladang.co.id/admin/products/unsuspend`
+
+### Query Body
+
+Parameter | Default | required | Deskripsi
+--------- | ------- | -------- | -----------
+id | integer | true | Id produk
