@@ -14,7 +14,7 @@ includes:
   - admin_branch
   - admin_complain
   # - admin_dashboard
-  # - admin_inspector
+  - admin_inspector
   - admin_merchant
   - admin_order
   - admin_payment
