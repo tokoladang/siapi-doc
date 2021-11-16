@@ -14,7 +14,7 @@ includes:
   - admin_product_category
   - admin_product
   - admin_admins
-  # - admin_sekolah
+  - admin_sekolah
   # - admin_payment
   # - admin_complain
   - seller_compare
