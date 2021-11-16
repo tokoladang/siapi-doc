@@ -16,7 +16,7 @@ includes:
   - admin_admins
   - admin_sekolah
   # - admin_payment
-  # - admin_complain
+  - admin_complain
   - seller_compare
   - seller_complain
   - seller_dashboard
