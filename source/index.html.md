@@ -31,7 +31,7 @@ includes:
   - seller_product
   - seller_order
   # - buyer_negotiation
-  # - buyer_compares
+  - buyer_compares
   # - buyer_cart
   # - buyer_order
   # - buyer_complain
