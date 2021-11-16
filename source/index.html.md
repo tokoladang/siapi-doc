@@ -10,13 +10,14 @@ toc_footers:
 
 includes:
   - authentication
-  - admin_merchant
-  - admin_product_category
-  - admin_product
   - admin_admins
-  - admin_sekolah
-  - admin_payment
+  - admin_branch
   - admin_complain
+  - admin_merchant
+  - admin_payment
+  - admin_product
+  - admin_product_category
+  - admin_sekolah
   - seller_compare
   - seller_complain
   - seller_dashboard

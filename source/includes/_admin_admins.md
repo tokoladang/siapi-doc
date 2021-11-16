@@ -1,4 +1,4 @@
-# [Admin] Admins
+# [Admin] Pengguna
 
 ## Get Daftar Pengguna Admin
 
