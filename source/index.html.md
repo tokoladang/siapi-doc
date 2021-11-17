@@ -34,7 +34,7 @@ includes:
   - buyer_compares
   - buyer_complain
   - buyer_merchant_following
-  # - buyer_negotiation
+  - buyer_negotiation
   - buyer_order
   # - buyer_product
   - errors
