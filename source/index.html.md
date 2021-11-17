@@ -10,6 +10,9 @@ toc_footers:
 
 includes:
   - authentication
+  - public_all
+  - public_merchant
+  - public_product
   - admin_admins
   - admin_branch
   - admin_complain
