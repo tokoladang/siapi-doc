@@ -36,7 +36,7 @@ includes:
   - buyer_merchant_following
   - buyer_negotiation
   - buyer_order
-  # - buyer_product
+  - buyer_product
   - errors
 
 search: true
