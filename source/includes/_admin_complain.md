@@ -21,7 +21,7 @@ curl -X GET "https://staging.siapi.tokoladang.co.id/admin/complains?q=&status=&p
     "customer_order_id": "integer",
     "from": "string",
     "id": "integer",
-    "merchant": {"id": "integer",, "name": "string"},
+    "merchant": {"id": "integer", "name": "string"},
     "merchant_id": "integer",
     "message": "string",
     "school": {"id": "string", "name": "string"},

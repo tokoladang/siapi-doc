@@ -30,12 +30,14 @@ includes:
   - seller_negotation
   - seller_product
   - seller_order
-  # - buyer_negotiation
-  - buyer_compares
   - buyer_cart
+  - buyer_compares
+  - buyer_complain
+  - buyer_favorite
+  # - buyer_negotiation
   - buyer_order
-  # - buyer_complain
-  # - errors
+  # - buyer_product
+  - errors
 
 search: true
 
