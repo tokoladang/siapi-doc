@@ -448,7 +448,7 @@ curl -X GET "https://staging.siapi.tokoladang.co.id/seller/orders/{id}/log"
   "event": "string",
   "id": "integer",
   "log_name": "string",
-  "properties": {"user": {"id": 14, "email": "string", "name": "string"},…},
+  "properties": {"user": {"id": "integer", "email": "string", "name": "string"},…},
   "subject_id": "181",
   "subject_type": "App\\Models\\CustomerOrder",
   "updated_at": "datetime"

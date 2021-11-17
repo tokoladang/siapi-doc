@@ -1,303 +1,424 @@
-# [Buyer] Pemesanan
+# [Buyer] Transaksi
 
-## Pemesanan barang
+<aside class="notice">
+  membutuhkan Autentikasi/Token <strong>buyer</strong>.
+</aside>
+
+## Get Data Transaksi
 
 > jenis: buyer
 
 ```shell
-curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/carts/checkout"
+curl -X GET "https://staging.siapi.tokoladang.co.id/buyer/orders?q=&status=&page="
   -H 'Authorization: Bearer {{TOKEN}}'
   -H 'Content-Type: application/json'
-  -d '{"couriers": [
-        {
-            "merchant_id": 92,
-            "courier": {
-                "name": "JNE",
-                "etd": "2-3",
-                "cost": "5000"
-            }
-        }
-    ],
-    "funding_sources": [
-        {
-            "merchant_id": 92,
-            "funding_source": {
-                "kode_sumber_dana": "BOSE00110",
-                "sumber_dana": "BOS Reguler"
-            }
-        }
-    ],
-    "notes": [
-        {
-            "merchant_id": 92,
-            "note": "Mohon Pengemasan yang Baik"
-        }
-    ]
-}'
+  -d '{}'
 ```
+> Contoh Json Response :
 
-endpoint ini digunakan untuk melakukan pemesanan barang barang.
+```json
+[
+  {
+    "bank_destination_id": "integer",
+    "bank_mutation_in_id": "integer",
+    "bank_mutation_out_id": "integer",
+    "bill_status": "unpaid",
+    "cant_apply": "boolean",
+    "compare_id": "integer",
+    "courier_detail": {"name": "string", "etd": "string", "cost": "integer", "address": "string"},
+    "courier_receipt": "string",
+    "courier_service_type": "string",
+    "created_at": "datetime",
+    "customer_order_items": [
+      {
+        "id": "integer", "product_id": "integer", "quantity": 1, "price": "integer", "total_price": "integer", "bast": "json", 
+        "customer_order_id": "integer", "item_no": "integer", "negotiation_id": "integer",  "product_image": "string",
+        "product_name": "string", "tax_price": "integer", "shipping": {
+          "quantity": "integer", "weight": "integer", "length": "integer", "width": "integer", "height": "integer"
+        }
+      }
+    ],
+    "details": "json",
+    "funding_source": "string",
+    "funding_source_ws": {"id": "string", "code": "string", "name": "string", "year": "integer"},
+    "handling_fee": "integer",
+    "handling_fee_details": "json",
+    "id": "integer",
+    "insurance_cost": "integer",
+    "invoice_file": "string",
+    "merchant": {"id": "integer", "name": "string", "image": "string"},
+    "merchant_id": "integer",
+    "note": "string",
+    "order_date": "datetime",
+    "order_no": "string",
+    "over_time_limit": "integer",
+    "payment_account_no": "string",
+    "payment_bank_origin": "string",
+    "payment_date": "datetime",
+    "payment_file": "string",
+    "payment_forwarded_date": "datetime",
+    "payment_method_id": "integer",
+    "payment_transferred": "integer",
+    "payments": "json",
+    "purchase_status": "string",
+    "reason_cancellation": "string",
+    "school_id": "string",
+    "shipping_cost": "integer",
+    "status_updated_at": "datetime",
+    "tax_payer": "string",
+    "tax_price": "integer",
+    "time_limit": "integer",
+    "total_price": "integer",
+    "total_qty": "integer",
+    "total_weight": "integer",
+    "updated_at": "datetime"
+  }
+]
+```
+endpoint ini digunakan untuk mendapatkan data transaksi.
 
-`POST https://staging.siapi.tokoladang.co.id/buyer/carts/checkout`
+### HTTP Request
 
-### Query Body
+`POST https://staging.siapi.tokoladang.co.id/buyer/orders?q=&status=&page=`
 
-| Parameter      | Default | required | Deskripsi              |
-| -------------- | ------- | -------- | ---------------------- |
-| merchant_id    |         | true     | ID Toko                |
-| courier        | null    | true     | nama kurir             |
-| funding_source |         | true     | sumber dana            |
-| note           | null    | true     | catatan kepada penjual |
+### Query Parameter
 
-## Menerima tawaran batas waktu toko
+Parameter | Default | required | Deskripsi
+--------- | ------- | -------- | -----------
+q | string | false | Kata kunci
+status | string | false | Status
+page | integer | false | Halaman
+
+## Get Detail Data Transaksi
 
 > jenis: buyer
 
 ```shell
-curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/orders/75/process"
+curl -X GET "https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/detail"
+  -H 'Authorization: Bearer {{TOKEN}}'
+  -H 'Content-Type: application/json'
+  -d '{}'
+```
+> Contoh Json Response :
+
+```json
+{
+  "bank_destination_id": "integer",
+  "bank_mutation_in_id": "integer",
+  "bank_mutation_out_id": "integer",
+  "bill_status": "unpaid",
+  "cant_apply": "boolean",
+  "compare_id": "integer",
+  "courier_detail": {"name": "string", "etd": "string", "cost": "integer", "address": "string"},
+  "courier_receipt": "string",
+  "courier_service_type": "string",
+  "created_at": "datetime",
+  "customer_order_items": [
+    {
+      "id": "integer", "product_id": "integer", "quantity": 1, "price": "integer", "total_price": "integer", "bast": "json", 
+      "customer_order_id": "integer", "item_no": "integer", "negotiation_id": "integer",  "product_image": "string",
+      "product_name": "string", "tax_price": "integer", "shipping": {
+        "quantity": "integer", "weight": "integer", "length": "integer", "width": "integer", "height": "integer"
+      }
+    }
+  ],
+  "details": "json",
+  "funding_source": "string",
+  "funding_source_ws": {"id": "string", "code": "string", "name": "string", "year": "integer"},
+  "handling_fee": "integer",
+  "handling_fee_details": "json",
+  "id": "integer",
+  "insurance_cost": "integer",
+  "invoice_file": "string",
+  "merchant": {"id": "integer", "name": "string", "image": "string"},
+  "merchant_id": "integer",
+  "note": "string",
+  "order_date": "datetime",
+  "order_no": "string",
+  "over_time_limit": "integer",
+  "payment_account_no": "string",
+  "payment_bank_origin": "string",
+  "payment_date": "datetime",
+  "payment_file": "string",
+  "payment_forwarded_date": "datetime",
+  "payment_method_id": "integer",
+  "payment_transferred": "integer",
+  "payments": "json",
+  "purchase_status": "string",
+  "reason_cancellation": "string",
+  "school_id": "string",
+  "shipping_cost": "integer",
+  "status_updated_at": "datetime",
+  "tax_payer": "string",
+  "tax_price": "integer",
+  "time_limit": "integer",
+  "total_price": "integer",
+  "total_qty": "integer",
+  "total_weight": "integer",
+  "updated_at": "datetime"
+}
+```
+endpoint ini digunakan untuk mendapatkan detail transaksi.
+
+### HTTP Request
+
+`POST https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/detail`
+
+## Get Riwayat Data Transaksi
+
+> jenis: buyer
+
+```shell
+curl -X GET "https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/activities"
+  -H 'Authorization: Bearer {{TOKEN}}'
+  -H 'Content-Type: application/json'
+  -d '{}'
+```
+> Contoh Json Response :
+
+```json
+[
+  {
+    "causer_id": "string",
+    "causer_type": "string",
+    "created_at": "datetime",
+    "description": "string",
+    "event": "string",
+    "id": "integer",
+    "log_name": "string",
+    "properties": {"user": {"id": "integer", "email": "string", "name": "string"},…},
+    "subject_id": "181",
+    "subject_type": "App\\Models\\CustomerOrder",
+    "updated_at": "datetime"
+  }
+]
+```
+endpoint ini digunakan untuk mendapatkan riwayat detail transaksi.
+
+### HTTP Request
+
+`POST https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/activities`
+
+## Post Proses Transaksi
+
+> jenis: buyer
+
+```shell
+curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/process"
   -H 'Authorization: Bearer {{TOKEN}}'
   -H 'Content-Type: application/json'
   -d '{
-    "accept": "1",
+        "status": "string"
+      }'
+```
+
+> Contoh Json Response:
+
+```json
+{
+   "code": "integer",
+   "message": "string"
+}
+```
+
+endpoint ini digunakan untuk memproses transaksi.
+
+### HTTP Request
+
+`POST https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/process`
+
+### Query Body
+
+Parameter  | Default | required | Deskripsi    
+---------- | ------- | -------- | -------------
+status | string | true | Status transaksi
+
+## Post Pembatalan Transaksi
+
+> jenis: buyer
+
+```shell
+curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/canceling"
+  -H 'Authorization: Bearer {{TOKEN}}'
+  -H 'Content-Type: application/json'
+  -d '{}'
+```
+
+> Contoh Json Response:
+
+```json
+{
+   "code": "integer",
+   "message": "string"
+}
+```
+
+endpoint ini digunakan untuk membatalkan transaksi.
+
+### HTTP Request
+
+`POST https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/canceling`
+
+## Post Perubahan Transaksi
+
+> jenis: buyer
+
+```shell
+curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/updating"
+  -H 'Authorization: Bearer {{TOKEN}}'
+  -H 'Content-Type: application/json'
+  -d '{
+        "items": [
+          {"id": "integer", "qty": "integer"}
+        ]
+      }'
+```
+
+> Contoh Json Response:
+
+```json
+{
+   "code": "integer",
+   "message": "string"
+}
+```
+
+endpoint ini digunakan untuk pengajuan perubahan transaksi.
+
+### HTTP Request
+
+`POST https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/updating`
+
+### Query Body
+
+Parameter  | Default | required | Deskripsi    
+---------- | ------- | -------- | -------------
+items.*.id | integer | true | Id Produk
+items.*.qty | integer | true | Jumlah
+
+## Post Setuju Penawaran Penjual
+
+> jenis: buyer
+
+```shell
+curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/orders/{{id}}/process-merchant-offer"
+  -H 'Authorization: Bearer {{TOKEN}}'
+  -H 'Content-Type: application/json'
+  -d '{
+    "accept": "boolean",
 }'
 ```
 
-endpoint ini digunakan untuk menerima tawaran batas waktu toko.
+> Contoh Json Response:
 
-`POST https://staging.siapi.tokoladang.co.id/buyer/orders/{$order->id}/process`
+```json
+{
+   "code": "integer",
+   "message": "string"
+}
+```
+
+endpoint ini digunakan untuk menerima tawaran batas waktu yang di ajukan penjual.
+
+`POST https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/process-merchant-offer`
 
 ### Query Body
 
 | Parameter | Default | required | Deskripsi          |
 | --------- | ------- | -------- | ------------------ |
-| accept    |         | true     | boolean `0 atau 1` |
+| accept    | boolean | true     | true / false
 
-## Membatalkan pesanan
+## Get Lacak Transaksi
 
 > jenis: buyer
 
 ```shell
-curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/orders/75/cancel"
+curl -X GET "https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/tracking"
   -H 'Authorization: Bearer {{TOKEN}}'
   -H 'Content-Type: application/json'
   -d '{}'
 ```
 
-endpoint ini digunakan untuk membatalkan pesanan.
+> Contoh Json Response:
 
-`POST https://staging.siapi.tokoladang.co.id/buyer/orders/{$order->id}/cancel`
+```json
+{
+  "cn_no": "string",
+  "location": "string",
+  "process_latitude": "string",
+  "process_longitude": "string",
+  "process_maps_location": "string",
+  "process_photo": "string",
+  "process_received_by": "string",
+  "process_received_relation": "string",
+  "process_signature": "string",
+  "status": "string",
+  "status_stage": "string",
+  "time": "datetime"
+}
+```
 
-## Menerima pesanan
+endpoint ini digunakan untuk melacak transaksi.
+
+### HTTP Request
+
+`GET https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/tracking`
+
+## Post Terima pesanan
 
 > jenis: buyer
 
 ```shell
-curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/orders/75/receive"
+curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/receive"
   -H 'Authorization: Bearer {{TOKEN}}'
   -H 'Content-Type: application/json'
   -d '{}'
 ```
 
-endpoint ini digunakan untuk membatalkan pesanan.
+> Contoh Json Response:
 
-`POST https://staging.siapi.tokoladang.co.id/buyer/orders/{$order->id}/receive`
+```json
+{
+   "code": "integer",
+   "message": "string"
+}
+```
 
-## Mengatur BAST
+endpoint ini digunakan untuk menerima pesanan.
+
+`POST https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/receive`
+
+## Post Atur BAST
 
 > jenis: buyer
 
 ```shell
-curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/orders/75/bast"
+curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/bast"
   -H 'Authorization: Bearer {{TOKEN}}'
   -H 'Content-Type: application/json'
   -d '{
-    "bast": {
-        "documentDate": "2021-01-04 10:44:08",
-        "signName": "Nama penerima BAST",
-        "signPosition": "Jabatan Penerima BAST",
-        "signId": "NIP/NIPY Penerima BAST",
-        "signPhone": "08123459789"
-    },
-    "bastItems": [
-        {
-            "id": "75",
-            "quantity": "9"
-        }
-    ]
-}'
+        "bast": {
+            "document_date": "date",
+            "sign_name": "string",
+            "sign_position": "string",
+            "sign_id": "string",
+            "sign_phone": "string",
+            "late_charge": "integer",
+            "late_charge_note": "string",
+            "images"; []
+        },
+        "bastItems": [
+          {"id": "integer", "quantity": "integer"}
+        ]
+      }'
 ```
 
-> response example
+> Contoh Json Response:
 
-```shell
+```json
 {
-    "id": 75,
-    "order_no": "5FF02A4940C58",
-    "order_date": "2021-01-04T03:44:08.000000Z",
-    "customer_id": null,
-    "address": null,
-    "insured": null,
-    "insurance_cost": null,
-    "shipping_cost": 40000,
-    "payment_method_id": null,
-    "payment_date": null,
-    "total_weight": 40000,
-    "total_qty": 5,
-    "total_price": 54450,
-    "invoice_no": null,
-    "created_by": null,
-    "updated_by": null,
-    "merchant_id": 92,
-    "note": "Mohon Pengemasan yang Baik",
-    "customer_address_id": null,
-    "courier_service_type": null,
-    "bill_status": "unpaid",
-    "purchase_status": "received",
-    "message_status": null,
-    "time_limit": 10,
-    "status_updated_at": "2021-01-04T05:08:53.000000Z",
-    "reason_cancellation": null,
-    "courier_receipt": "RESINO987631452",
-    "invoice_file": null,
-    "payment_bank_origin": null,
-    "payment_account_no": null,
-    "payment_file": null,
-    "payment_forwarded_date": null,
-    "tax_price": 5445,
-    "funding_source": "BOSE00110",
-    "bank_destination_id": null,
-    "compare_id": null,
-    "school_id": "85491D19-0BA8-4946-90E6-2R0R8DFB985R",
-    "courier_detail": {
-        "name": "JNE",
-        "etd": "2-3",
-        "cost": "5000"
-    },
-    "payment_transferred": null,
-    "handling_fee": null,
-    "handling_fee_details": null,
-    "details": {
-        "documentDate": "2021-01-04 10:44:08",
-        "signName": "Nama penerima BAST",
-        "signPosition": "Jabatan Penerima BAST",
-        "signId": "NIP/NIPY Penerima BAST",
-        "signPhone": "08123459789",
-        "totalQty": 5,
-        "totalPrice": 54450,
-        "taxPrice": 5445
-    },
-    "bank_mutation_in_id": null,
-    "bank_mutation_out_id": null,
-    "payments": null,
-    "funding_source_ws": {
-        "kode_sumber_dana": "BOSE00110",
-        "sumber_dana": "BOS Reguler"
-    },
-    "created_at": "2021-01-02T08:09:45.000000Z",
-    "updated_at": "2021-01-04T05:54:38.000000Z",
-    "customer_order_items": [
-        {
-            "id": 281,
-            "product_id": 307,
-            "item_no": null,
-            "product_name": "Arwana Biru",
-            "product_image": "merchant/17/profile/E6cMULPCZMcWcMtNNiP8MmqeCqdSIbAWYKMRMTYT.png",
-            "quantity": 5,
-            "price": 10890,
-            "total_price": 54450,
-            "customer_order_id": 75,
-            "negotiation_id": null,
-            "tax_price": 5445,
-            "bast": null,
-            "created_by": null,
-            "updated_by": null,
-            "created_at": "2021-01-02T08:09:45.000000Z",
-            "updated_at": "2021-01-02T08:09:45.000000Z"
-        }
-    ],
-    "school": {
-        "id": "85491D19-0BA8-4946-90E6-2R0R8DFB985R",
-        "name": "SEKOLAH CONTOH",
-        "details": {
-            "sekolah_id": "85491D19-0BA8-4946-90E6-2R0R8DFB985R",
-            "nama_sekolah": "SEKOLAH CONTOH",
-            "npsn": "12345678",
-            "status": "Negeri",
-            "bentuk_pendidikan": "SMK",
-            "kd_prov": "030000  ",
-            "prov": "Prov. Jawa Tengah",
-            "kd_kab": "032200  ",
-            "kab": "Kab. Semarang",
-            "kd_kec": "032207  ",
-            "kec": "Kec. Banyubiru",
-            "alamat": "JL. RAYA SEKOLAHAN",
-            "desa": "Kemambang",
-            "kode_pos": "61373",
-            "nomor_telepon": "0321491752",
-            "email": "sekolah@gmail.com",
-            "nama_bendahara_bos": "Bendahara Sekolah",
-            "nip_bendahara_bos": "198209242070011457",
-            "nama_kepsek": "Kepala Sekolah",
-            "hp_kepsek": "08563397781",
-            "nip_kepsek": "196503281990031456",
-            "email_kepsek": "kepsek@gmail.com",
-            "npwp": "005781570602000",
-            "lintang": "-7.583800000000",
-            "bujur": "112.422900000000",
-            "zona": "1"
-        },
-        "funding_sources": null,
-        "created_at": "2020-12-29T02:59:50.000000Z",
-        "updated_at": "2020-12-29T02:59:50.000000Z"
-    },
-    "merchant": {
-        "id": 92,
-        "name": "O'Conner-Hackett",
-        "address": "647 Hickle Ville Apt. 615\nLake Alecberg, DE 12393",
-        "province_id": "220000",
-        "city_id": "220200",
-        "district_id": "220205",
-        "village_id": "220205AI",
-        "postal_code": "25626-2367",
-        "longitude": null,
-        "latitude": null,
-        "slogan": "Sint pariatur voluptas ratione quaerat.",
-        "note": "Est voluptatem repellendus vel laborum pariatur.",
-        "type": 1,
-        "suspend": false,
-        "enabled": true,
-        "slug": "oconner-hackett",
-        "image": "https://lorempixel.com/200/200/?71869",
-        "deleted_at": null,
-        "verified_at": null,
-        "rating": 5,
-        "review_total": 15,
-        "review_count": 3,
-        "couriers": "jne:jnt",
-        "is_umkm": 0,
-        "qualified": 1,
-        "business_category": "kecil",
-        "email": "sven.borer@kulas.org",
-        "phone": "08151358355",
-        "seller_type": "individual",
-        "main_category": null,
-        "is_pkp": 0,
-        "documents": null,
-        "bank_account": {
-            "name": "O'Conner-Hackett",
-            "no": 1876478800,
-            "bank": "BNI",
-            "branch": "Gaylordport"
-        },
-        "sosmed": null,
-        "signature": null,
-        "email_verified_at": null,
-        "created_by": null,
-        "updated_by": null,
-        "created_at": "2020-12-29T02:03:30.000000Z",
-        "updated_at": "2020-12-29T02:03:30.000000Z",
-        "user_id": null
-    }
+   "code": "integer",
+   "message": "string"
 }
 ```
 
@@ -307,79 +428,359 @@ endpoint ini digunakan untuk mengatur BAST.
 
 ### Query Body
 
-| Parameter      | Default | required | Deskripsi                   |
-| -------------- | ------- | -------- | --------------------------- |
-| documentDate   |         | true     | Tanggal Dokumen             |
-| signName       |         | true     | Nama Penerima BAST          |
-| signPosition   |         | true     | Jabatan Penerima BAST       |
-| signId         |         | true     | NIP/NIPY Penerima BAST      |
-| signPhone      |         | true     | Telepon Penerima BAST       |
-| lateCharge     |         | false    | Denda Keterlambatan         |
-| lateChargeNote |         | false    | Catatan Denda Keterlambatan |
-| id             |         | true     | id bast items               |
-| quantity       |         | true     | jumlah bast items           |
+Parameter      | Default | required | Deskripsi                   
+-------------- | ------- | -------- | --------------------------- 
+bast.*.document_date | string | true | Tanggal Dokumen             
+bast.*.sign_name | string | true | Nama Penerima BAST          
+bast.*.sign_position | string | true | Jabatan Penerima BAST       
+bast.*.sign_id | string | false | NIP/NIPY Penerima BAST      
+bast.*.sign_phone | string | false | Telepon Penerima BAST       
+bast.*.late_charge | integer | false | Denda Keterlambatan         
+bast.*.late_charge_note | string | false | Catatan Denda Keterlambatan 
+bast.*.images | array | false | Bukti gambar 
+bast_items.*.id | integer | true | Id item           
+bast_items.*.quantity | integer | true | Jumlah item           
 
-## Mengatur pembayaran transfer bank
+## Post Pembayaran Manual / Transfer
 
 > jenis: buyer
 
 ```shell
-curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/orders/75/receive"
+curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/payment1"
   -H 'Authorization: Bearer {{TOKEN}}'
   -H 'Content-Type: application/json'
   -d '{
-    "date": "2021-01-04 12:54:38",
-    "bankOrigin": "BNI",
-    "bankAccount": "987654321"
-    "bankDestination": 2
-    "transferred": 54450
-    "paymentFile":"school/85491D19-0BA8-4946-90E6-2R0R8DFB985R/KFNoNR2ZnjdBMnH6OnR95sT10zoSGiwoKj0ZoQje.png"
-  }'
+        "date": "datetime",
+        "bank_origin": "string",
+        "bank_account": "string",
+        "bank_destination": "integer",
+        "transferred": "integer",
+        "payment_file":"string"
+      }'
 ```
 
-endpoint ini digunakan untuk mengatur pembayaran bank transfer.
+endpoint ini digunakan untuk mengatur pembayaran secara manual / transfer.
 
-`POST https://staging.siapi.tokoladang.co.id/buyer/orders/{$order->id}/payment1`
+`POST https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/payment1`
 
 ### Query Body
 
-| Parameter       | Default | required | Deskripsi              |
-| --------------- | ------- | -------- | ---------------------- |
-| date            |         | true     | Tanggal Pembayaran     |
-| bankOrigin      | null    | true     | Nama Bank              |
-| bankAccount     | null    | true     | Akun Bank              |
-| bankDestination | null    | true     | Bank Tujuan            |
-| transferred     | null    | true     | Jumlah yang ditransfer |
-| paymentFile     | null    | true     | Bukti Pembayaran       |
+| Parameter       | Default | required | Deskripsi
+| --------------- | ------- | -------- | -----------------
+| date | date | true | Tanggal Pembayaran
+| bank_origin | string | true | Nama Bank         
+| bank_account | string | true | Akun Bank         
+| bank_destination | integer | true | Bank Tujuan       
+| transferred | integer | true | Jumlah yang ditransfer
+| payment_file | string | true | Bukti Pembayaran  
 
-## Mengatur Pembayaran BRIVA
+## Post Generate Pembayaran BRIVA
 
 > jenis: buyer
 
 ```shell
-curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/orders/75/payment2"
+curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/create-va2"
   -H 'Authorization: Bearer {{TOKEN}}'
   -H 'Content-Type: application/json'
   -d '{}'
 ```
 
-> response example
+> Contoh Json Response:
 
-```shell
+```json
 {
-    "code": 200,
-    "message": "Berhasil Mengatur Pembayaran Briva Virtual Account",
-    "data": {
-        "pm2": {
-            "va": "0695456033",
-            "amount": 147811,
-            "expired": "2021-01-19 10:14:37",
-            "paid": false
-        }
-    }
+  "pm2": {
+    "amount": "integer",
+    "expired": "datetime",
+    "paid": "boolean",
+    "va": "string"
+  }
 }
 ```
 
-endpoint ini digunakan untuk mengatur pembayaran bank transfer.
+endpoint ini digunakan untuk generate pembayaran melalui BRI Virtual Account.
 
-`POST https://staging.siapi.tokoladang.co.id/buyer/orders/{$order->id}/payment2`
+`POST https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/create-va2`
+
+## Post Pembayaran BRIVA
+
+> jenis: buyer
+
+```shell
+curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/payment2"
+  -H 'Authorization: Bearer {{TOKEN}}'
+  -H 'Content-Type: application/json'
+  -d '{
+        "date": "date",
+        "payment_file": "file|image"
+      }'
+```
+
+> Contoh Json Response
+
+```json
+{
+    "code": "integer",
+    "message": "string"
+}
+```
+
+endpoint ini digunakan untuk mengatur pembayaran melalui BRIVA.
+
+`POST https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/payment2`
+
+### Query Body
+
+Parameter      | Default | required | Deskripsi                   
+-------------- | ------- | -------- | --------------------------- 
+date | date | true | Tanggal             
+payment_file | file | true | Gambar
+
+## Post Generate Pembayaran BPD
+
+> jenis: buyer
+
+```shell
+curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/create-va3"
+  -H 'Authorization: Bearer {{TOKEN}}'
+  -H 'Content-Type: application/json'
+  -d '{}'
+```
+
+> Contoh Json Response:
+
+```json
+{}
+```
+
+endpoint ini digunakan untuk generate pembayaran melului BPD.
+
+`POST https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/create-va3`
+
+## Post Pembayaran BPD
+
+> jenis: buyer
+
+```shell
+curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/payment3"
+  -H 'Authorization: Bearer {{TOKEN}}'
+  -H 'Content-Type: application/json'
+  -d '{
+        "date": "date",
+        "payment_file": "file|image"
+      }'
+```
+
+> Contoh Json Response
+
+```json
+{
+    "code": "integer",
+    "message": "string"
+}
+```
+
+endpoint ini digunakan untuk mengatur pembayaran melalui BPD.
+
+`POST https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/payment3`
+
+### Query Body
+
+Parameter      | Default | required | Deskripsi                   
+-------------- | ------- | -------- | --------------------------- 
+date | date | true | Tanggal             
+payment_file | file | true | Gambar
+
+## Post Generate Pembayaran Bank Jatim
+
+> jenis: buyer
+
+```shell
+curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/create-va4"
+  -H 'Authorization: Bearer {{TOKEN}}'
+  -H 'Content-Type: application/json'
+  -d '{}'
+```
+
+> Contoh Json Response:
+
+```json
+{
+  "pm4": {
+    "amount": "integer",
+    "expired": "date",
+    "paid": "boolean",
+    "va": "string"
+  }
+}
+```
+
+endpoint ini digunakan untuk generate pembayaran melului Bank Jatim.
+
+`POST https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/create-va4`
+
+## Post Pembayaran Bank Jatim
+
+> jenis: buyer
+
+```shell
+curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/payment4"
+  -H 'Authorization: Bearer {{TOKEN}}'
+  -H 'Content-Type: application/json'
+  -d '{
+        "date": "date",
+        "payment_file": "file|image"
+      }'
+```
+
+> Contoh Json Response
+
+```json
+{
+    "code": "integer",
+    "message": "string"
+}
+```
+
+endpoint ini digunakan untuk mengatur pembayaran melalui Bank Jatim.
+
+`POST https://staging.siapi.tokoladang.co.id/buyer/orders/{id}/payment4`
+
+### Query Body
+
+Parameter      | Default | required | Deskripsi                   
+-------------- | ------- | -------- | --------------------------- 
+date | date | true | Tanggal             
+payment_file | file | true | Gambar
+
+## Get Review Toko
+
+> jenis: buyer
+
+```shell
+curl -X GET "https://staging.siapi.tokoladang.co.id/buyer/orders/{orderId}/merchant-review"
+  -H 'Authorization: Bearer {{TOKEN}}'
+  -H 'Content-Type: application/json'
+  -d '{}'
+```
+
+> Contoh Json Response:
+
+```json
+{
+  "created_at": "datetime",
+  "customer_order_id": "integer",
+  "id": "integer",
+  "message": "string",
+  "rating": "integer",
+  "merchant_id": "integer",
+  "school_id": "string",
+  "updated_at": "datetime"
+}
+```
+
+endpoint ini digunakan untuk mendapatkan review toko.
+
+### HTTP Request
+
+`GET https://staging.siapi.tokoladang.co.id/buyer/orders/{orderId}/merchant-review`
+
+## Get Review Produk
+
+> jenis: buyer
+
+```shell
+curl -X GET "https://staging.siapi.tokoladang.co.id/buyer/orders/{orderItemId}/product-review"
+  -H 'Authorization: Bearer {{TOKEN}}'
+  -H 'Content-Type: application/json'
+  -d '{}'
+```
+
+> Contoh Json Response:
+
+```json
+{
+  "created_at": "datetime",
+  "customer_order_item_id": "integer",
+  "id": "integer",
+  "message": "string",
+  "product_id": "string",
+  "rating": "integer",
+  "school_id": "string",
+  "updated_at": "datetime"
+}
+```
+
+endpoint ini digunakan untuk mendapatkan review produk.
+
+### HTTP Request
+
+`GET https://staging.siapi.tokoladang.co.id/buyer/orders/{orderItemId}/product-review`
+
+## Post Komentar Review Toko
+
+> jenis: buyer
+
+```shell
+curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/orders/{orderId}/merchant-review"
+  -H 'Authorization: Bearer {{TOKEN}}'
+  -H 'Content-Type: application/json'
+  -d '{
+        "rating": "integer",
+        "message": "string"
+      }'
+```
+
+> Contoh Json Response
+
+```json
+{
+    "code": "integer",
+    "message": "string"
+}
+```
+
+endpoint ini digunakan untuk memberi review terhadap toko.
+
+`POST https://staging.siapi.tokoladang.co.id/buyer/orders/{orderId}/merchant-review`
+
+### Query Body
+
+Parameter      | Default | required | Deskripsi                   
+-------------- | ------- | -------- | --------------------------- 
+rating | integer | true | Penilaian             
+message | string | true | Komentar
+
+## Post Komentar Review Produk
+
+> jenis: buyer
+
+```shell
+curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/orders/{orderItemId}/product-review"
+  -H 'Authorization: Bearer {{TOKEN}}'
+  -H 'Content-Type: application/json'
+  -d '{
+        "rating": "integer",
+        "message": "string"
+      }'
+```
+
+> Contoh Json Response
+
+```json
+{
+    "code": "integer",
+    "message": "string"
+}
+```
+
+endpoint ini digunakan untuk memberi review terhadap toko.
+
+`POST https://staging.siapi.tokoladang.co.id/buyer/orders/{orderItemId}/product-review`
+
+### Query Body
+
+Parameter      | Default | required | Deskripsi                   
+-------------- | ------- | -------- | --------------------------- 
+rating | integer | true | Penilaian             
+message | string | true | Komentar
