@@ -5,7 +5,7 @@
 > jenis: admin
 
 ```shell
-curl -X GET "https://staging.siapi.tokoladang.co.id/admin/schools"
+curl -X GET "https://staging.siapi.tokoladang.co.id/admin/schools?q=&status=&page"
 -H 'Content-Type: application/json'
 -d '{}'
 ```
@@ -13,49 +13,23 @@ curl -X GET "https://staging.siapi.tokoladang.co.id/admin/schools"
 
 ```json
 [
-    {
-        "id": "348D60E0-81E0-3DD7-803F-ADC860EB7D22",
-        "name": "Distinctio optio quidem vel non est occaecati vel.",
-        "details": {
-            "sekolah_id": "348D60E0-81E0-3DD7-803F-ADC860EB7D22",
-            "nama_sekolah": "Distinctio optio quidem vel non est occaecati vel.",
-            "npsn": "12345678",
-            "status": "Negeri",
-            "bentuk_pendidikan": "SMK",
-            "kd_prov": "030000  ",
-            "prov": "Prov. Jawa Tengah",
-            "kd_kab": "032200  ",
-            "kab": "Kab. Semarang",
-            "kd_kec": "032207  ",
-            "kec": "Kec. Banyubiru",
-            "alamat": "JL. RAYA SEKOLAHAN",
-            "desa": "Kemambang",
-            "kode_pos": "61373",
-            "nomor_telepon": "0321491752",
-            "email": "sekolah@gmail.com",
-            "nama_bendahara_bos": "Bendahara Sekolah",
-            "nip_bendahara_bos": "198209242070011457",
-            "nama_kepsek": "Kepala Sekolah",
-            "hp_kepsek": "08563397781",
-            "nip_kepsek": "196503281990031456",
-            "email_kepsek": "kepsek@gmail.com",
-            "npwp": "005781570602000",
-            "lintang": "-7.583800000000",
-            "bujur": "112.422900000000",
-            "zona": 1
-        },
-        "funding_sources": [
-            {
-                "sumber_dana_id": "E802B268-6F57-4C57-A069-8DFA07E1B267",
-                "sumber_dana": "BOS Reguler",
-                "tahun_sumber_dana": "2020",
-                "kode_sumber_dana": "BOSE00110"
-            }
-        ],
-        "created_at": "2020-12-29T04:08:09.000000Z",
-        "updated_at": "2020-12-29T04:08:09.000000Z"
-    },
-    {....}
+  {
+    "admin_note": "string",
+    "city_id": "integer",
+    "created_at": "datetime",
+    "details": {"sekolah_id": "string", "nama_sekolah": "string", "status": "string",...},
+    "district_id": "integer",
+    "email_verified_at": "datetime",
+    "funding_sources": [{"id": "string", "code": "string", "name": "string", "year": "integer",...}],
+    "id": "string",
+    "image": "string",
+    "name": "string",
+    "province_id": "integer",
+    "suspended": "boolean",
+    "type": "string",
+    "updated_at": "datetime",
+    "zone": "string"
+  }
 ]
 ```
 
@@ -63,14 +37,22 @@ endpoint ini digunakan untuk mendapatkan semua data sekolah.
 
 ### HTTP Request
 
-`GET https://staging.siapi.tokoladang.co.id/admin/schools`
+`GET https://staging.siapi.tokoladang.co.id/admin/schools?q=&status=&page`
 
-## Get salah satu Sekolah
+### Query Parameter
+
+Parameter | Default | required | Deskripsi
+--------- | ------- | -------- | -----------
+q | string | false | Kata kunci
+status | string | false | Status
+page | integer | false | Halaman
+
+## Get Detail Sekolah
 
 > jenis: admin
 
 ```shell
-curl -X GET "https://staging.siapi.tokoladang.co.id/admin/schools/{school}"
+curl -X GET "https://staging.siapi.tokoladang.co.id/admin/schools/{id}"
 -H 'Content-Type: application/json'
 -d '{}'
 ```
@@ -78,56 +60,99 @@ curl -X GET "https://staging.siapi.tokoladang.co.id/admin/schools/{school}"
 
 ```json
 {
-    "id": "348D60E0-81E0-3DD7-803F-ADC860EB7D22",
-    "name": "Distinctio optio quidem vel non est occaecati vel.",
-    "details": {
-        "sekolah_id": "348D60E0-81E0-3DD7-803F-ADC860EB7D22",
-        "nama_sekolah": "Distinctio optio quidem vel non est occaecati vel.",
-        "npsn": "12345678",
-        "status": "Negeri",
-        "bentuk_pendidikan": "SMK",
-        "kd_prov": "030000  ",
-        "prov": "Prov. Jawa Tengah",
-        "kd_kab": "032200  ",
-        "kab": "Kab. Semarang",
-        "kd_kec": "032207  ",
-        "kec": "Kec. Banyubiru",
-        "alamat": "JL. RAYA SEKOLAHAN",
-        "desa": "Kemambang",
-        "kode_pos": "61373",
-        "nomor_telepon": "0321491752",
-        "email": "sekolah@gmail.com",
-        "nama_bendahara_bos": "Bendahara Sekolah",
-        "nip_bendahara_bos": "198209242070011457",
-        "nama_kepsek": "Kepala Sekolah",
-        "hp_kepsek": "08563397781",
-        "nip_kepsek": "196503281990031456",
-        "email_kepsek": "kepsek@gmail.com",
-        "npwp": "005781570602000",
-        "lintang": "-7.583800000000",
-        "bujur": "112.422900000000",
-        "zona": 1
-    },
-    "funding_sources": [
-        {
-            "sumber_dana_id": "E802B268-6F57-4C57-A069-8DFA07E1B267",
-            "sumber_dana": "BOS Reguler",
-            "tahun_sumber_dana": "2020",
-            "kode_sumber_dana": "BOSE00110"
-        }
-    ],
-    "created_at": "2020-12-29T04:08:09.000000Z",
-    "updated_at": "2020-12-29T04:08:09.000000Z"
+  "admin_note": "string",
+  "city_id": "integer",
+  "created_at": "datetime",
+  "details": {"sekolah_id": "string", "nama_sekolah": "string", "status": "string",...},
+  "district_id": "integer",
+  "email_verified_at": "datetime",
+  "funding_sources": [{"id": "string", "code": "string", "name": "string", "year": "integer",...}],
+  "id": "string",
+  "image": "string",
+  "name": "string",
+  "province_id": "integer",
+  "suspended": "boolean",
+  "type": "string",
+  "updated_at": "datetime",
+  "zone": "string"
 }
 ```
 
-endpoint ini digunakan untuk mendapatkan salah satu data sekolah.
+endpoint ini digunakan untuk mendapatkan detail data sekolah.
 
 ### HTTP Request
 
-`GET https://staging.siapi.tokoladang.co.id/admin/schools/{school}`
+`GET https://staging.siapi.tokoladang.co.id/admin/schools/{id}`
 
-## Get customer berdasarkan Sekolah
+
+## Post Blokir Sekolah
+
+> jenis: admin
+
+```shell
+curl -X POST "https://staging.siapi.tokoladang.co.id/admin/schools/suspend"
+-H 'Content-Type: application/json'
+-d '{
+      "id": "string",
+      "note": "string"
+    }'
+```
+> Contoh Json Response :
+
+```json
+{
+  "code": "integer",
+  "message": "string"
+}
+```
+
+endpoint ini digunakan untuk memblokir sekolah.
+
+### HTTP Request
+
+`POST https://staging.siapi.tokoladang.co.id/admin/schools/suspend`
+
+### Query Body
+
+Parameter | Default | required | Deskripsi
+--------- | ------- | -------- | -----------
+id | string | true | Id Sekolah
+note | string | true | Catatan
+
+
+## Post Aktifkan Sekolah
+
+> jenis: admin
+
+```shell
+curl -X POST "https://staging.siapi.tokoladang.co.id/admin/schools/unsuspend"
+-H 'Content-Type: application/json'
+-d '{
+      "id": "string"
+    }'
+```
+> Contoh Json Response :
+
+```json
+{
+  "code": "integer",
+  "message": "string"
+}
+```
+
+endpoint ini digunakan untuk aktifkan sekolah.
+
+### HTTP Request
+
+`POST https://staging.siapi.tokoladang.co.id/admin/schools/unsuspend`
+
+### Query Body
+
+Parameter | Default | required | Deskripsi
+--------- | ------- | -------- | -----------
+id | string | true | Id Sekolah
+
+## Get User Sekolah
 
 > jenis: admin
 
@@ -140,53 +165,31 @@ curl -X GET "https://staging.siapi.tokoladang.co.id/admin/customers/{schoolId}"
 
 ```json
 [
-    {
-        "id": 9,
-        "name": "Dr. Marco Turcotte Jr.",
-        "username": "xschroeder@example.org",
-        "birthday": null,
-        "gender": null,
-        "email": "xschroeder@example.org",
-        "phone": null,
-        "enabled": 1,
-        "user_id": null,
-        "image": null,
-        "is_phone_verified": 0,
-        "is_email_verified": 0,
-        "created_by": null,
-        "updated_by": null,
-        "school_id": "348D60E0-81E0-3DD7-803F-ADC860EB7D22",
-        "details": {
-            "nama": "Buyer",
-            "nik": "3516132409850001",
-            "nip": "198209242070011457",
-            "pengguna_id": "301F2DFD-B6F2-3872-B24C-137B53156BA8",
-            "peran_id": "53",
-            "peran": "Kepala Sekolah",
-            "sekolah_id": "348D60E0-81E0-3DD7-803F-ADC860EB7D22",
-            "kode_wilayah": "032207AB",
-            "no_telepon": "08563397781",
-            "no_hp": "08563397781",
-            "username": "xschroeder@example.org"
-        },
-        "created_at": "2020-12-29T04:08:09.000000Z",
-        "updated_at": "2020-12-29T04:08:09.000000Z"
-    }
+  {
+    "id": "integer",
+    "name": "string",
+    "email": "string",
+    "suspended": "boolean",
+    "school_id": "string",
+    "details": "json",
+    "created_at": "datetime",
+    "updated_at": "datetime"
+  }
 ]
 ```
 
-endpoint ini digunakan untuk mendapatkan data customer berdasarkan id sekolah.
+endpoint ini digunakan untuk mendapatkan data users berdasarkan id sekolah.
 
 ### HTTP Request
 
 `GET https://staging.siapi.tokoladang.co.id/admin/customers/{schoolId}`
 
-## Get customer detail
+## Get User Detail
 
 > jenis: admin
 
 ```shell
-curl -X GET "https://staging.siapi.tokoladang.co.id/admin/customers/{customer}/detail"
+curl -X GET "https://staging.siapi.tokoladang.co.id/admin/customers/{id}/detail"
 -H 'Content-Type: application/json'
 -d '{}'
 ```
@@ -194,41 +197,19 @@ curl -X GET "https://staging.siapi.tokoladang.co.id/admin/customers/{customer}/d
 
 ```json
 {
-    "id": 9,
-    "name": "Dr. Marco Turcotte Jr.",
-    "username": "xschroeder@example.org",
-    "birthday": null,
-    "gender": null,
-    "email": "xschroeder@example.org",
-    "phone": null,
-    "enabled": 1,
-    "user_id": null,
-    "image": null,
-    "is_phone_verified": 0,
-    "is_email_verified": 0,
-    "created_by": null,
-    "updated_by": null,
-    "school_id": "348D60E0-81E0-3DD7-803F-ADC860EB7D22",
-    "details": {
-        "nama": "Buyer",
-        "nik": "3516132409850001",
-        "nip": "198209242070011457",
-        "pengguna_id": "301F2DFD-B6F2-3872-B24C-137B53156BA8",
-        "peran_id": "53",
-        "peran": "Kepala Sekolah",
-        "sekolah_id": "348D60E0-81E0-3DD7-803F-ADC860EB7D22",
-        "kode_wilayah": "032207AB",
-        "no_telepon": "08563397781",
-        "no_hp": "08563397781",
-        "username": "xschroeder@example.org"
-    },
-    "created_at": "2020-12-29T04:08:09.000000Z",
-    "updated_at": "2020-12-29T04:08:09.000000Z"
+  "id": "integer",
+  "name": "string",
+  "email": "string",
+  "suspended": "boolean",
+  "school_id": "string",
+  "details": "json",
+  "created_at": "datetime",
+  "updated_at": "datetime"
 }
 ```
 
-endpoint ini digunakan untuk mendapatkan data detail customer.
+endpoint ini digunakan untuk mendapatkan data detail user.
 
 ### HTTP Request
 
-`GET https://staging.siapi.tokoladang.co.id/admin/customers/{customer}/detail`
+`GET https://staging.siapi.tokoladang.co.id/admin/customers/{id}/detail`

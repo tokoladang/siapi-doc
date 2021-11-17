@@ -1,12 +1,12 @@
-# [Seller] Merchant Storage
+# [Seller] Etalase 
 
-Merchant Storage digunakan untuk mengambil data etalase toko, membuat data etalase, merubah data etalase, dan menghapus etalase.
+Etalase digunakan untuk mengelompokan Produk.
 
 <aside class="notice">
 Memerlukan Authentikasi sebagai seller.
 </aside>
 
-## DATA Merchant Storage
+## DATA Etalase Toko
 
 ## Get Semua data Etalase 
 
@@ -21,16 +21,17 @@ curl -X GET "https://staging.siapi.tokoladang.co.id/seller/merchant-storages"
 > Contoh Json Response :
 
 ```json
-{
-  "id": 1,
-  "merchant_id": 92,
-  "name": "Buku Gambar",
-},
-{
-  "id": 2,
-  "merchant_id": 92,
-  "name": "Buku Menulis",
-}
+[
+  {
+    "created_at": "datetime",
+    "created_by": "string",
+    "id": "integer",
+    "merchant_id": "integer",
+    "name": "string",
+    "updated_at": "datetime",
+    "updated_by": "string"
+  }
+]
 ```
 
 endpoint ini digunakan untuk mendapatkan data etalase.
@@ -39,7 +40,7 @@ endpoint ini digunakan untuk mendapatkan data etalase.
 
 `GET https://staging.siapi.tokoladang.co.id/seller/merchant-storages`
 
-## Post Tambah data Etalase
+## Post Tambah Etalase Baru
 
 > jenis: seller
 
@@ -48,11 +49,11 @@ curl -X POST "https://staging.siapi.tokoladang.co.id/seller/merchant-storages"
   -H 'Content-Type: application/json'
       'Authorization': Bearer {{TOKEN}}
   -d '{
-        "name": "Buku Gambar",
+        "name": "string"
       }'
 ```
 
-endpoint ini digunakan untuk membuat data etalase sesuai toko.
+endpoint ini digunakan untuk membuat data etalase baru.
 
 ### HTTP Request
 
@@ -62,9 +63,9 @@ endpoint ini digunakan untuk membuat data etalase sesuai toko.
 
 Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
-name | null | true | Nama Etalase
+name | string | true | Nama Etalase
 
-## Put Ubah data etalase
+## Put Ubah Data Etalase
 
 > jenis: seller
 
@@ -73,7 +74,7 @@ curl -X PUT "https://staging.siapi.tokoladang.co.id/merchant-storages/{id}"
   -H 'Content-Type: application/json'
       'Authorization': Bearer {{TOKEN}}
   -d '{
-        "name": "Buku Menulis",
+        "name": "string"
       }'
 ```
 
@@ -87,7 +88,7 @@ endpoint ini digunakan untuk mengubah data nama etalase toko.
 
 Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
-name | null | true | Nama Etalase
+name | string | true | Nama Etalase
 
 
 ## Delete Hapus data Etalase

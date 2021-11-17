@@ -5,7 +5,7 @@
 > jenis: admin
 
 ```shell
-curl -X GET "https://staging.siapi.tokoladang.co.id/admin/product-categories"
+curl -X GET "https://staging.siapi.tokoladang.co.id/admin/product-categories?parent="
 -H 'Content-Type: application/json'
 -d '{}'
 ```
@@ -14,21 +14,22 @@ curl -X GET "https://staging.siapi.tokoladang.co.id/admin/product-categories"
 ```json
 [
   {
-        "id": 1,
-        "name": "Tempore est nesciunt laudantium consequuntur beatae vero est eum.",
-        "parent_id": null,
-        "sequence": 1,
-        "description": "Recusandae quis aspernatur ea quis fuga.",
-        "enabled": true,
-        "image": "https://lorempixel.com/100/100/food",
-        "level": 2,
-        "slug": "tempore-est-nesciunt-laudantium-consequuntur-beatae-vero-est-eum",
-        "created_by": null,
-        "updated_by": null,
-        "created_at": "2020-12-29T04:08:10.000000Z",
-        "updated_at": "2020-12-29T04:08:10.000000Z"
-    },
-    {...}
+    "created_at": "datetime",
+    "created_by": "string",
+    "description": "string",
+    "enabled": "true",
+    "id": "integer",
+    "image": "string",
+    "level": "integer",
+    "name": "string",
+    "parent_id": "integer",
+    "sequence": "integer",
+    "slug": "string",
+    "updated_at": "datetime",
+    "updated_by": "string",
+    "_lft": "integer",
+    "_rgt": "integer",
+  }
 ]
 ```
 
@@ -36,7 +37,13 @@ endpoint ini digunakan untuk mendapatkan data kategori produk.
 
 ### HTTP Request
 
-`GET https://staging.siapi.tokoladang.co.id/admin/product-categories`
+`GET https://staging.siapi.tokoladang.co.id/admin/product-categories?parent=`
+
+### Query Body
+
+Parameter | Default | required | Deskripsi
+--------- | ------- | -------- | -----------
+parent | string | false | id parent kategori
 
 ## Simpan Kategori Produk
 
@@ -46,20 +53,19 @@ endpoint ini digunakan untuk mendapatkan data kategori produk.
 curl -X POST "https://staging.siapi.tokoladang.co.id/admin/product-categories"
 -H 'Content-Type: application/json'
 -d '{    
-    "name": "Pelengkap"
-    "sequence": "1"
-    "description": "deskripsi"
-    "image": ""
-    "enabled": "true"
-}'
+      "name": "string",
+      "sequence": "integer",
+      "image": "file",
+      "enabled": "boolean"
+    }'
 ```
 
 > Contoh Json Response :
 
 ```json
 {
-  "code": 200,
-  "message": "Kategori Produk Berhasil disimpan"
+  "code": "integer",
+  "message": "string"
 }
 ```
 
@@ -73,11 +79,10 @@ endpoint ini digunakan untuk menyimpan kategori produk.
 
 Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
-name | null | true | Nama Kategori
-sequence | null | true | Sequence
-description | null | true | Deskripsi
-image | null | image | Gambar ikon
-enabled | null | true | Status kategori
+name | string | true | Nama Kategori
+sequence | integer | true | Sequence
+image | file | false | Gambar ikon
+enabled | boolean | true | Status kategori
 
 ## Ubah Kategori Produk
 
@@ -86,21 +91,20 @@ enabled | null | true | Status kategori
 ```shell
 curl -X PUT "https://staging.siapi.tokoladang.co.id/admin/product-categories/{id}"
 -H 'Content-Type: application/json'
--d '{
-    "name": "Pelengkap 2"
-    "sequence": "1"
-    "description": "deskripsi"
-    "image": ""
-    "enabled": "true"
-}'
+-d '{    
+      "name": "string",
+      "sequence": "integer",
+      "image": "file",
+      "enabled": "boolean"
+    }'
 ```
 
 > Contoh Json Response :
 
 ```json
 {
-    "code": 200,
-    "message": "Kategori Produk Berhasil disimpan"
+  "code": "integer",
+  "message": "string"
 }
 ```
 
@@ -114,11 +118,10 @@ endpoint ini digunakan untuk mengubah kategori produk.
 
 Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
-name | null | true | Nama Kategori
-sequence | null | true | Sequence
-description | null | true | Deskripsi
-image | null | image | Gambar ikon
-enabled | null | true | Status kategori
+name | string | true | Nama Kategori
+sequence | integer | true | Sequence
+image | file | false | Gambar ikon
+enabled | boolean | true | Status kategori
 
 ## Hapus Kategori Produk
 
@@ -134,8 +137,8 @@ curl -X DELETE "https://staging.siapi.tokoladang.co.id/admin/product-categories/
 
 ```json
 {
-    "code": 200,
-    "message": "Kategori Produk Berhasil dihapus"
+  "code": "integer",
+  "message": "string"
 }
 ```
 

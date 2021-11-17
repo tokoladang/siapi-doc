@@ -4,25 +4,58 @@
 membutuhkan Autentikasi/Token <strong>buyer</strong>.
 </aside>
 
-## GET data keranjang
+## Get Keranjang Belanja
 
 > jenis: buyer
 
 ```shell
-curl -X GET "https://staging.siapi.tokoladang.co.id/buyer/carts/"
+curl -X GET "https://staging.siapi.tokoladang.co.id/buyer/carts"
   -H 'Authorization: Bearer {{TOKEN}}'
   -H 'Content-Type: application/json'
-  -d '{
-}'
+  -d '{}'
 ```
+> Contoh Json Response :
 
-endpoint ini digunakan untuk mendapatkan data keranjang.
+```json
+[
+  {
+    "cart_items": [
+      {
+        "cart_id": "integer",
+        "created_at": "datetime",
+        "id": "integer",
+        "price": "integer",
+        "product": {"id": "integer", "name": "Keyboard HP", "price": "integer",…},
+        "product_id": "integer",
+        "quantity": "integer",
+        "selected": "boolean",
+        "shipping": "json",
+        "tax_price": "integer",
+        "total_price": "integer",
+        "updated_at": "datetime"
+      }
+    ],
+    "created_at": "datetime",
+    "funding_source": "json",
+    "id": "integer",
+    "merchant": {"id": "integer", "name": "string", "slug": "string", "status": "string", "image": "string"},
+    "merchant_id": "integer",
+    "school_id": "string",
+    "selected": "boolean",
+    "shipping": "json",
+    "shipping_address": {"from": "string", "thru": "string"},
+    "shipping_list": "json",
+    "updated_at": "datetime"
+  }
+]
+```
+endpoint ini digunakan untuk mendapatkan data keranjang belanja.
 
 ### HTTP Request
 
 `POST https://staging.siapi.tokoladang.co.id/buyer/carts`
 
-## Menambahkan barang ke keranjang
+## Post Tambah Barang Ke Keranjang
 
 > jenis: buyer
 
@@ -31,37 +64,21 @@ curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/carts/add"
   -H 'Authorization: Bearer {{TOKEN}}'
   -H 'Content-Type: application/json'
   -d '{
-    "product_id": 299,
-    "quantity": 5
-}'
+        "product_id": "integer",
+        "quantity": "integer"
+      }'
 ```
 
-> Example response:
+> Contoh Json Response:
 
-```shell
+```json
 {
-    "id": 1,
-    "merchant_id": 365,
-    "school_id": "85491D19-0BA8-4946-90E6-2R0R8DFB985R",
-    "selected": 1,
-    "created_at": "2020-12-29T10:28:47.000000Z",
-    "updated_at": "2020-12-29T10:28:47.000000Z",
-    "cart_items": [
-        {
-            "id": 1,
-            "cart_id": 1,
-            "product_id": 299,
-            "negotiation_id": null,
-            "quantity": 5,
-            "selected": 1,
-            "created_at": "2020-12-29T10:28:47.000000Z",
-            "updated_at": "2020-12-29T10:28:47.000000Z"
-        }
-    ]
+   "code": "integer",
+   "message": "string"
 }
 ```
 
-endpoint ini digunakan untuk menambahkan barang ke keranjang.
+endpoint ini digunakan untuk menambahkan barang ke keranjang belanja.
 
 ### HTTP Request
 
@@ -69,112 +86,225 @@ endpoint ini digunakan untuk menambahkan barang ke keranjang.
 
 ### Query Body
 
-| Parameter  | Default | required | Deskripsi     |
-| ---------- | ------- | -------- | ------------- |
-| product_id |         | true     | id Produk     |
-| quantity   | null    | true     | Jumlah Barang |
+Parameter  | Default | required | Deskripsi    
+---------- | ------- | -------- | -------------
+product_id | integer | true | Id Produk    
+quantity | integer | true | Jumlah
 
-## Menambahkan barang ke keranjang dari negosiasi
-
-> jenis: buyer
-
-```shell
-curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/carts/add-nego"
-  -H 'Authorization: Bearer {{TOKEN}}'
-  -H 'Content-Type: application/json'
-  -d '{
-    "negotiation_id": 1
-}'
-```
-
-> Example Response
-
-```shell
-{
-    "id": 1,
-    "merchant_id": 365,
-    "school_id": "85491D19-0BA8-4946-90E6-2R0R8DFB985R",
-    "selected": 1,
-    "created_at": "2020-12-29T10:28:47.000000Z",
-    "updated_at": "2020-12-29T10:28:47.000000Z",
-    "cart_items": [
-        {
-            "id": 5,
-            "cart_id": 1,
-            "product_id": 299,
-            "negotiation_id": null,
-            "quantity": 5,
-            "selected": 1,
-            "created_at": "2020-12-29T11:15:31.000000Z",
-            "updated_at": "2020-12-30T07:19:42.000000Z"
-        }
-    ]
-}
-```
-
-endpoint ini digunakan untuk menambahkan barang ke keranjang dari negosiasi.
-
-### HTTP Request
-
-`POST https://staging.siapi.tokoladang.co.id/buyer/carts/add-nego`
-
-### Query Body
-
-| Parameter      | Default | required | Deskripsi    |
-| -------------- | ------- | -------- | ------------ |
-| negotiation_id |         | true     | id Negosiasi |
-
-## Memperbarui data barang di keranjang
+## Post Ubah Data Keranjang
 
 > jenis: buyer
 
 ```shell
-curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/carts/update"
+curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/carts/update-cart"
   -H 'Authorization: Bearer {{TOKEN}}'
   -H 'Content-Type: application/json'
   -d '{
-    "type": "selected",
-    "cart_item_id": 5,
-    "selected": 1
-}'
+        "type": "string",
+        "cart_id": "integer",
+        "selected": "boolean"
+      }'
 ```
 
-> example response
+> Contoh Json Response:
 
-```shell
+```json
 {
-    "id": 1,
-    "merchant_id": 365,
-    "school_id": "85491D19-0BA8-4946-90E6-2R0R8DFB985R",
-    "selected": 1,
-    "created_at": "2020-12-29T10:28:47.000000Z",
-    "updated_at": "2020-12-29T10:28:47.000000Z",
-    "cart_items": [
-        {
-            "id": 5,
-            "cart_id": 1,
-            "product_id": 299,
-            "negotiation_id": null,
-            "quantity": 5,
-            "selected": 1,
-            "created_at": "2020-12-29T11:15:31.000000Z",
-            "updated_at": "2020-12-30T07:19:42.000000Z"
-        }
-    ]
+   "code": "integer",
+   "message": "string"
 }
 ```
 
-endpoint ini digunakan untuk memperbarui data barang di keranjang.
+endpoint ini digunakan untuk memperbarui data keranjang belanja.
 
 ### HTTP Request
 
-`POST https://staging.siapi.tokoladang.co.id/buyer/carts/update`
+`POST https://staging.siapi.tokoladang.co.id/buyer/carts/update-cart`
 
 ### Query Body
 
-| Parameter    | Default | required | Deskripsi                                           |
-| ------------ | ------- | -------- | --------------------------------------------------- |
-| type         |         | true     | tipe data yang di update `selected,quantity,remove` |
-| cart_item_id |         | true     | id item keranjang                                   |
-| quantity     |         | true     | jumlah barang                                       |
-| selected     |         | true     | barang dipilih `0 atau 1`                           |
+| Parameter    | Default | required | Deskripsi                                           
+| ------------ | ------- | -------- | ----------------------------------------
+| type         | string  | true     | Tipe data yang di update `select,remove` 
+| cart_id      | integer | true     | Id keranjang  
+| selected     | boolean | true if type = `select` | true / false
+
+## Post Ubah Barang Di Keranjang
+
+> jenis: buyer
+
+```shell
+curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/carts/update-item"
+  -H 'Authorization: Bearer {{TOKEN}}'
+  -H 'Content-Type: application/json'
+  -d '{
+        "type": "string",
+        "cart_item_id": "integer",
+        "quantity": "integer",
+        "selected": "boolean",
+      }'
+```
+
+> Contoh Json Response:
+
+```json
+{
+   "code": "integer",
+   "message": "string"
+}
+```
+
+endpoint ini digunakan untuk merubah item barang di keranjang belanja.
+
+### HTTP Request
+
+`POST https://staging.siapi.tokoladang.co.id/buyer/carts/update-item`
+
+### Query Body
+
+Parameter  | Default | required | Deskripsi    
+---------- | ------- | -------- | -------------
+type | string | true | Tipe
+cart_item_id | integer | true | Id item di keranjang
+quantity | integer | true if type `quantity` | jumlah
+selected | boolean | true if type `select` | true / false
+
+## Get Data Biaya Pengiriman
+
+> jenis: buyer
+
+```shell
+curl -X GET "https://staging.siapi.tokoladang.co.id/buyer/refresh-shipping"
+  -H 'Authorization: Bearer {{TOKEN}}'
+  -H 'Content-Type: application/json'
+  -d '{}'
+```
+
+> Contoh Json Response:
+
+```json
+{
+   "code": "integer",
+   "message": "string"
+}
+```
+
+endpoint ini digunakan untuk mendapatkan data biaya pengiriman.
+
+### HTTP Request
+
+`POST https://staging.siapi.tokoladang.co.id/buyer/refresh-shipping`
+
+## Post Pilih Pengiriman
+
+> jenis: buyer
+
+```shell
+curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/carts/pick-shipping"
+  -H 'Authorization: Bearer {{TOKEN}}'
+  -H 'Content-Type: application/json'
+  -d '{
+        "cart_id": "integer",
+        "service": "string"
+      }'
+```
+
+> Contoh Json Response:
+
+```json
+{
+   "code": "integer",
+   "message": "string"
+}
+```
+
+endpoint ini digunakan untuk memilih pengiriman.
+
+### HTTP Request
+
+`POST https://staging.siapi.tokoladang.co.id/buyer/carts/pick-shipping`
+
+### Query Body
+
+Parameter  | Default | required | Deskripsi    
+---------- | ------- | -------- | -------------
+cart_id | integer | true | Id keranjang
+service | string | true | Jasa pengiriman
+
+## Post Perbarui Pengiriman
+
+> jenis: buyer
+
+```shell
+curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/carts/update-funding"
+  -H 'Authorization: Bearer {{TOKEN}}'
+  -H 'Content-Type: application/json'
+  -d '{
+        "cart_id": "integer",
+        "funding_source": {
+          "code": "string",
+          "name": "string",
+          "year": "integer"
+        }
+      }'
+```
+
+> Contoh Json Response:
+
+```json
+{
+   "code": "integer",
+   "message": "string"
+}
+```
+
+endpoint ini digunakan untuk memilih pengiriman.
+
+### HTTP Request
+
+`POST https://staging.siapi.tokoladang.co.id/buyer/carts/update-funding`
+
+### Query Body
+
+Parameter  | Default | required | Deskripsi    
+---------- | ------- | -------- | -------------
+cart_id | integer | true | Id keranjang
+funding_source.code | string | true | Kode
+funding_source.name | string | true | Nama
+funding_source.year | integer | true | Tahun
+
+## Post Checkout Pesanan
+
+> jenis: buyer
+
+```shell
+curl -X POST "https://staging.siapi.tokoladang.co.id/buyer/carts/checkout"
+  -H 'Authorization: Bearer {{TOKEN}}'
+  -H 'Content-Type: application/json'
+  -d '{
+        "note": "string",
+        "nego": "boolean"
+      }'
+```
+
+> Contoh Json Response:
+
+```json
+{
+   "code": "integer",
+   "message": "string"
+}
+```
+
+endpoint ini digunakan untuk checkout pesanan.
+
+### HTTP Request
+
+`POST https://staging.siapi.tokoladang.co.id/buyer/carts/checkout`
+
+### Query Body
+
+Parameter  | Default | required | Deskripsi    
+---------- | ------- | -------- | -------------
+note | string | true | Catatan
+nego | integer | true | Nego / Proses

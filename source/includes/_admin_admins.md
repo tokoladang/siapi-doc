@@ -1,11 +1,60 @@
-# [Admin] Admins
+# [Admin] Pengguna
 
-## Get Semua Admin
+
+## Get Verifikasi Pengguna
+
+> jenis: public
+
+```shell
+curl -X GET "https://staging.siapi.tokoladang.co.id/seller/admin-email/verify/{id}/{hash}"
+-H 'Content-Type: application/json'
+-d '{}'
+```
+> Contoh Json Response :
+
+```json
+{
+  "id": "code",
+  "message": "message"
+}
+```
+
+endpoint ini digunakan untuk verifikasi pengguna.
+
+### HTTP Request
+
+`GET https://staging.siapi.tokoladang.co.id/seller/admin-email/verify/{id}/{hash}`
+
+## Get Kirim Link Verifikasi Pengguna
+
+> jenis: public
+
+```shell
+curl -X GET "https://staging.siapi.tokoladang.co.id/seller/admin-email/verification-notification"
+-H 'Content-Type: application/json'
+-d '{}'
+```
+> Contoh Json Response :
+
+```json
+{
+  "id": "code",
+  "message": "message"
+}
+```
+
+endpoint ini digunakan untuk mengirim link verifikasi pengguna.
+
+### HTTP Request
+
+`GET https://staging.siapi.tokoladang.co.id/seller/admin-email/verification-notification`
+
+## Get Daftar Pengguna Admin
 
 > jenis: admin
 
 ```shell
-curl -X GET "https://staging.siapi.tokoladang.co.id/admin/admins"
+curl -X GET "https://staging.siapi.tokoladang.co.id/admin/admins?q=&status=&page="
 -H 'Content-Type: application/json'
 -d '{}'
 ```
@@ -14,28 +63,33 @@ curl -X GET "https://staging.siapi.tokoladang.co.id/admin/admins"
 ```json
 [
   {
-        "id": 1,
-        "name": "Jackie Grimes",
-        "email": "super@gmail.com",
-        "email_verified_at": "2020-12-29T04:08:07.000000Z",
-        "roles": [
-            "*"
-        ],
-        "active": true,
-        "created_at": "2020-12-29T04:08:08.000000Z",
-        "updated_at": "2020-12-29T04:08:08.000000Z"
-    },
-    {....}
+    "id": "integer",
+    "name": "string",
+    "email": "string",
+    "email_verified_at": "dateime",
+    "roles": [],
+    "active": "boolean",
+    "created_at": "dateime",
+    "updated_at": "dateime"
+  }
 ]
 ```
 
-endpoint ini digunakan untuk mendapatkan data admin.
+endpoint ini digunakan untuk mendapatkan data pengguna admin.
 
 ### HTTP Request
 
-`GET https://staging.siapi.tokoladang.co.id/admin/admins`
+`GET https://staging.siapi.tokoladang.co.id/admin/admins?q=&status=&page=`
 
-## Post Admin baru
+### Query Parameter
+
+Parameter | Default | required | Deskripsi
+--------- | ------- | -------- | -----------
+q | string | false | Kata kunci
+status | string | false | Status
+page | integer | false | Halaman
+
+## Post Pengguna Admin Baru
 
 > jenis: admin
 
@@ -43,21 +97,21 @@ endpoint ini digunakan untuk mendapatkan data admin.
 curl -X POST "https://staging.siapi.tokoladang.co.id/admin/admins"
 -H 'Content-Type: application/json'
 -d '{
-    "name": "new admin",
-    "email": "new@demo.id"
-    "roles": "*"
-}'
+      "name": "string",
+      "email": "string",
+      "roles": "array"
+    }'
 ```
 > Contoh Json Response :
 
 ```json
 {
-    "code": 200,
-    "message": "Admin Berhasil ditambahkan",
+    "code": "integer",
+    "message": "string"
 }
 ```
 
-endpoint ini digunakan untuk menambah user admin.
+endpoint ini digunakan untuk menambah pengguna admin.
 
 ### HTTP Request
 
@@ -67,27 +121,27 @@ endpoint ini digunakan untuk menambah user admin.
 
 Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
-email | null | true | Email Admin
-name | null | true | Name Admin
-roles | null | true | Rule
+email | string | true | Email
+name | string | true | Nama
+roles | array | true | Rule
 
-## Post ubah role Admin
+## Post Ubah Role Admin
 
 > jenis: admin
 
 ```shell
-curl -X POST "https://staging.siapi.tokoladang.co.id/admin/admins/{admin}/update-roles"
+curl -X POST "https://staging.siapi.tokoladang.co.id/admin/admins/{id}/update-roles"
 -H 'Content-Type: application/json'
 -d '{
-    "roles": "finance"
-}'
+      "roles": "array"
+    }'
 ```
 > Contoh Json Response :
 
 ```json
 {
-    "code": 200,
-    "message": "Peran Admin Berhasil diubah",
+    "code": "integer",
+    "message": "string"
 }
 ```
 
@@ -95,31 +149,31 @@ endpoint ini digunakan untuk update role admin.
 
 ### HTTP Request
 
-`POST https://staging.siapi.tokoladang.co.id/admin/admins/{admin}/update-roles`
+`POST https://staging.siapi.tokoladang.co.id/admin/admins/{id}/update-roles`
 
 ### Query Body
 
 Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
-roles | null | true | Rule
+roles | array | true | Rule
 
-## Post ubah status Admin
+## Post Ubah Status Admin
 
 > jenis: admin
 
 ```shell
-curl -X POST "https://staging.siapi.tokoladang.co.id/admin/admins/{admin}/update-active"
+curl -X POST "https://staging.siapi.tokoladang.co.id/admin/admins/{id}/update-active"
 -H 'Content-Type: application/json'
 -d '{
-    "active": "0"
-}'
+      "active": "boolean"
+    }'
 ```
 > Contoh Json Response :
 
 ```json
 {
-    "code": 200,
-    "message": "Status Admin Berhasil diubah"
+    "code": "integer",
+    "message": "string"
 }
 ```
 
@@ -127,10 +181,10 @@ endpoint ini digunakan untuk mengubah status admin.
 
 ### HTTP Request
 
-`POST https://staging.siapi.tokoladang.co.id/admin/admins/{admin}/update-active`
+`POST https://staging.siapi.tokoladang.co.id/admin/admins/{id}/update-active`
 
 ### Query Body
 
 Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
-active | null | true | status aktif
+active | boolean | true | Status

@@ -1,11 +1,11 @@
 # [Admin] Payment
 
-## Get Semua payment
+## Get Semua Pembayaran
 
 > jenis: admin
 
 ```shell
-curl -X GET "https://staging.siapi.tokoladang.co.id/admin/payments"
+curl -X GET "https://staging.siapi.tokoladang.co.id/admin/payments?q=&status=&page="
 -H 'Content-Type: application/json'
 -d '{}'
 ```
@@ -14,118 +14,81 @@ curl -X GET "https://staging.siapi.tokoladang.co.id/admin/payments"
 ```json
 [
   {
-        "id": 48,
-        "school_id": "D48797A3-6C81-331B-8BCD-4B9E3A31ABD6",
-        "merchant_id": 92,
-        "order_no": "5FEAABB737D7D",
-        "order_date": "2001-02-19T20:38:16.000000Z",
-        "status_updated_at": null,
-        "bill_status": "unpaid",
-        "total_price": 9673522,
-        "tax_price": 967352,
-        "shipping_cost": 36209,
-        "details": {
-            "documentDate": "1977-10-06",
-            "signName": "Nama penerima BAST",
-            "signPosition": "Jabatan Penerima BAST",
-            "signId": "NIP/NIPY Penerima BAST",
-            "signPhone": "08123459789",
-            "lateCharge": 20000,
-            "lateChargeNote": "terlambat 20 Hari",
-            "totalQty": 40,
-            "totalPrice": 9663522,
-            "taxPrice": 966352
-        },
-        "payment_method_id": 1,
-        "payments": {
-            "pm1": {
-                "date": "1976-07-16 14:57:00",
-                "bankOrigin": "BCA",
-                "bankAccount": 1866013150,
-                "bankDestination": 2,
-                "transferred": 10666083,
-                "paymentFile": "https://lorempixel.com/640/480/?27600"
-            },
-            "pm2": {
-                "va": "777771729679989",
-                "amount": 10666083,
-                "expired": "2020-12-01 10:00:00",
-                "paid": false
-            }
-        },
-        "payment_date": "1981-03-26T17:22:12.000000Z",
-        "payment_transferred": 10666083,
-        "bank_mutation_in_id": null,
-        "handling_fee": null,
-        "handling_fee_details": null,
-        "payment_forwarded_date": null,
-        "bank_mutation_out_id": null,
-        "bill": 10666083,
-        "total_order": 10677083,
-        "school": {
-            "id": "D48797A3-6C81-331B-8BCD-4B9E3A31ABD6",
-            "name": "Sit necessitatibus et dicta porro.",
-            "details": {
-                "sekolah_id": "D48797A3-6C81-331B-8BCD-4B9E3A31ABD6",
-                "nama_sekolah": "Sit necessitatibus et dicta porro.",
-                "npsn": "12345678",
-                "status": "Negeri",
-                "bentuk_pendidikan": "SMK",
-                "kd_prov": "030000  ",
-                "prov": "Prov. Jawa Tengah",
-                "kd_kab": "032200  ",
-                "kab": "Kab. Semarang",
-                "kd_kec": "032207  ",
-                "kec": "Kec. Banyubiru",
-                "alamat": "JL. RAYA SEKOLAHAN",
-                "desa": "Kemambang",
-                "kode_pos": "61373",
-                "nomor_telepon": "0321491752",
-                "email": "sekolah@gmail.com",
-                "nama_bendahara_bos": "Bendahara Sekolah",
-                "nip_bendahara_bos": "198209242070011457",
-                "nama_kepsek": "Kepala Sekolah",
-                "hp_kepsek": "08563397781",
-                "nip_kepsek": "196503281990031456",
-                "email_kepsek": "kepsek@gmail.com",
-                "npwp": "005781570602000",
-                "lintang": "-7.583800000000",
-                "bujur": "112.422900000000",
-                "zona": 4
-            }
-        },
-        "bank_mutation_in": null,
-        "bank_mutation_out": null,
-        "merchant": {
-            "id": 92,
-            "name": "Veum Ltd",
-            "email": "lpollich@dubuque.biz",
-            "phone": "08185596325",
-            "image": "https://lorempixel.com/200/200/?71537",
-            "bank_account": {
-                "name": "Veum Ltd",
-                "no": 1336386302,
-                "bank": "BRI",
-                "branch": "East Brando"
-            }
-        }
-    },
-    {....}
+    "bank_mutation_in": {"id": "integer", "admin_id": "integer",, "note": "string",…},
+    "bank_mutation_in_id": "integer",
+    "bank_mutation_out": {"id": "integer","admin_id": "integer", "note": "string",…},
+    "bank_mutation_out_id": "integer",
+    "bill": "integer",
+    "bill_status": "string",
+    "details": {"documentDate": "2021-06-15", "signName": "string", "signPosition": "string", "signId": "string",…},
+    "handling_fee": "integer",
+    "handling_fee_details": [{"name": "string", "amount": "integer"}, {"name": "string", "amount": "integer"}],
+    "id": "integer",
+    "merchant": {"id": "integer", "name": "string", "email": "string", "phone": "string",…},
+    "merchant_id": "integer",
+    "order_date": "datetime",
+    "order_no": "string",
+    "payment_date": "datetime",
+    "payment_forwarded_date": "datetime",
+    "payment_method_id": "integer",
+    "payment_transferred": "integer",
+    "payments": {"pm2": {"va": "string", "amount": "integer", "expired": "datetime", "paid": "boolean",…}},
+    "school": {"id": "string", "name": "string",…},
+    "school_id": "string",
+    "shipping_cost": "integer",
+    "status_updated_at": "datetime",
+    "tax_price": "integer",
+    "total_order": "integer",
+    "total_price": "integer"
+  }
 ]
 ```
 
-endpoint ini digunakan untuk mendapatkan data Payment.
+endpoint ini digunakan untuk mendapatkan data pembayaran.
 
 ### HTTP Request
 
-`POST https://staging.siapi.tokoladang.co.id/admin/payments`
+`POST https://staging.siapi.tokoladang.co.id/admin/payments?q=&status=&page=`
 
-## Get payment berdasarkan penjual
+### Query Parameter
+
+Parameter | Default | required | Deskripsi
+--------- | ------- | -------- | -----------
+q | string | false | Kata kunci
+status | string | false | Status
+page | integer | false | Halaman
+
+## Get Ringkasan Pembayaran
 
 > jenis: admin
 
 ```shell
-curl -X GET "https://staging.siapi.tokoladang.co.id/admin/payments{merchant}/merchant?q&status&page"
+curl -X GET "https://staging.siapi.tokoladang.co.id/admin/payments/summary"
+-H 'Content-Type: application/json'
+-d '{}'
+```
+> Contoh Json Response :
+
+```json
+{
+  "forwarded": "integer",
+  "paid": "integer",
+  "unpaid": "integer"
+}
+```
+
+endpoint ini digunakan untuk mendapatkan data ringkasan pembayaran.
+
+### HTTP Request
+
+`POST https://staging.siapi.tokoladang.co.id/admin/payments/summary`
+
+## Get Pembayaran By Penjual
+
+> jenis: admin
+
+```shell
+curl -X GET "https://staging.siapi.tokoladang.co.id/admin/payments/{merchant}/merchant?q&status&page"
 -H 'Content-Type: application/json'
 -d '{}'
 ```
@@ -133,91 +96,34 @@ curl -X GET "https://staging.siapi.tokoladang.co.id/admin/payments{merchant}/mer
 
 ```json
 [
-    {
-        "id": 48,
-        "school_id": "D48797A3-6C81-331B-8BCD-4B9E3A31ABD6",
-        "merchant_id": 92,
-        "order_no": "5FEAABB737D7D",
-        "order_date": "2001-02-19T20:38:16.000000Z",
-        "status_updated_at": null,
-        "bill_status": "unpaid",
-        "total_price": 9673522,
-        "tax_price": 967352,
-        "shipping_cost": 36209,
-        "details": {
-            "documentDate": "1977-10-06",
-            "signName": "Nama penerima BAST",
-            "signPosition": "Jabatan Penerima BAST",
-            "signId": "NIP/NIPY Penerima BAST",
-            "signPhone": "08123459789",
-            "lateCharge": 20000,
-            "lateChargeNote": "terlambat 20 Hari",
-            "totalQty": 40,
-            "totalPrice": 9663522,
-            "taxPrice": 966352
-        },
-        "payment_method_id": 1,
-        "payments": {
-            "pm1": {
-                "date": "1976-07-16 14:57:00",
-                "bankOrigin": "BCA",
-                "bankAccount": 1866013150,
-                "bankDestination": 2,
-                "transferred": 10666083,
-                "paymentFile": "https://lorempixel.com/640/480/?27600"
-            },
-            "pm2": {
-                "va": "777771729679989",
-                "amount": 10666083,
-                "expired": "2020-12-01 10:00:00",
-                "paid": false
-            }
-        },
-        "payment_date": "1981-03-26T17:22:12.000000Z",
-        "payment_transferred": 10666083,
-        "bank_mutation_in_id": null,
-        "handling_fee": null,
-        "handling_fee_details": null,
-        "payment_forwarded_date": null,
-        "bank_mutation_out_id": null,
-        "bill": 10666083,
-        "total_order": 10677083,
-        "school": {
-            "id": "D48797A3-6C81-331B-8BCD-4B9E3A31ABD6",
-            "name": "Sit necessitatibus et dicta porro.",
-            "details": {
-                "sekolah_id": "D48797A3-6C81-331B-8BCD-4B9E3A31ABD6",
-                "nama_sekolah": "Sit necessitatibus et dicta porro.",
-                "npsn": "12345678",
-                "status": "Negeri",
-                "bentuk_pendidikan": "SMK",
-                "kd_prov": "030000  ",
-                "prov": "Prov. Jawa Tengah",
-                "kd_kab": "032200  ",
-                "kab": "Kab. Semarang",
-                "kd_kec": "032207  ",
-                "kec": "Kec. Banyubiru",
-                "alamat": "JL. RAYA SEKOLAHAN",
-                "desa": "Kemambang",
-                "kode_pos": "61373",
-                "nomor_telepon": "0321491752",
-                "email": "sekolah@gmail.com",
-                "nama_bendahara_bos": "Bendahara Sekolah",
-                "nip_bendahara_bos": "198209242070011457",
-                "nama_kepsek": "Kepala Sekolah",
-                "hp_kepsek": "08563397781",
-                "nip_kepsek": "196503281990031456",
-                "email_kepsek": "kepsek@gmail.com",
-                "npwp": "005781570602000",
-                "lintang": "-7.583800000000",
-                "bujur": "112.422900000000",
-                "zona": 4
-            }
-        },
-        "bank_mutation_in": null,
-        "bank_mutation_out": null
-    },
-    {....}
+  {
+    "bank_mutation_in": {"id": "integer", "admin_id": "integer",, "note": "string",…},
+    "bank_mutation_in_id": "integer",
+    "bank_mutation_out": {"id": "integer","admin_id": "integer", "note": "string",…},
+    "bank_mutation_out_id": "integer",
+    "bill": "integer",
+    "bill_status": "string",
+    "details": {"documentDate": "2021-06-15", "signName": "string", "signPosition": "string", "signId": "string",…},
+    "handling_fee": "integer",
+    "handling_fee_details": [{"name": "string", "amount": "integer"}, {"name": "string", "amount": "integer"}],
+    "id": "integer",
+    "merchant": {"id": "integer", "name": "string", "email": "string", "phone": "string",…},
+    "merchant_id": "integer",
+    "order_date": "datetime",
+    "order_no": "string",
+    "payment_date": "datetime",
+    "payment_forwarded_date": "datetime",
+    "payment_method_id": "integer",
+    "payment_transferred": "integer",
+    "payments": {"pm2": {"va": "string", "amount": "integer", "expired": "datetime", "paid": "boolean",…}},
+    "school": {"id": "string", "name": "string",…},
+    "school_id": "string",
+    "shipping_cost": "integer",
+    "status_updated_at": "datetime",
+    "tax_price": "integer",
+    "total_order": "integer",
+    "total_price": "integer"
+  }
 ]
 ```
 
@@ -227,83 +133,83 @@ endpoint ini digunakan untuk mendapatkan data Payment berdasarkan penjual.
 
 `POST https://staging.siapi.tokoladang.co.id/admin/payments/{merchant}/merchant?q&status&page`
 
-## Post verifikasi pesanan
+## Post verifikasi Pembayaran
 
 > jenis: admin
 
 ```shell
-curl -X POST "https://staging.siapi.tokoladang.co.id/admin/payments/{order}/verify"
+curl -X POST "https://staging.siapi.tokoladang.co.id/admin/payments/{orderId}/verify"
 -H 'Content-Type: application/json'
 -d '{
-    "system_bank_id": "2",
-    "client_bank": {
-        "bank": "baru",
-        "name": "baru",
-        "no": "12345"
-    },
-    "transferred": "1",
-    "transferred_at": "2020-12-29 11:08:11",
-    "note": "",
-    "bank_mutation_id": "",
-    "is_valid": "1"
-}'
+      "system_bank_id": "integer",
+      "client_bank": {
+          "bank": "string",
+          "name": "string",
+          "no": "string"
+      },
+      "transferred": "integer",
+      "transferred_at": "datetime",
+      "note": "string",
+      "bank_mutation_id": "integer",
+      "is_valid": "boolean"
+    }'
 ```
 > Contoh Json Response :
 
 ```json
 {
-    "code": 200,
-    "message": "Pembayaran Berhasil diverifikasi."
+    "code": "integer",
+    "message": "message"
 }
 ```
 
-endpoint ini digunakan untuk verifikasi pesanan.
+endpoint ini digunakan untuk verifikasi pembayaran.
 
 ### HTTP Request
 
-`GET https://staging.siapi.tokoladang.co.id/admin/payments/{order}/verify`
+`GET https://staging.siapi.tokoladang.co.id/admin/payments/{orderId}/verify`
 
 ### Query Body
 
 Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
-system_bank_id | null | true | sistem bank
-client_bank.bank | null | true | bank
-client_bank.name | null | true | nama bank
-client_bank.no | null | true | no. bank
-transferred | null | true | status transfer
-transferred_at | null | true | tanggal transfer
-note | null | true | catatan
-bank_mutation_id | null | true | mutasi bank
-is_valid | null | true | valid
+system_bank_id | integer | true | sistem bank
+client_bank.bank | string | true | bank
+client_bank.name | string | true | nama bank
+client_bank.no | string | true | no. bank
+transferred | integer | true | status transfer
+transferred_at | datetime | true | tanggal transfer
+note | string | false | catatan
+bank_mutation_id | integer | false | mutasi bank
+is_valid | boolean | true | valid
 
 ## Post verifikasi ulang pesanan
 
 > jenis: admin
 
 ```shell
-curl -X POST "https://staging.siapi.tokoladang.co.id/admin/payments/{order}/reverify"
+curl -X POST "https://staging.siapi.tokoladang.co.id/admin/payments/{orderId}/reverify"
 -H 'Content-Type: application/json'
 -d '{
-    "system_bank_id": "2",
-    "client_bank": {
-        "bank": "baru 2",
-        "name": "baru 2",
-        "no": "12345"
-    },
-    "transferred": "1",
-    "transferred_at": "2020-12-29 11:08:11",
-    "note": "",
-    "bank_mutation_id": "",
-    "is_valid": "1"
-}'
+      "system_bank_id": "integer",
+      "client_bank": {
+          "bank": "string",
+          "name": "string",
+          "no": "string"
+      },
+      "transferred": "integer",
+      "transferred_at": "datetime",
+      "note": "string",
+      "bank_mutation_id": "integer",
+      "is_valid": "boolean"
+    }'
 ```
 > Contoh Json Response :
 
 ```json
 {
-    "code": 200,
-    "message": "Pembayaran Berhasil diverifikasi ulang"
+    "code": "integer",
+    "message": "message"
 }
 ```
 
@@ -311,34 +217,34 @@ endpoint ini digunakan untuk verifikasi ulang pesanan.
 
 ### HTTP Request
 
-`GET https://staging.siapi.tokoladang.co.id/admin/payments/{order}/reverify`
+`GET https://staging.siapi.tokoladang.co.id/admin/payments/{orderId}/reverify`
 
 ### Query Body
 
 Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
-system_bank_id | null | true | sistem bank
-client_bank.bank | null | true | bank
-client_bank.name | null | true | nama bank
-client_bank.no | null | true | no. bank
-transferred | null | true | status transfer
-transferred_at | null | true | tanggal transfer
-note | null | true | catatan
-bank_mutation_id | null | true | mutasi bank
-is_valid | null | true | valid
+system_bank_id | integer | true | sistem bank
+client_bank.bank | string | true | bank
+client_bank.name | string | true | nama bank
+client_bank.no | string | true | no. bank
+transferred | integer | true | status transfer
+transferred_at | datetime | true | tanggal transfer
+note | string | false | catatan
+bank_mutation_id | integer | false | mutasi bank
+is_valid | boolean | true | valid
 
-## Post biaya admin pesanan
+## Post Biaya Admin
 
 > jenis: admin
 
 ```shell
-curl -X POST "https://staging.siapi.tokoladang.co.id/admin/payments/{order}/handling-fees"
+curl -X POST "https://staging.siapi.tokoladang.co.id/admin/payments/{orderId}/handling-fees"
 -H 'Content-Type: application/json'
 -d '{
-    "free": "0",
+    "free": "boolean",
     "fees": {
-        "name": "baru 2",
-        "amount": "12345"
+        "name": "string",
+        "amount": "integer"
     }
 }'
 ```
@@ -346,8 +252,8 @@ curl -X POST "https://staging.siapi.tokoladang.co.id/admin/payments/{order}/hand
 
 ```json
 {
-    "code": 200,
-    "message": "Biaya Penanganan Berhasil disimpan"
+    "code": "integer",
+    "message": "string"
 }
 ```
 
@@ -355,38 +261,38 @@ endpoint ini digunakan untuk verifikasi biaya penanganan pesanan.
 
 ### HTTP Request
 
-`GET https://staging.siapi.tokoladang.co.id/admin/payments/{order}/handling-fees`
+`GET https://staging.siapi.tokoladang.co.id/admin/payments/{orderId}/handling-fees`
 
 ### Query Body
 
 Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
-free | null | true | status biaya pengiriman
-fees.name | null | true | nama pengiriman
-fees.amount | null | true | biaya pengiriman
+free | boolean | true | status biaya pengiriman
+fees.name | string | true if free false | nama pengiriman
+fees.amount | integer | true if free false | biaya pengiriman
 
 ## Post pesanan forwarded
 
 > jenis: admin
 
 ```shell
-curl -X POST "https://staging.siapi.tokoladang.co.id/admin/payments/{merchant}/forward"
+curl -X POST "https://staging.siapi.tokoladang.co.id/admin/payments/{merchantId}/forward"
 -H 'Content-Type: application/json'
 -d '{
     "orders": {
-        "id": "1"
+        "id": "integer"
     }, 
-    "note": "",
-    "system_bank_id": "1", 
-    "transferred_at": "2020-12-29 11:08:11"
+    "note": "string",
+    "system_bank_id": "integer", 
+    "transferred_at": "datetime"
 }'
 ```
 > Contoh Json Response :
 
 ```json
 {
-    "code": 200,
-    "message": "Pembayaran Berhasil diteruskan ke Penjual."
+    "code": "integer",
+    "message": "string"
 }
 ```
 
@@ -394,13 +300,13 @@ endpoint ini digunakan untuk verifikasi biaya penanganan pesanan.
 
 ### HTTP Request
 
-`GET https://staging.siapi.tokoladang.co.id/admin/payments/{merchant}/forward`
+`GET https://staging.siapi.tokoladang.co.id/admin/payments/{merchantId}/forward`
 
 ### Query Body
 
 Parameter | Default | required | Deskripsi
 --------- | ------- | -------- | -----------
-orders.id | null | true | pesanan
-note | null | true | catatan
-system_bank_id | null | true | sistem bank
-transferred_at | null | true | tanggal
+orders.id | integer | true | pesanan
+note | string | false | catatan
+system_bank_id | integer | true | sistem bank
+transferred_at | date | true | tanggal

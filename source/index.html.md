@@ -10,24 +10,36 @@ toc_footers:
 
 includes:
   - authentication
-  - admin_merchant
-  - admin_product_category
-  - admin_product
+  - public_all
+  - public_merchant
+  - public_product
   - admin_admins
-  - admin_sekolah
-  - admin_payment
+  - admin_branch
   - admin_complain
-  - seller_Merc
-  - seller_Product
-  - seller_Order
-  - seller_Merc_storage
+  # - admin_dashboard
+  - admin_inspector
+  - admin_merchant
+  - admin_order
+  - admin_payment
+  - admin_product
+  - admin_product_category
+  - admin_promo
+  - admin_sekolah
+  - seller_compare
   - seller_complain
-  - seller_Negotation
-  - buyer_negotiation
-  - buyer_compares
+  - seller_dashboard
+  - seller_merchant
+  - seller_merchant_storage
+  - seller_negotation
+  - seller_product
+  - seller_order
   - buyer_cart
-  - buyer_order
+  - buyer_compares
   - buyer_complain
+  - buyer_merchant_following
+  - buyer_negotiation
+  - buyer_order
+  - buyer_product
   - errors
 
 search: true
