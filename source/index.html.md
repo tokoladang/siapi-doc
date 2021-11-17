@@ -33,7 +33,7 @@ includes:
   - buyer_cart
   - buyer_compares
   - buyer_complain
-  - buyer_favorite
+  - buyer_merchant_following
   # - buyer_negotiation
   - buyer_order
   # - buyer_product
