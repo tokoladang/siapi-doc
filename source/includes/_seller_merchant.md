@@ -6,7 +6,101 @@ Toko digunakan untuk melihat data toko, membuat data toko, dan merubah data toko
 Memerlukan Authentikasi sebagai seller.
 </aside>
 
-## DATA Toko
+## Get Verifikasi Pengguna
+
+> jenis: public
+
+```shell
+curl -X GET "https://staging.siapi.tokoladang.co.id/seller/seller-email/verify/{id}/{hash}"
+-H 'Content-Type: application/json'
+-d '{}'
+```
+> Contoh Json Response :
+
+```json
+{
+  "id": "code",
+  "message": "message"
+}
+```
+
+endpoint ini digunakan untuk verifikasi pengguna.
+
+### HTTP Request
+
+`GET https://staging.siapi.tokoladang.co.id/seller/seller-email/verify/{id}/{hash}`
+
+## Get Kirim Link Verifikasi Pengguna
+
+> jenis: public
+
+```shell
+curl -X GET "https://staging.siapi.tokoladang.co.id/seller/seller-email/verification-notification"
+-H 'Content-Type: application/json'
+-d '{}'
+```
+> Contoh Json Response :
+
+```json
+{
+  "id": "code",
+  "message": "message"
+}
+```
+
+endpoint ini digunakan untuk mengirim link verifikasi pengguna.
+
+### HTTP Request
+
+`GET https://staging.siapi.tokoladang.co.id/seller/seller-email/verification-notification`
+
+## Get Verifikasi Toko
+
+> jenis: public
+
+```shell
+curl -X GET "https://staging.siapi.tokoladang.co.id/seller/merchant-email/verify/{id}/{hash}"
+-H 'Content-Type: application/json'
+-d '{}'
+```
+> Contoh Json Response :
+
+```json
+{
+  "id": "code",
+  "message": "message"
+}
+```
+
+endpoint ini digunakan untuk verifikasi toko.
+
+### HTTP Request
+
+`GET https://staging.siapi.tokoladang.co.id/seller/merchant-email/verify/{id}/{hash}`
+
+## Get Kirim Link Verifikasi Toko
+
+> jenis: public
+
+```shell
+curl -X GET "https://staging.siapi.tokoladang.co.id/seller/merchant-email/verification-notification"
+-H 'Content-Type: application/json'
+-d '{}'
+```
+> Contoh Json Response :
+
+```json
+{
+  "id": "code",
+  "message": "message"
+}
+```
+
+endpoint ini digunakan untuk mengirim link verifikasi toko.
+
+### HTTP Request
+
+`GET https://staging.siapi.tokoladang.co.id/seller/merchant-email/verification-notification`
 
 ## Get Data Toko
 
