@@ -1,5 +1,54 @@
 # [Admin] Pengguna
 
+
+## Get Verifikasi Pengguna
+
+> jenis: public
+
+```shell
+curl -X GET "https://staging.siapi.tokoladang.co.id/seller/admin-email/verify/{id}/{hash}"
+-H 'Content-Type: application/json'
+-d '{}'
+```
+> Contoh Json Response :
+
+```json
+{
+  "id": "code",
+  "message": "message"
+}
+```
+
+endpoint ini digunakan untuk verifikasi pengguna.
+
+### HTTP Request
+
+`GET https://staging.siapi.tokoladang.co.id/seller/admin-email/verify/{id}/{hash}`
+
+## Get Kirim Link Verifikasi Pengguna
+
+> jenis: public
+
+```shell
+curl -X GET "https://staging.siapi.tokoladang.co.id/seller/admin-email/verification-notification"
+-H 'Content-Type: application/json'
+-d '{}'
+```
+> Contoh Json Response :
+
+```json
+{
+  "id": "code",
+  "message": "message"
+}
+```
+
+endpoint ini digunakan untuk mengirim link verifikasi pengguna.
+
+### HTTP Request
+
+`GET https://staging.siapi.tokoladang.co.id/seller/admin-email/verification-notification`
+
 ## Get Daftar Pengguna Admin
 
 > jenis: admin
